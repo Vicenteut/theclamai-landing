@@ -1,0 +1,45 @@
+---
+const steps = [
+  {
+    num: "01",
+    title: "You brief us",
+    body: "Share your menu, room types, policies, and FAQs. We handle everything else — no technical setup required on your end.",
+    detail: "30-min onboarding call",
+  },
+  {
+    num: "02",
+    title: "We configure",
+    body: "Our team trains the AI on your brand voice, connects it to your WhatsApp Business number, and tests every edge case.",
+    detail: "Runs in the background",
+  },
+  {
+    num: "03",
+    title: "It goes live",
+    body: "Your AI assistant starts handling guest messages in real time. You monitor from a simple dashboard. We handle the updates.",
+    detail: "Live within 72 hours",
+  },
+];
+---
+
+<section id="how" style="padding:80px 24px;max-width:1000px;margin:0 auto;">
+
+  <p class="section-label" style="text-align:center;margin-bottom:12px;">How it works</p>
+  <h2 style="font-size:clamp(26px,4vw,40px);font-weight:700;letter-spacing:-0.03em;color:#ededed;text-align:center;margin:0 0 64px;">
+    Three steps. Then it runs itself.
+  </h2>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;">
+    {steps.map((s) => (
+      <div class="step-card">
+        <p style="font-size:11px;font-family:monospace;color:#D4AF37;letter-spacing:0.12em;margin:0 0 20px;">{s.num}</p>
+        <h3 style="font-size:20px;font-weight:600;letter-spacing:-0.02em;color:#ededed;margin:0 0 12px;">{s.title}</h3>
+        <p style="font-size:14px;color:#888;line-height:1.65;margin:0 0 20px;flex:1;">{s.body}</p>
+        <div style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:9999px;background:rgba(212,175,55,0.06);border:1px solid rgba(212,175,55,0.18);">
+          <span style="width:5px;height:5px;border-radius:50%;background:#D4AF37;flex-shrink:0;opacity:0.7;"></span>
+          <span style="font-size:11px;color:#D4AF37;font-weight:500;">{s.detail}</span>
+        </div>
+      </div>
+    ))}
+  </div>
+
+</section>

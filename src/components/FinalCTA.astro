@@ -1,0 +1,40 @@
+---
+const WA_LINK = "https://wa.me/501XXXXXXXX?text=demo";
+---
+
+<section id="demo" style="position:relative;padding:100px 24px;text-align:center;overflow:hidden;">
+
+  <!-- Radial glow -->
+  <div aria-hidden="true" style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 50% 100%,rgba(212,175,55,0.1) 0%,transparent 70%);pointer-events:none;"></div>
+
+  <!-- Top border line -->
+  <div aria-hidden="true" style="position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,0.3),transparent);"></div>
+
+  <div style="position:relative;max-width:640px;margin:0 auto;">
+
+    <p class="section-label" style="margin-bottom:16px;">Ready?</p>
+
+    <h2 style="font-size:clamp(30px,5vw,56px);font-weight:700;letter-spacing:-0.04em;color:#ededed;line-height:1.08;margin:0 0 20px;">
+      The only thing we can't do<br>is try it <span style="color:#D4AF37;">for you.</span>
+    </h2>
+
+    <p style="font-size:16px;color:#888;line-height:1.6;max-width:440px;margin:0 auto 40px;">
+      Send a message on WhatsApp and talk to the actual AI — no demo scripts, no sales call needed.
+    </p>
+
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;">
+      <a href={WA_LINK} target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:15px;padding:13px 28px;">
+        Try the demo on WhatsApp →
+      </a>
+      <a href="mailto:hello@theclamai.com" class="btn-secondary">
+        Email us instead
+      </a>
+    </div>
+
+    <p style="font-size:12px;color:#333;margin-top:20px;">
+      No card required · Cancel anytime · Live in 3 days
+    </p>
+
+  </div>
+
+</section>

@@ -1,0 +1,48 @@
+---
+// Preloader — placeholder for Vicente's GSAP SVG animation
+// CLAM letters (replacing CBZ) with gold glow + directional assembly
+// Replace the inner SVG content with Vicente's final artwork when ready.
+// Current: simple fade-out after 800ms so the site works without it.
+---
+
+<div
+  id="preloader"
+  aria-hidden="true"
+  style="
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    background:#000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    pointer-events:none;
+  "
+>
+  <!-- ╔═══════════════════════════════════════════════════════════╗
+       ║  DROP VICENTE'S GSAP SVG HERE                            ║
+       ║  • Replace CBZ → CLAM                                    ║
+       ║  • Replace cyan (#00f7ff) → gold (#D4AF37)               ║
+       ║  • feColorMatrix: keep values, change target hue         ║
+       ╚═══════════════════════════════════════════════════════════╝ -->
+
+  <!-- Fallback: C mark logo + fade -->
+  <svg width="48" height="48" viewBox="0 0 100 100" fill="none" aria-label="The Clam AI">
+    <path d="M 75 22 Q 28 12 22 50 Q 28 88 75 78" stroke="#D4AF37" stroke-width="7" stroke-linecap="round" fill="none"/>
+    <circle cx="19" cy="50" r="4" fill="#D4AF37"/>
+  </svg>
+</div>
+
+<script>
+  // Simple fade-out — replace with GSAP timeline when Vicente's SVG is integrated
+  window.addEventListener('load', () => {
+    const el = document.getElementById('preloader');
+    if (!el) return;
+    // Short delay so the logo is visible for a beat
+    setTimeout(() => {
+      el.style.transition = 'opacity 0.5s ease';
+      el.style.opacity = '0';
+      setTimeout(() => { el.style.display = 'none'; }, 500);
+    }, 600);
+  });
+</script>

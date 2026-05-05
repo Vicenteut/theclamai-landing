@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const updated = "May 2025";
+---
+
+<BaseLayout
+  title="Privacy Policy — The Clam AI"
+  description="How The Clam AI collects, uses and protects your data."
+>
+  <Navbar />
+
+  <main style="max-width:720px;margin:0 auto;padding:140px 24px 80px;">
+
+    <h1 style="font-size:36px;font-weight:700;letter-spacing:-0.03em;color:#ededed;margin:0 0 8px;">Privacy Policy</h1>
+    <p style="font-size:13px;color:#555;margin:0 0 48px;">Last updated: {updated}</p>
+
+    <div style="display:flex;flex-direction:column;gap:32px;">
+
+      <section>
+        <h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">1. Who we are</h2>
+        <p style="font-size:14px;color:#888;line-height:1.75;margin:0;">
+          The Clam AI ("we", "us", "our") provides a conversational AI platform for the hospitality industry.
+          You can contact us at <a href="mailto:hello@theclamai.com" style="color:#D4AF37;">hello@theclamai.com</a>.
+        </p>
+      </section>
+
+      <section>
+        <h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">2. What data we collect</h2>
+        <p style="font-size:14px;color:#888;line-height:1.75;margin:0 0 10px;">We collect only the data necessary to provide our service:</p>
+        <ul style="font-size:14px;color:#888;line-height:1.75;margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;">
+          <li><strong style="color:#ededed;">Business contact data</strong> — name, email address, phone number of business owners who sign up.</li>
+          <li><strong style="color:#ededed;">Guest message data</strong> — WhatsApp message content processed on behalf of our business clients to generate AI responses.</li>
+          <li><strong style="color:#ededed;">Usage data</strong> — anonymised analytics on how our dashboard is used (page views, feature usage).</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">3. How we use your data</h2>
+        <ul style="font-size:14px;color:#888;line-height:1.75;margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;">
+          <li>To deliver and improve the AI assistant service.</li>
+          <li>To respond to support requests and communications.</li>
+          <li>To send service-related notifications (no marketing without opt-in).</li>
+          <li>To comply with legal obligations.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">4. Data sharing</h2>
+        <p style="font-size:14px;color:#888;line-height:1.75;margin:0;">
+          We do not sell or rent personal data. We share data only with sub-processors necessary to operate the service
+          (e.g., cloud hosting, AI inference providers) under strict data processing agreements.
+          We will disclose data to law enforcement only when legally required.
+        </p>
+      </section>
+
+      <section>
+        <h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">5. Data retention</h2>
+        <p style="font-size:14px;color:#888;line-height:1.75;margin:0;">
+          Guest conversation data is retained for 90 days by default, configurable per business client.
+          Business account data is retained for the duration of the contract plus 30 days after termination.
+        </p>
+      </section>
+
+      <section>
+        <h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">6. Your rights (GDPR)</h2>
+        <p style="font-size:14px;color:#888;line-height:1.75;margin:0 0 10px;">
+          If you are in the EU/EEA, you have the right to access, correct, delete, or port your data,
+          and to object to or restrict processing. To exercise any of these rights, email us at
+          <a href="mailto:hello@theclamai.com" style="color:#D4AF37;">hello@theclamai.com</a>.
+          We respond within 30 days.
+        </p>
+      </section>
+
+      <section>
+        <h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">7. Cookies</h2>
+        <p style="font-size:14px;color:#888;line-height:1.75;margin:0;">
+          Our marketing site uses no tracking cookies. Our dashboard uses only strictly necessary session cookies.
+        </p>
+      </section>
+
+      <section>
+        <h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">8. Changes to this policy</h2>
+        <p style="font-size:14px;color:#888;line-height:1.75;margin:0;">
+          We may update this policy. If changes are material, we will notify clients by email 14 days in advance.
+          The "last updated" date at the top reflects the current version.
+        </p>
+      </section>
+
+    </div>
+
+  </main>
+
+  <Footer />
+</BaseLayout>

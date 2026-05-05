@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Thanks! — The Clam AI"
+  description="We received your message and will get back to you shortly."
+>
+  <Navbar />
+
+  <main style="min-height:80vh;display:flex;align-items:center;justify-content:center;padding:120px 24px 80px;text-align:center;">
+    <div style="max-width:480px;">
+
+      <!-- Gold check icon -->
+      <div style="width:56px;height:56px;border-radius:50%;background:rgba(212,175,55,0.1);border:1px solid rgba(212,175,55,0.25);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M5 13l4 4L19 7" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <h1 style="font-size:36px;font-weight:700;letter-spacing:-0.03em;color:#ededed;margin:0 0 12px;">You're in.</h1>
+      <p style="font-size:16px;color:#888;line-height:1.65;margin:0 0 32px;">
+        We got your message. Our team will reach out within one business day to schedule your onboarding call.
+      </p>
+
+      <a href="/" style="font-size:14px;color:#D4AF37;text-decoration:none;border-bottom:1px solid rgba(212,175,55,0.3);">
+        ← Back to home
+      </a>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>

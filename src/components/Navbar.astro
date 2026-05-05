@@ -1,0 +1,48 @@
+---
+const WA_LINK = "https://wa.me/501XXXXXXXX?text=demo";
+---
+
+<nav
+  x-data="{ open: false }"
+  style="position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:100;width:max-content;max-width:calc(100vw - 32px);"
+>
+  <!-- Pill container -->
+  <div style="display:flex;align-items:center;gap:0;background:rgba(0,0,0,0.8);border:1px solid rgba(255,255,255,0.08);border-radius:9999px;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:8px 8px 8px 20px;">
+
+    <!-- Logo -->
+    <a href="/" style="display:flex;align-items:center;gap:8px;margin-right:28px;text-decoration:none;">
+      <svg width="20" height="20" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+        <path d="M 75 22 Q 28 12 22 50 Q 28 88 75 78" stroke="#D4AF37" stroke-width="7" stroke-linecap="round" fill="none"/>
+        <circle cx="19" cy="50" r="4" fill="#D4AF37"/>
+      </svg>
+      <span style="font-size:14px;font-weight:600;letter-spacing:-0.02em;color:#ededed;white-space:nowrap;">The Clam AI</span>
+    </a>
+
+    <!-- Desktop links -->
+    <div class="nav-links" style="display:flex;align-items:center;gap:2px;margin-right:12px;">
+      <a href="#how" style="font-size:13px;color:#888;padding:6px 12px;border-radius:9999px;transition:color .15s,background .15s;white-space:nowrap;"
+         onmouseover="this.style.color='#ededed';this.style.background='rgba(255,255,255,0.06)'"
+         onmouseout="this.style.color='#888';this.style.background='transparent'">How it works</a>
+      <a href="#pricing" style="font-size:13px;color:#888;padding:6px 12px;border-radius:9999px;transition:color .15s,background .15s;white-space:nowrap;"
+         onmouseover="this.style.color='#ededed';this.style.background='rgba(255,255,255,0.06)'"
+         onmouseout="this.style.color='#888';this.style.background='transparent'">Pricing</a>
+      <a href="#demo" style="font-size:13px;color:#888;padding:6px 12px;border-radius:9999px;transition:color .15s,background .15s;white-space:nowrap;"
+         onmouseover="this.style.color='#ededed';this.style.background='rgba(255,255,255,0.06)'"
+         onmouseout="this.style.color='#888';this.style.background='transparent'">Demo</a>
+    </div>
+
+    <!-- CTA -->
+    <a href={WA_LINK} target="_blank" rel="noopener noreferrer"
+       style="font-size:13px;font-weight:600;background:#D4AF37;color:#000;padding:9px 18px;border-radius:9999px;white-space:nowrap;transition:background .15s;text-decoration:none;"
+       onmouseover="this.style.background='#E8C547'"
+       onmouseout="this.style.background='#D4AF37'">
+      Try demo →
+    </a>
+  </div>
+</nav>
+
+<style>
+  @media (max-width: 640px) {
+    .nav-links { display: none !important; }
+  }
+</style>

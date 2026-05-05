@@ -1,0 +1,114 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const updated = "May 2025";
+---
+
+<BaseLayout
+  title="Terms of Service — The Clam AI"
+  description="Terms and conditions for using The Clam AI platform."
+>
+  <Navbar />
+
+  <main style="max-width:720px;margin:0 auto;padding:140px 24px 80px;">
+
+    <h1 style="font-size:36px;font-weight:700;letter-spacing:-0.03em;color:#ededed;margin:0 0 8px;">Terms of Service</h1>
+    <p style="font-size:13px;color:#555;margin:0 0 48px;">Last updated: {updated}</p>
+
+    <div style="display:flex;flex-direction:column;gap:32px;">
+
+      <section>
+        <h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">1. Acceptance</h2>
+        <p style="font-size:14px;color:#888;line-height:1.75;margin:0;">
+          By subscribing to or using The Clam AI ("Service"), you agree to these Terms. If you do not agree, do not use the Service.
+          These Terms constitute a binding contract between you ("Client") and The Clam AI.
+        </p>
+      </section>
+
+      <section>
+        <h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">2. The Service</h2>
+        <p style="font-size:14px;color:#888;line-height:1.75;margin:0;">
+          The Clam AI provides a managed AI assistant that processes WhatsApp messages on behalf of hospitality businesses.
+          The Service includes configuration, hosting, and ongoing model maintenance. We reserve the right to modify
+          features with 14 days' notice.
+        </p>
+      </section>
+
+      <section>
+        <h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">3. Subscriptions & billing</h2>
+        <ul style="font-size:14px;color:#888;line-height:1.75;margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;">
+          <li>Plans are billed monthly in advance.</li>
+          <li>No long-term contract is required — you may cancel at any time before the next billing cycle.</li>
+          <li>There are no setup fees.</li>
+          <li>Price changes will be communicated 30 days in advance.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">4. Refund policy</h2>
+        <p style="font-size:14px;color:#888;line-height:1.75;margin:0;">
+          We offer a full refund if you cancel within 7 days of your first charge and the AI assistant has not yet gone live.
+          Once the Service is live, charges are non-refundable for the current billing period, but you will not be charged again
+          after cancellation.
+        </p>
+      </section>
+
+      <section>
+        <h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">5. Client responsibilities</h2>
+        <ul style="font-size:14px;color:#888;line-height:1.75;margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;">
+          <li>You must provide accurate business information during onboarding.</li>
+          <li>You are responsible for maintaining your WhatsApp Business account in good standing with Meta's policies.</li>
+          <li>You must not use the Service for unlawful, deceptive, or abusive communications.</li>
+          <li>You are responsible for informing your guests that automated AI may respond on your behalf.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">6. Limitation of liability</h2>
+        <p style="font-size:14px;color:#888;line-height:1.75;margin:0;">
+          The Clam AI shall not be liable for indirect, incidental, or consequential damages arising from use of the Service.
+          Our total liability in any 12-month period shall not exceed the fees paid by you during that period.
+          The AI may occasionally produce inaccurate responses — you are responsible for reviewing critical operational decisions.
+        </p>
+      </section>
+
+      <section>
+        <h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">7. Intellectual property</h2>
+        <p style="font-size:14px;color:#888;line-height:1.75;margin:0;">
+          The Clam AI retains all rights to the platform software, AI models, and infrastructure.
+          You retain ownership of your business data and guest conversation content.
+          Upon termination, your data will be exported to you within 48 hours.
+        </p>
+      </section>
+
+      <section>
+        <h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">8. Termination</h2>
+        <p style="font-size:14px;color:#888;line-height:1.75;margin:0;">
+          Either party may terminate at any time. We may suspend the Service immediately if you violate these Terms.
+          On termination, access is revoked at end of the billing period and data is purged after the retention period defined in the Privacy Policy.
+        </p>
+      </section>
+
+      <section>
+        <h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">9. Governing law</h2>
+        <p style="font-size:14px;color:#888;line-height:1.75;margin:0;">
+          These Terms are governed by applicable law. Disputes shall be resolved by binding arbitration or in the courts of
+          competent jurisdiction. If any provision is held invalid, the remainder of the Terms continues in effect.
+        </p>
+      </section>
+
+      <section>
+        <h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">10. Contact</h2>
+        <p style="font-size:14px;color:#888;line-height:1.75;margin:0;">
+          Questions about these Terms? Email us at <a href="mailto:hello@theclamai.com" style="color:#D4AF37;">hello@theclamai.com</a>.
+        </p>
+      </section>
+
+    </div>
+
+  </main>
+
+  <Footer />
+</BaseLayout>
