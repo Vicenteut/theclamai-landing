@@ -48,7 +48,8 @@ const ctaLabel = t.nav.cta;
     </div>
 
     <!-- CTA (desktop) -->
-    <a href={WA_LINK} target="_blank" rel="noopener noreferrer" class="nav-cta nav-cta-desktop">
+    <a href={WA_LINK} target="_blank" rel="noopener noreferrer" class="nav-cta nav-cta-desktop"
+       data-track="cta_click_navbar" data-track-source="desktop">
       {ctaLabel} →
     </a>
 
@@ -85,7 +86,9 @@ const ctaLabel = t.nav.cta;
     <div style="margin-top:8px;display:flex;justify-content:center;">
       <LangToggle />
     </div>
-    <a href={WA_LINK} target="_blank" rel="noopener noreferrer" class="nav-cta" style="display:block;text-align:center;margin-top:8px;">
+    <a href={WA_LINK} target="_blank" rel="noopener noreferrer" class="nav-cta"
+       style="display:block;text-align:center;margin-top:8px;"
+       data-track="cta_click_navbar" data-track-source="mobile">
       {ctaLabel} →
     </a>
   </div>

@@ -13,11 +13,11 @@ const items = t.faq.items;
   </header>
 
   <div class="faq__list">
-    {items.map((item) => (
+    {items.map((item, idx) => (
       <div class="faq__item" x-data="{ open: false }">
         <button
           type="button"
-          x-on:click="open = !open"
+          x-on:click={`open = !open; if (!open) { window.posthog?.capture('faq_opened', { question_index: ${idx}, lang: document.documentElement.lang }) }`}
           class="faq__q"
           aria-expanded="false"
           x-bind:aria-expanded="open.toString()"

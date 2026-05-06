@@ -22,10 +22,12 @@ const bookCallLink = waBookCallLink(lang);
   <p class="cta__sub">{t.final_cta.sub}</p>
 
   <div class="cta__actions">
-    <a href={tryDemoLink} target="_blank" rel="noopener noreferrer" class="btn-primary cta__btn">
+    <a href={tryDemoLink} target="_blank" rel="noopener noreferrer" class="btn-primary cta__btn"
+       data-track="cta_click_finalcta" data-track-action="try_demo">
       {t.final_cta.primary} →
     </a>
-    <a href={bookCallLink} target="_blank" rel="noopener noreferrer" class="btn-secondary cta__btn">
+    <a href={bookCallLink} target="_blank" rel="noopener noreferrer" class="btn-secondary cta__btn"
+       data-track="cta_click_finalcta" data-track-action="book_call">
       {t.final_cta.secondary}
     </a>
   </div>

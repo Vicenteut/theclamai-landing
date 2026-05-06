@@ -18,7 +18,7 @@ const t = dict(lang);
         type="button"
         role="tab"
         class="vsw__pill"
-        x-on:click="active = d.id"
+        x-on:click="active = d.id; window.posthog?.capture('vertical_switched', { to: d.id, lang: document.documentElement.lang })"
         x-text="d.label"
         x-bind:aria-selected="active === d.id"
         x-bind:class="active === d.id ? 'vsw__pill--active' : ''"

@@ -41,6 +41,8 @@ const p = t.pricing;
             target="_blank"
             rel="noopener noreferrer"
             class={plan.featured ? 'btn-primary plan__cta' : 'btn-secondary plan__cta'}
+            data-track="cta_click_pricing"
+            data-track-plan={plan.id}
           >
             {copy.cta}
           </a>

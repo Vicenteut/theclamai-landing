@@ -11,6 +11,8 @@ const altLabel = lang === 'en' ? 'ES' : 'EN';
   class="lang-toggle"
   aria-label={`Switch language to ${altLabel}`}
   data-astro-prefetch
+  data-track="lang_toggle"
+  data-track-to={altLabel.toLowerCase()}
 >
   <span aria-hidden="true">{lang === 'en' ? 'EN' : 'ES'}</span>
   <span class="lang-toggle__sep" aria-hidden="true">/</span>
