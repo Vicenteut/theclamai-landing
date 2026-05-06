@@ -7,7 +7,17 @@ import cloudflare from '@astrojs/cloudflare';
 
 export default defineConfig({
   site: 'https://theclamai.com',
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      i18n: {
+        defaultLocale: 'en',
+        locales: {
+          en: 'en-US',
+          es: 'es-ES',
+        },
+      },
+    }),
+  ],
 
   vite: {
     plugins: [tailwindcss()]

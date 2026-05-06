@@ -26,6 +26,12 @@ const {
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const ogLocale = lang === 'es' ? 'es_ES' : 'en_US';
 const ogImageUrl = new URL(ogImage, Astro.site).toString();
+
+// hreflang: compute the equivalent path for the OTHER locale (and x-default).
+const path = Astro.url.pathname;
+const stripEs = path.replace(/^\/es(\/|$)/, '/');
+const enHref = new URL(stripEs === '' ? '/' : stripEs, Astro.site).toString();
+const esHref = new URL(stripEs === '/' ? '/es/' : `/es${stripEs}`, Astro.site).toString();
 ---
 
 <!doctype html>
@@ -39,6 +45,11 @@ const ogImageUrl = new URL(ogImage, Astro.site).toString();
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="en" href={enHref} />
+    <link rel="alternate" hreflang="es" href={esHref} />
+    <link rel="alternate" hreflang="x-default" href={enHref} />
 
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
@@ -59,14 +70,37 @@ const ogImageUrl = new URL(ogImage, Astro.site).toString();
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.14.0/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.0/dist/cdn.min.js"></script>
 
-    <!-- JSON-LD -->
+    <!-- JSON-LD: Organization + WebSite + SoftwareApplication -->
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
-      '@type': 'SoftwareApplication',
-      name: 'The Clam AI',
-      applicationCategory: 'BusinessApplication',
-      operatingSystem: 'Web',
-      offers: { '@type': 'Offer', priceCurrency: 'USD' }
+      '@graph': [
+        {
+          '@type': 'Organization',
+          '@id': 'https://theclamai.com/#org',
+          name: 'The Clam AI',
+          url: 'https://theclamai.com/',
+          logo: 'https://theclamai.com/favicon.svg',
+          email: 'hello@theclamai.com',
+          sameAs: [],
+        },
+        {
+          '@type': 'WebSite',
+          '@id': 'https://theclamai.com/#website',
+          url: 'https://theclamai.com/',
+          name: 'The Clam AI',
+          inLanguage: lang === 'es' ? 'es-ES' : 'en-US',
+          publisher: { '@id': 'https://theclamai.com/#org' },
+        },
+        {
+          '@type': 'SoftwareApplication',
+          name: 'The Clam AI',
+          applicationCategory: 'BusinessApplication',
+          operatingSystem: 'Web, WhatsApp',
+          inLanguage: lang === 'es' ? 'es-ES' : 'en-US',
+          publisher: { '@id': 'https://theclamai.com/#org' },
+          offers: { '@type': 'Offer', priceCurrency: 'USD' },
+        },
+      ],
     })} />
   </head>
   <body data-lang={lang}>
