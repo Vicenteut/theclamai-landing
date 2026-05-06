@@ -12,7 +12,7 @@
   },
   "a11y": {
     "menu_toggle": "Abrir menú",
-    "qr_label": "Código QR del demo de WhatsApp"
+    "qr_label": "Demo animado del chatbot IA"
   },
   "hero": {
     "eyebrow": "IA conversacional · WhatsApp",
@@ -20,7 +20,7 @@
     "title_strong": "que tu negocio ya necesitaba.",
     "sub": "Conecta WhatsApp. Entrénalo con tus datos. En vivo en 72 horas.",
     "demo_label": "Demo en vivo",
-    "demo_help": "Escanea o toca. El bot responde en tu idioma.",
+    "demo_help": "Toca para chatear. El bot responde en tu idioma.",
     "cta_primary": "Probar el demo",
     "cta_secondary": "Agendar una llamada"
   },

@@ -12,7 +12,7 @@
   },
   "a11y": {
     "menu_toggle": "Toggle menu",
-    "qr_label": "WhatsApp demo QR code"
+    "qr_label": "Animated AI chatbot demo"
   },
   "hero": {
     "eyebrow": "Conversational AI · WhatsApp",
@@ -20,7 +20,7 @@
     "title_strong": "your business already needs.",
     "sub": "Connect WhatsApp. Train it on your data. Live in 72 hours.",
     "demo_label": "Live demo",
-    "demo_help": "Scan or tap. The bot replies in your language.",
+    "demo_help": "Tap to chat. The bot replies in your language.",
     "cta_primary": "Try the demo",
     "cta_secondary": "Book a call"
   },
