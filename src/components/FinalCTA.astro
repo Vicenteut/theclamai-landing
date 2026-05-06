@@ -1,17 +1,17 @@
 ---
 import { getLocale, dict } from '../i18n';
-import { WA_NUMBER, VERTICALS } from '../data/demos';
+import { WA_NUMBER, VERTICALS, waBookCallLink } from '../data/demos';
 
 const lang = getLocale(Astro.url);
 const t = dict(lang);
 
-// Default prefill for the final CTA = restaurant (most common). Hero allows switching.
+// Primary: try the demo (restaurant prefill — Hero is where users pick a vertical).
 const v = VERTICALS[0];
 const prefill = encodeURIComponent(lang === 'es' ? v.prefill_es : v.prefill_en);
-const waLink = `https://wa.me/${WA_NUMBER}?text=${prefill}`;
+const tryDemoLink = `https://wa.me/${WA_NUMBER}?text=${prefill}`;
 
-// TODO: replace with real Calendly URL once user provides it.
-const calendlyLink = 'https://calendly.com/theclamai/intro';
+// Secondary: book a call — also WhatsApp, different prefill.
+const bookCallLink = waBookCallLink(lang);
 ---
 
 <section id="demo" class="cta" aria-labelledby="cta-title">
@@ -22,10 +22,10 @@ const calendlyLink = 'https://calendly.com/theclamai/intro';
   <p class="cta__sub">{t.final_cta.sub}</p>
 
   <div class="cta__actions">
-    <a href={waLink} target="_blank" rel="noopener noreferrer" class="btn-primary cta__btn">
+    <a href={tryDemoLink} target="_blank" rel="noopener noreferrer" class="btn-primary cta__btn">
       {t.final_cta.primary} →
     </a>
-    <a href={calendlyLink} target="_blank" rel="noopener noreferrer" class="btn-secondary cta__btn">
+    <a href={bookCallLink} target="_blank" rel="noopener noreferrer" class="btn-secondary cta__btn">
       {t.final_cta.secondary}
     </a>
   </div>

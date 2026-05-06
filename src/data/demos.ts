@@ -54,9 +54,20 @@ export const VERTICALS: VerticalDemo[] = [
   },
 ];
 
+/** Generic "book a call" prefill — used by secondary CTAs that don't switch verticals. */
+export const BOOK_CALL_PREFILL = {
+  en: "Hi! I'd like to book a call to learn more about The Clam AI for my business.",
+  es: '¡Hola! Quiero agendar una llamada para saber más sobre The Clam AI para mi negocio.',
+} as const;
+
 /** Build a wa.me link with a prefilled message for a vertical + locale. */
 export function waLink(verticalId: VerticalId, lang: 'en' | 'es'): string {
   const v = VERTICALS.find((x) => x.id === verticalId) ?? VERTICALS[0];
   const text = encodeURIComponent(lang === 'es' ? v.prefill_es : v.prefill_en);
   return `https://wa.me/${WA_NUMBER}?text=${text}`;
+}
+
+/** Build a wa.me link for the "book a call" CTA. */
+export function waBookCallLink(lang: 'en' | 'es'): string {
+  return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(BOOK_CALL_PREFILL[lang])}`;
 }

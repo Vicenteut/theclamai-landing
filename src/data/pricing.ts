@@ -1,8 +1,8 @@
 /**
  * Pricing tiers (USD, monthly).
  *
- * NOTE: Prices and Calendly link are PLACEHOLDERS. The user must confirm
- * the real numbers in Phase 4 before launch (see plan).
+ * NOTE: Prices are PLACEHOLDERS pending user confirmation. All CTAs route
+ * to WhatsApp (no external scheduler — coherent with the product).
  */
 
 import type { VerticalId } from './demos';
@@ -19,28 +19,29 @@ export interface PricingPlan {
   featured: boolean;
 }
 
-const WA = '501XXXXXXXX'; // TODO: real demo number
-const CALENDLY = 'https://calendly.com/theclamai/intro'; // TODO: real Calendly
+import { WA_NUMBER } from './demos';
+
+const wa = (text: string) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
 
 export const plans: PricingPlan[] = [
   {
     id: 'starter',
     priceUSD: 99, // TODO: confirm
     featured: false,
-    ctaHref: `https://wa.me/${WA}?text=starter`,
+    ctaHref: wa("Hi! I'm interested in the Starter plan for my business."),
   },
   {
     id: 'pro',
     priceUSD: 299, // TODO: confirm
     featured: true,
     highlight: 'most_popular',
-    ctaHref: `https://wa.me/${WA}?text=pro`,
+    ctaHref: wa("Hi! I'm interested in the Pro plan for my business."),
   },
   {
     id: 'custom',
     priceUSD: null,
     featured: false,
-    ctaHref: CALENDLY,
+    ctaHref: wa("Hi! I'd like to discuss a Custom plan for my business."),
   },
 ];
 
