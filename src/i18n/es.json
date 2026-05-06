@@ -21,6 +21,11 @@
     "sub": "Conecta WhatsApp. Entrénalo con tus datos. En vivo en 72 horas.",
     "demo_label": "Demo en vivo",
     "demo_help": "Toca para chatear. El bot responde en tu idioma.",
+    "chat_messages": [
+      "¡Hola! Tengo un restaurante. Necesito un bot de WhatsApp.",
+      "Listo. Toma pedidos, reserva mesas, multilingüe.",
+      "¿En vivo en 72 horas? Hagámoslo."
+    ],
     "cta_primary": "Probar el demo",
     "cta_secondary": "Agendar una llamada"
   },

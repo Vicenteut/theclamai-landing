@@ -21,6 +21,11 @@
     "sub": "Connect WhatsApp. Train it on your data. Live in 72 hours.",
     "demo_label": "Live demo",
     "demo_help": "Tap to chat. The bot replies in your language.",
+    "chat_messages": [
+      "Hi! I run a restaurant. Need a WhatsApp bot.",
+      "Got it. Takes orders, books tables, multilingual.",
+      "Live in 72 hours? Let's do it."
+    ],
     "cta_primary": "Try the demo",
     "cta_secondary": "Book a call"
   },

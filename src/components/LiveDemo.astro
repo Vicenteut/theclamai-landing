@@ -7,6 +7,8 @@ import { getLocale, dict } from '../i18n';
 
 const lang = getLocale(Astro.url);
 const t = dict(lang);
+
+const chatMessages = t.hero.chat_messages;
 ---
 
 <div class="live-demo">
@@ -23,6 +25,9 @@ const t = dict(lang);
       width="600"
       height="600"
       aria-label={t.a11y.qr_label}
+      data-msg-1={chatMessages[0]}
+      data-msg-2={chatMessages[1]}
+      data-msg-3={chatMessages[2]}
     ></canvas>
   </div>
 
@@ -55,18 +60,27 @@ const t = dict(lang);
     const canvas = document.getElementById('rive-chatbot') as HTMLCanvasElement | null;
     if (!canvas) return;
 
-    new Rive({
+    const msg1 = canvas.dataset.msg1 ?? '';
+    const msg2 = canvas.dataset.msg2 ?? '';
+    const msg3 = canvas.dataset.msg3 ?? '';
+
+    const r = new Rive({
       src: '/animations/ai-chatbot-demo.riv',
       canvas,
       autoplay: true,
       stateMachines: 'State Machine 1',
       layout: new Layout({ fit: Fit.Contain, alignment: Alignment.Center }),
       onLoad: () => {
-        // Resize to crisp pixel ratio
+        // Crisp pixel ratio
         const dpr = window.devicePixelRatio || 1;
         const rect = canvas.getBoundingClientRect();
         canvas.width = rect.width * dpr;
         canvas.height = rect.height * dpr;
+
+        // The .riv file's text runs are not marked queryable in the Rive editor.
+        // We keep msg1/2/3 in the i18n dictionary for when an updated .riv ships;
+        // for now they're unused but ready: msg1, msg2, msg3.
+        void msg1; void msg2; void msg3;
       },
     });
   }
@@ -83,18 +97,12 @@ const t = dict(lang);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
-    padding: 28px;
-    background: linear-gradient(180deg, var(--surface) 0%, var(--bg) 100%);
-    border: 1px solid var(--border);
-    border-radius: var(--r-xl);
+    gap: 14px;
     width: 100%;
-    max-width: 420px;
+    max-width: 820px;
     margin: 32px auto 0;
     position: relative;
-    box-shadow:
-      0 0 0 1px rgba(212, 175, 55, 0.06),
-      inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    /* No card chrome — animation floats over the hero background */
   }
   .live-demo__head {
     display: flex;
@@ -117,11 +125,9 @@ const t = dict(lang);
   }
   .live-demo__stage {
     width: 100%;
-    aspect-ratio: 1 / 1;
-    max-width: 340px;
-    border-radius: var(--r-lg);
-    overflow: hidden;
-    background: radial-gradient(ellipse at top, rgba(212, 175, 55, 0.04) 0%, transparent 70%);
+    aspect-ratio: 16 / 9;
+    max-width: 820px;
+    /* No bg / border — let it float */
   }
   .live-demo__rive {
     display: block;
@@ -138,6 +144,7 @@ const t = dict(lang);
     border-radius: 12px;
     padding: 12px 14px;
     width: 100%;
+    max-width: 480px;
     text-align: left;
   }
   .live-demo__bubble-from {
@@ -155,6 +162,7 @@ const t = dict(lang);
 
   .live-demo__cta {
     width: 100%;
+    max-width: 320px;
     justify-content: center;
   }
 
