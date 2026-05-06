@@ -75,7 +75,53 @@
   "pricing": {
     "eyebrow": "Pricing",
     "title": "Simple plans. USD, monthly.",
-    "sub": "Start small. Upgrade when you grow. Cancel anytime."
+    "sub": "Start small. Upgrade when you grow. Cancel anytime.",
+    "period": "/ month",
+    "custom_price": "Let's talk",
+    "most_popular": "Most popular",
+    "plans": {
+      "starter": {
+        "name": "Starter",
+        "tagline": "One number, one location, fully on.",
+        "cta": "Start with Starter",
+        "features": [
+          "1 WhatsApp Business number",
+          "Up to 1,000 conversations / month",
+          "Orders, bookings, FAQs",
+          "20+ languages",
+          "Smart human handoff",
+          "Basic analytics dashboard",
+          "Email support"
+        ]
+      },
+      "pro": {
+        "name": "Pro",
+        "tagline": "Multiple locations, full coverage, integrations.",
+        "cta": "Go Pro",
+        "features": [
+          "Up to 3 WhatsApp numbers",
+          "Unlimited conversations",
+          "Multi-location dashboard",
+          "Custom AI persona & voice",
+          "POS / PMS / CRM integration",
+          "Priority 24/7 support",
+          "Monthly strategy call"
+        ]
+      },
+      "custom": {
+        "name": "Custom",
+        "tagline": "Chains, franchises, regulated industries.",
+        "cta": "Book a call",
+        "features": [
+          "Unlimited numbers & locations",
+          "White-label option",
+          "Bespoke integrations",
+          "On-premise / private cloud",
+          "Dedicated CSM",
+          "SLA & compliance support"
+        ]
+      }
+    }
   },
   "faq": {
     "eyebrow": "FAQ",

@@ -75,7 +75,53 @@
   "pricing": {
     "eyebrow": "Precios",
     "title": "Planes simples. USD, mensual.",
-    "sub": "Empieza pequeño. Sube cuando crezcas. Cancela cuando quieras."
+    "sub": "Empieza pequeño. Sube cuando crezcas. Cancela cuando quieras.",
+    "period": "/ mes",
+    "custom_price": "Hablemos",
+    "most_popular": "Más popular",
+    "plans": {
+      "starter": {
+        "name": "Starter",
+        "tagline": "Un número, una sucursal, encendido completo.",
+        "cta": "Empezar con Starter",
+        "features": [
+          "1 número de WhatsApp Business",
+          "Hasta 1,000 conversaciones / mes",
+          "Pedidos, reservas, preguntas",
+          "20+ idiomas",
+          "Handoff inteligente a humano",
+          "Dashboard de métricas básico",
+          "Soporte por email"
+        ]
+      },
+      "pro": {
+        "name": "Pro",
+        "tagline": "Varias sucursales, cobertura total, integraciones.",
+        "cta": "Ir a Pro",
+        "features": [
+          "Hasta 3 números de WhatsApp",
+          "Conversaciones ilimitadas",
+          "Dashboard multi-sucursal",
+          "Persona y voz personalizadas",
+          "Integración POS / PMS / CRM",
+          "Soporte prioritario 24/7",
+          "Llamada de estrategia mensual"
+        ]
+      },
+      "custom": {
+        "name": "Custom",
+        "tagline": "Cadenas, franquicias, industrias reguladas.",
+        "cta": "Agendar una llamada",
+        "features": [
+          "Números y sucursales ilimitadas",
+          "Opción white-label",
+          "Integraciones a medida",
+          "On-premise / nube privada",
+          "CSM dedicado",
+          "SLA y soporte de cumplimiento"
+        ]
+      }
+    }
   },
   "faq": {
     "eyebrow": "Preguntas frecuentes",

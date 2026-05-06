@@ -1,55 +1,47 @@
+/**
+ * Pricing tiers (USD, monthly).
+ *
+ * NOTE: Prices and Calendly link are PLACEHOLDERS. The user must confirm
+ * the real numbers in Phase 4 before launch (see plan).
+ */
+
+import type { VerticalId } from './demos';
+
 export interface PricingPlan {
-  id: string;
-  name: string;
-  price: string;
-  period: string;
-  tagline: string;
-  featured: boolean;
-  cta: string;
+  id: 'starter' | 'pro' | 'custom';
+  /** Optional badge label shown above the card (e.g. "Most popular"). */
+  highlight?: 'most_popular';
+  /** USD price displayed; null for "Custom" plans. */
+  priceUSD: number | null;
+  /** i18n key suffix — `pricing.plans.<id>.{name,tagline,cta,features[*]}`. */
+  // (rendering pulls all copy from i18n by id)
   ctaHref: string;
-  features: string[];
-  note?: string;
+  featured: boolean;
 }
+
+const WA = '501XXXXXXXX'; // TODO: real demo number
+const CALENDLY = 'https://calendly.com/theclamai/intro'; // TODO: real Calendly
 
 export const plans: PricingPlan[] = [
   {
-    id: "essential",
-    name: "Essential",
-    price: "$XXX",
-    period: "/ month",
-    tagline: "For a single location ready to automate guest messaging.",
+    id: 'starter',
+    priceUSD: 99, // TODO: confirm
     featured: false,
-    cta: "Get started",
-    ctaHref: "https://wa.me/501XXXXXXXX?text=essential",
-    features: [
-      "1 WhatsApp Business number",
-      "Up to 1,000 conversations / month",
-      "Order-taking & reservations",
-      "FAQ answering in 20+ languages",
-      "Handoff to human agent",
-      "Basic analytics dashboard",
-      "Email support",
-    ],
+    ctaHref: `https://wa.me/${WA}?text=starter`,
   },
   {
-    id: "pro",
-    name: "Pro",
-    price: "$XXX",
-    period: "/ month",
-    tagline: "For growing properties that need full AI coverage across channels.",
+    id: 'pro',
+    priceUSD: 299, // TODO: confirm
     featured: true,
-    cta: "Talk to us →",
-    ctaHref: "https://wa.me/501XXXXXXXX?text=pro",
-    features: [
-      "Up to 3 WhatsApp numbers",
-      "Unlimited conversations",
-      "Multi-property dashboard",
-      "Custom AI persona & voice",
-      "PMS / POS integration (API)",
-      "Priority 24/7 support",
-      "Monthly strategy call",
-      "White-label option",
-    ],
-    note: "Most popular",
+    highlight: 'most_popular',
+    ctaHref: `https://wa.me/${WA}?text=pro`,
+  },
+  {
+    id: 'custom',
+    priceUSD: null,
+    featured: false,
+    ctaHref: CALENDLY,
   },
 ];
+
+export type { VerticalId };
