@@ -2,24 +2,24 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Hero from '../../components/Hero.astro';
-import TrustStrip from '../../components/TrustStrip.astro';
-import Problem from '../../components/Problem.astro';
+import DemoStrip from '../../components/DemoStrip.astro';
 import HowItWorks from '../../components/HowItWorks.astro';
+import Capabilities from '../../components/Capabilities.astro';
 import Pricing from '../../components/Pricing.astro';
 import FAQ from '../../components/FAQ.astro';
 import FinalCTA from '../../components/FinalCTA.astro';
 import Footer from '../../components/Footer.astro';
-import Preloader from '../../components/Preloader.astro';
+import { dict } from '../../i18n';
+const t = dict('es');
 ---
 
-<BaseLayout lang="es">
-  <Preloader />
+<BaseLayout lang="es" title={t.meta.title} description={t.meta.description}>
   <Navbar />
   <main>
     <Hero />
-    <TrustStrip />
-    <Problem />
+    <DemoStrip />
     <HowItWorks />
+    <Capabilities />
     <Pricing />
     <FAQ />
     <FinalCTA />

@@ -1,0 +1,111 @@
+---
+import { getLocale, dict } from '../i18n';
+
+const lang = getLocale(Astro.url);
+const t = dict(lang);
+const items = t.capabilities.items;
+
+const ICONS: Record<number, string> = {
+  0: 'M3 7h18M3 12h18M3 17h12',
+  1: 'M12 2v20M2 12h20',
+  2: 'M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.97-4.03 9-9 9-1.5 0-2.91-.37-4.15-1.02L3 21l1.02-4.85A8.96 8.96 0 0 1 3 12c0-4.97 4.03-9 9-9s9 4.03 9 9z',
+  3: 'M5 12l5 5L20 7',
+  4: 'M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z',
+  5: 'M12 6v6l4 2M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20z',
+};
+---
+
+<section class="caps" id="capabilities" aria-labelledby="caps-title">
+  <header class="caps__head">
+    <p class="caps__eyebrow">{t.capabilities.eyebrow}</p>
+    <h2 class="caps__title" id="caps-title">{t.capabilities.title}</h2>
+  </header>
+
+  <ul class="caps__grid">
+    {items.map((it, i) => (
+      <li class="caps__cell">
+        <span class="caps__icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d={ICONS[i] ?? ICONS[0]} />
+          </svg>
+        </span>
+        <h3 class="caps__cell-title">{it.title}</h3>
+        <p class="caps__cell-body">{it.body}</p>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .caps {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: var(--sp-9) var(--sp-5);
+  }
+  .caps__head {
+    text-align: center;
+    margin-bottom: var(--sp-8);
+  }
+  .caps__eyebrow {
+    font-size: var(--fs-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    font-weight: 500;
+    margin: 0 0 var(--sp-3);
+  }
+  .caps__title {
+    font-size: var(--fs-3xl);
+    font-weight: 600;
+    color: var(--text);
+    margin: 0;
+    letter-spacing: -0.03em;
+    max-width: 720px;
+    margin-inline: auto;
+    line-height: 1.15;
+  }
+  .caps__grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    overflow: hidden;
+  }
+  .caps__cell {
+    background: var(--surface);
+    padding: var(--sp-6);
+    transition: background 0.15s;
+  }
+  .caps__cell:hover {
+    background: var(--surface-2);
+  }
+  .caps__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--r-md);
+    background: rgba(212, 175, 55, 0.08);
+    color: var(--accent);
+    margin-bottom: var(--sp-4);
+  }
+  .caps__cell-title {
+    font-size: var(--fs-md);
+    font-weight: 600;
+    color: var(--text);
+    margin: 0 0 var(--sp-2);
+    letter-spacing: -0.01em;
+  }
+  .caps__cell-body {
+    font-size: var(--fs-sm);
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+</style>
