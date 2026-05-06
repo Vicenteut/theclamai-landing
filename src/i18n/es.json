@@ -1,0 +1,167 @@
+{
+  "meta": {
+    "title": "The Clam AI — IA conversacional para cualquier negocio",
+    "description": "Asistentes de IA que toman pedidos, reservas, contestan dudas y dan seguimiento en WhatsApp — en cualquier idioma, 24/7. En vivo en 72 horas."
+  },
+  "nav": {
+    "how_it_works": "Cómo funciona",
+    "verticals": "Industrias",
+    "pricing": "Precios",
+    "faq": "Preguntas",
+    "cta": "Probar el demo"
+  },
+  "a11y": {
+    "menu_toggle": "Abrir menú",
+    "qr_label": "Demo animado del chatbot IA"
+  },
+  "hero": {
+    "eyebrow": "IA conversacional · WhatsApp",
+    "title_pre": "El asistente de IA",
+    "title_strong": "que tu negocio ya necesitaba.",
+    "sub": "Conecta WhatsApp. Entrénalo con tus datos. En vivo en 72 horas.",
+    "demo_label": "Demo en vivo",
+    "demo_help": "Toca para chatear. El bot responde en tu idioma.",
+    "chat_messages": [
+      "¡Hola! Tengo un restaurante. Necesito un bot de WhatsApp.",
+      "Listo. Toma pedidos, reserva mesas, multilingüe.",
+      "¿En vivo en 72 horas? Hagámoslo."
+    ],
+    "cta_primary": "Probar el demo",
+    "cta_secondary": "Agendar una llamada"
+  },
+  "switcher": {
+    "label": "Tengo un…",
+    "verticals": {
+      "restaurant": "Restaurante",
+      "hotel": "Hotel",
+      "pharmacy": "Farmacia",
+      "real_estate": "Inmobiliaria",
+      "car_dealer": "Concesionario"
+    }
+  },
+  "demo_strip": {
+    "eyebrow": "Qué acaba de pasar",
+    "steps": [
+      { "title": "Escaneaste",         "body": "WhatsApp abrió con un mensaje ya redactado para tu industria." },
+      { "title": "El bot respondió",   "body": "En tu idioma, con el contexto correcto — pedidos, reservas, info, seguimiento." },
+      { "title": "Handoff real",       "body": "Si algo requiere humano, se marca y pasa limpio a tu equipo." }
+    ]
+  },
+  "how_it_works": {
+    "eyebrow": "Cómo funciona",
+    "title": "Tres pasos. En vivo en 72 horas.",
+    "steps": [
+      { "n": "01", "title": "Conecta WhatsApp",   "body": "Te damos un número de WhatsApp Business — o conectamos el tuyo." },
+      { "n": "02", "title": "Entrena con tus datos", "body": "Menú, habitaciones, propiedades, inventario — lo que tu negocio maneje." },
+      { "n": "03", "title": "En vivo en 72 horas", "body": "Probamos, apruebas, el bot empieza a responder a tus clientes." }
+    ]
+  },
+  "verticals_section": {
+    "eyebrow": "Industrias",
+    "title": "Hecho para negocios que hablan con clientes.",
+    "sub": "Una sola plataforma, ajustada por industria. Elige la tuya.",
+    "items": {
+      "restaurant": { "name": "Restaurantes", "use": "Toma pedidos, recomienda platillos, se conecta a tu POS." },
+      "hotel":      { "name": "Hoteles",       "use": "Responde a huéspedes, checa disponibilidad y reserva." },
+      "pharmacy":   { "name": "Farmacias",     "use": "Contesta dudas, registra recetas, agenda recogidas." },
+      "real_estate":{ "name": "Inmobiliarias", "use": "Califica compradores, comparte propiedades, agenda visitas." },
+      "car_dealer": { "name": "Concesionarios","use": "Pre-califica leads, comparte inventario, agenda pruebas de manejo." }
+    },
+    "soon": "Muy pronto"
+  },
+  "capabilities": {
+    "eyebrow": "Capacidades",
+    "title": "Todo lo que un asistente al cliente debería hacer.",
+    "items": [
+      { "title": "Pedidos y reservas", "body": "Captura pedidos o reservas estructurados, validados y listos para tu sistema." },
+      { "title": "Preguntas e info",   "body": "Contesta lo que tus clientes preguntan siempre — horarios, precios, políticas." },
+      { "title": "Handoff inteligente","body": "Pasa al humano cuando hay duda o cuando el cliente lo pide." },
+      { "title": "20+ idiomas",        "body": "Detecta el idioma del cliente y responde igual." },
+      { "title": "Integraciones",      "body": "POS, PMS, CRM, calendario — se conecta con lo que ya usas." },
+      { "title": "Siempre activo",     "body": "24/7. No duerme, no se enferma, no olvida." }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "Precios",
+    "title": "Planes simples. USD, mensual.",
+    "sub": "Empieza pequeño. Sube cuando crezcas. Cancela cuando quieras.",
+    "period": "/ mes",
+    "custom_price": "Hablemos",
+    "most_popular": "Más popular",
+    "plans": {
+      "starter": {
+        "name": "Starter",
+        "tagline": "Un número, una sucursal, encendido completo.",
+        "cta": "Empezar con Starter",
+        "features": [
+          "1 número de WhatsApp Business",
+          "Hasta 1,000 conversaciones / mes",
+          "Pedidos, reservas, preguntas",
+          "20+ idiomas",
+          "Handoff inteligente a humano",
+          "Dashboard de métricas básico",
+          "Soporte por email"
+        ]
+      },
+      "pro": {
+        "name": "Pro",
+        "tagline": "Varias sucursales, cobertura total, integraciones.",
+        "cta": "Ir a Pro",
+        "features": [
+          "Hasta 3 números de WhatsApp",
+          "Conversaciones ilimitadas",
+          "Dashboard multi-sucursal",
+          "Persona y voz personalizadas",
+          "Integración POS / PMS / CRM",
+          "Soporte prioritario 24/7",
+          "Llamada de estrategia mensual"
+        ]
+      },
+      "custom": {
+        "name": "Custom",
+        "tagline": "Cadenas, franquicias, industrias reguladas.",
+        "cta": "Agendar una llamada",
+        "features": [
+          "Números y sucursales ilimitadas",
+          "Opción white-label",
+          "Integraciones a medida",
+          "On-premise / nube privada",
+          "CSM dedicado",
+          "SLA y soporte de cumplimiento"
+        ]
+      }
+    }
+  },
+  "faq": {
+    "eyebrow": "Preguntas frecuentes",
+    "title": "Respuestas rápidas.",
+    "items": [
+      { "q": "¿Qué hace The Clam AI exactamente?",                "a": "Es un asistente de IA conectado a tu número de WhatsApp Business. Lee mensajes en cualquier idioma y responde con precisión y tu tono — tomando pedidos, reservas, calificando leads, contestando preguntas y pasando al humano cuando hace falta." },
+      { "q": "¿Solo sirve para restaurantes y hoteles?",          "a": "No. Funciona para cualquier negocio que hable con clientes por WhatsApp — farmacias, inmobiliarias, concesionarios, clínicas, empresas de servicios. Lo ajustamos a tu industria durante el onboarding." },
+      { "q": "¿Necesito conocimientos técnicos?",                 "a": "Ninguno. Hacemos una llamada de 30 min, nos compartes menú/listings/inventario/preguntas frecuentes, y nosotros configuramos, probamos y lanzamos por ti." },
+      { "q": "¿Qué idiomas soporta?",                             "a": "Detecta el idioma del cliente automáticamente y responde igual — 20+ idiomas incluyendo español, inglés, francés, alemán, portugués, italiano, chino y árabe." },
+      { "q": "¿Qué pasa cuando la IA no puede responder?",        "a": "Cuando no tiene certeza, marca el mensaje y lo pasa a tu equipo en tiempo real. Tú defines las reglas — por tema, horario o nivel de confianza." },
+      { "q": "¿Se integra con mi POS, PMS o CRM?",                "a": "Sí — en planes Pro y Custom. Nos integramos con la mayoría de sistemas modernos vía API. Si el tuyo es atípico, conversemos en Custom." },
+      { "q": "¿Los datos de mis clientes están seguros?",         "a": "Todo va cifrado en tránsito y en reposo. Cumplimos GDPR, nunca vendemos ni compartimos datos, y puedes configurar la retención de conversaciones según tus políticas." },
+      { "q": "¿Cuánto tarda en estar en vivo?",                   "a": "La mayoría de clientes están en vivo dentro de 72 horas del onboarding. Integraciones complejas pueden agregar unos días." },
+      { "q": "¿Puedo cancelar cuando quiera?",                    "a": "Sí. Todos los planes son mes a mes. El número sigue siendo tuyo y exportamos todos los datos dentro de 48 horas." }
+    ]
+  },
+  "final_cta": {
+    "eyebrow": "¿Listo?",
+    "title": "Pruébalo ahora, o agenda una llamada.",
+    "sub": "La forma más rápida de saber si te sirve es escribirle al bot tú mismo.",
+    "primary": "Probar el demo",
+    "secondary": "Agendar una llamada"
+  },
+  "footer": {
+    "tagline": "IA conversacional para cualquier negocio.",
+    "product": "Producto",
+    "nav_label": "Pie de página",
+    "links_legal": "Legal",
+    "links_privacy": "Privacidad",
+    "links_terms": "Términos",
+    "links_contact": "Contacto",
+    "rights": "Todos los derechos reservados."
+  }
+}

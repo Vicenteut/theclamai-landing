@@ -1,0 +1,175 @@
+---
+/**
+ * LiveDemo: Rive chatbot animation + WhatsApp CTA.
+ * Reads Alpine state from parent (Hero): `active`, `waLink()`, `prefillText()`.
+ */
+import { getLocale, dict } from '../i18n';
+
+const lang = getLocale(Astro.url);
+const t = dict(lang);
+
+const chatMessages = t.hero.chat_messages;
+---
+
+<div class="live-demo">
+  <div class="live-demo__head">
+    <span class="live-demo__pulse"></span>
+    <span class="live-demo__head-text">{t.hero.demo_label}</span>
+  </div>
+
+  <!-- Rive chatbot animation -->
+  <div class="live-demo__stage">
+    <canvas
+      id="rive-chatbot"
+      class="live-demo__rive"
+      width="600"
+      height="600"
+      aria-label={t.a11y.qr_label}
+      data-msg-1={chatMessages[0]}
+      data-msg-2={chatMessages[1]}
+      data-msg-3={chatMessages[2]}
+    ></canvas>
+  </div>
+
+  <!-- Prefill preview -->
+  <div class="live-demo__bubble" aria-live="polite">
+    <span class="live-demo__bubble-from">You</span>
+    <span class="live-demo__bubble-text" x-text="prefillText()"></span>
+  </div>
+
+  <!-- Action -->
+  <a
+    class="live-demo__cta btn-primary"
+    x-bind:href="waLink()"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.6 6.4A7.96 7.96 0 0 0 12 4a8 8 0 0 0-6.9 12L4 20l4-1A8 8 0 0 0 20 12a7.96 7.96 0 0 0-2.4-5.6Zm-5.6 12.3a6.7 6.7 0 0 1-3.4-.9l-.2-.1-2.4.6.6-2.3-.2-.3a6.7 6.7 0 1 1 5.6 3Zm3.7-5c-.2-.1-1.2-.6-1.4-.7-.2-.1-.3-.1-.5.1-.2.2-.5.7-.7.8-.1.1-.2.2-.4 0-.2-.1-.9-.3-1.7-1-.6-.5-1-1.2-1.2-1.4-.1-.2 0-.3.1-.4l.3-.4.2-.3c.1-.1 0-.2 0-.3 0-.1-.5-1.2-.7-1.6-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.4 0-.7.3-.2.2-.9.9-.9 2.2 0 1.3.9 2.5 1 2.7.1.2 1.8 2.7 4.4 3.8.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.4-.3Z"/>
+    </svg>
+    {t.hero.cta_primary} →
+  </a>
+
+  <p class="live-demo__help">{t.hero.demo_help}</p>
+</div>
+
+<script>
+  import { Rive, Layout, Fit, Alignment } from '@rive-app/canvas';
+
+  function init() {
+    const canvas = document.getElementById('rive-chatbot') as HTMLCanvasElement | null;
+    if (!canvas) return;
+
+    const msg1 = canvas.dataset.msg1 ?? '';
+    const msg2 = canvas.dataset.msg2 ?? '';
+    const msg3 = canvas.dataset.msg3 ?? '';
+
+    const r = new Rive({
+      src: '/animations/ai-chatbot-demo.riv',
+      canvas,
+      autoplay: true,
+      stateMachines: 'State Machine 1',
+      layout: new Layout({ fit: Fit.Contain, alignment: Alignment.Center }),
+      onLoad: () => {
+        // Crisp pixel ratio
+        const dpr = window.devicePixelRatio || 1;
+        const rect = canvas.getBoundingClientRect();
+        canvas.width = rect.width * dpr;
+        canvas.height = rect.height * dpr;
+
+        // The .riv file's text runs are not marked queryable in the Rive editor.
+        // We keep msg1/2/3 in the i18n dictionary for when an updated .riv ships;
+        // for now they're unused but ready: msg1, msg2, msg3.
+        void msg1; void msg2; void msg3;
+      },
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+</script>
+
+<style>
+  .live-demo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    max-width: 820px;
+    margin: 32px auto 0;
+    position: relative;
+    /* No card chrome — animation floats over the hero background */
+  }
+  .live-demo__head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+  .live-demo__head-text { color: var(--accent); }
+  .live-demo__pulse {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #25D366;
+    box-shadow: 0 0 8px #25D366;
+    animation: pulse-dot 2s infinite;
+  }
+  .live-demo__stage {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    max-width: 820px;
+    /* No bg / border — let it float */
+  }
+  .live-demo__rive {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .live-demo__bubble {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: rgba(37, 211, 102, 0.05);
+    border: 1px solid rgba(37, 211, 102, 0.15);
+    border-radius: 12px;
+    padding: 12px 14px;
+    width: 100%;
+    max-width: 480px;
+    text-align: left;
+  }
+  .live-demo__bubble-from {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #25D366;
+    font-weight: 600;
+  }
+  .live-demo__bubble-text {
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.45;
+  }
+
+  .live-demo__cta {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+
+  .live-demo__help {
+    font-size: 11px;
+    color: var(--text-dim);
+    text-align: center;
+    margin: 0;
+  }
+</style>

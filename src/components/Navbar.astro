@@ -1,11 +1,23 @@
 ---
-const WA_LINK = "https://wa.me/501XXXXXXXX?text=demo";
+import LangToggle from './LangToggle.astro';
+import { getLocale, dict } from '../i18n';
+import { WA_NUMBER, VERTICALS } from '../data/demos';
+
+const lang = getLocale(Astro.url);
+const t = dict(lang);
+
+const v = VERTICALS[0];
+const prefill = encodeURIComponent(lang === 'es' ? v.prefill_es : v.prefill_en);
+const WA_LINK = `https://wa.me/${WA_NUMBER}?text=${prefill}`;
 
 const links = [
-  { href: "#how", label: "How it works" },
-  { href: "#pricing", label: "Pricing" },
-  { href: "#demo", label: "Demo" },
+  { href: "#how", label: t.nav.how_it_works },
+  { href: "#verticals", label: t.nav.verticals },
+  { href: "#pricing", label: t.nav.pricing },
+  { href: "#faq", label: t.nav.faq },
 ];
+
+const ctaLabel = t.nav.cta;
 ---
 
 <nav
@@ -30,16 +42,21 @@ const links = [
       ))}
     </div>
 
+    <!-- Lang toggle (desktop) -->
+    <div class="nav-lang-desktop" style="margin-right:12px;">
+      <LangToggle />
+    </div>
+
     <!-- CTA (desktop) -->
     <a href={WA_LINK} target="_blank" rel="noopener noreferrer" class="nav-cta nav-cta-desktop">
-      Try demo →
+      {ctaLabel} →
     </a>
 
     <!-- Mobile hamburger -->
     <button
       x-on:click="open = !open"
       class="nav-hamburger"
-      aria-label="Toggle menu"
+      aria-label={t.a11y.menu_toggle}
       style="display:none;background:transparent;border:none;cursor:pointer;padding:8px;margin-left:4px;"
     >
       <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
@@ -65,8 +82,11 @@ const links = [
     {links.map((link) => (
       <a href={link.href} x-on:click="open = false" class="nav-mobile-link">{link.label}</a>
     ))}
-    <a href={WA_LINK} target="_blank" rel="noopener noreferrer" class="nav-cta" style="display:block;text-align:center;margin-top:4px;">
-      Try demo →
+    <div style="margin-top:8px;display:flex;justify-content:center;">
+      <LangToggle />
+    </div>
+    <a href={WA_LINK} target="_blank" rel="noopener noreferrer" class="nav-cta" style="display:block;text-align:center;margin-top:8px;">
+      {ctaLabel} →
     </a>
   </div>
 </nav>
@@ -139,6 +159,7 @@ const links = [
   @media (max-width: 640px) {
     .nav-links-desktop { display: none !important; }
     .nav-cta-desktop { display: none !important; }
+    .nav-lang-desktop { display: none !important; }
     .nav-hamburger { display: block !important; }
   }
 </style>

@@ -16,12 +16,16 @@
   "dependencies": {
     "@astrojs/cloudflare": "^13.3.1",
     "@astrojs/sitemap": "^3.7.2",
+    "@fontsource-variable/geist": "^5.2.8",
     "@fontsource/inter": "^5.2.8",
+    "@rive-app/canvas": "^2.37.5",
     "@tailwindcss/vite": "^4.2.4",
     "astro": "^6.2.2",
+    "qrcode": "^1.5.4",
     "tailwindcss": "^4.2.4"
   },
   "devDependencies": {
+    "@types/qrcode": "^1.5.6",
     "wrangler": "^4.88.0"
   },
   "overrides": {

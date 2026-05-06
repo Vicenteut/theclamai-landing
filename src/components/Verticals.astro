@@ -1,0 +1,138 @@
+---
+import { getLocale, dict } from '../i18n';
+import { VERTICALS } from '../data/demos';
+
+const lang = getLocale(Astro.url);
+const t = dict(lang);
+const items = t.verticals_section.items;
+
+const ICON_PATHS: Record<string, string> = {
+  utensils: 'M3 2v7c0 1.1.9 2 2 2h2v11M7 2v20M21 15V2a5 5 0 0 0-3 4.5V14h3z',
+  bed: 'M3 21V8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v13M3 14h18M7 10h4',
+  pill: 'M10.5 20.5L20.5 10.5a4 4 0 0 0-5.66-5.66L4.84 14.84a4 4 0 0 0 5.66 5.66zM7.5 7.5l9 9',
+  home: 'M3 9.5L12 3l9 6.5V21H3z M9 21V12h6v9',
+  car: 'M5 17h14M5 17a2 2 0 0 1-2-2v-3l2-5h14l2 5v3a2 2 0 0 1-2 2M7 17v2M17 17v2M7 12h10',
+};
+---
+
+<section class="vert" id="verticals" aria-labelledby="vert-title">
+  <header class="vert__head">
+    <p class="vert__eyebrow">{t.verticals_section.eyebrow}</p>
+    <h2 class="vert__title" id="vert-title">{t.verticals_section.title}</h2>
+    <p class="vert__sub">{t.verticals_section.sub}</p>
+  </header>
+
+  <ul class="vert__grid">
+    {VERTICALS.map((v) => {
+      const info = items[v.id];
+      return (
+        <li class="vert__card">
+          <span class="vert__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d={ICON_PATHS[v.icon]} />
+            </svg>
+          </span>
+          <h3 class="vert__name">{info.name}</h3>
+          <p class="vert__use">{info.use}</p>
+          <span class="vert__soon">{t.verticals_section.soon}</span>
+        </li>
+      );
+    })}
+  </ul>
+</section>
+
+<style>
+  .vert {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: var(--sp-9) var(--sp-5);
+  }
+  .vert__head {
+    text-align: center;
+    margin-bottom: var(--sp-8);
+  }
+  .vert__eyebrow {
+    font-size: var(--fs-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    font-weight: 500;
+    margin: 0 0 var(--sp-3);
+  }
+  .vert__title {
+    font-size: var(--fs-3xl);
+    font-weight: 600;
+    color: var(--text);
+    margin: 0 0 var(--sp-4);
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    max-width: 720px;
+    margin-inline: auto;
+  }
+  .vert__sub {
+    font-size: var(--fs-md);
+    color: var(--text-muted);
+    line-height: 1.55;
+    margin: 0;
+    max-width: 540px;
+    margin-inline: auto;
+  }
+  .vert__grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--sp-4);
+  }
+  .vert__card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    padding: var(--sp-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-3);
+    transition: border-color 0.15s, transform 0.15s;
+  }
+  .vert__card:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-2px);
+  }
+  .vert__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--r-md);
+    background: rgba(212, 175, 55, 0.08);
+    color: var(--accent);
+  }
+  .vert__name {
+    font-size: var(--fs-lg);
+    font-weight: 600;
+    color: var(--text);
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+  .vert__use {
+    font-size: var(--fs-sm);
+    color: var(--text-muted);
+    line-height: 1.55;
+    margin: 0;
+    flex: 1;
+  }
+  .vert__soon {
+    align-self: flex-start;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    background: rgba(212, 175, 55, 0.08);
+    border: 1px solid rgba(212, 175, 55, 0.18);
+    border-radius: var(--r-pill);
+    padding: 4px 10px;
+    font-weight: 500;
+  }
+</style>

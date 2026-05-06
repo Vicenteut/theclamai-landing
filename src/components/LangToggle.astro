@@ -1,0 +1,40 @@
+---
+import { getLocale, altLocaleHref } from '../i18n';
+
+const lang = getLocale(Astro.url);
+const altHref = altLocaleHref(Astro.url, lang);
+const altLabel = lang === 'en' ? 'ES' : 'EN';
+---
+
+<a
+  href={altHref}
+  class="lang-toggle"
+  aria-label={`Switch language to ${altLabel}`}
+  data-astro-prefetch
+>
+  <span aria-hidden="true">{lang === 'en' ? 'EN' : 'ES'}</span>
+  <span class="lang-toggle__sep" aria-hidden="true">/</span>
+  <span class="lang-toggle__alt">{altLabel}</span>
+</a>
+
+<style>
+  .lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    padding: 6px 12px;
+    border-radius: var(--r-pill);
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .lang-toggle:hover {
+    color: var(--text);
+    border-color: var(--border-hover);
+  }
+  .lang-toggle__sep { color: var(--text-dim); }
+  .lang-toggle__alt { color: var(--accent); }
+</style>

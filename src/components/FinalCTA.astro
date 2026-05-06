@@ -1,40 +1,86 @@
 ---
-const WA_LINK = "https://wa.me/501XXXXXXXX?text=demo";
+import { getLocale, dict } from '../i18n';
+import { WA_NUMBER, VERTICALS, waBookCallLink } from '../data/demos';
+
+const lang = getLocale(Astro.url);
+const t = dict(lang);
+
+// Primary: try the demo (restaurant prefill — Hero is where users pick a vertical).
+const v = VERTICALS[0];
+const prefill = encodeURIComponent(lang === 'es' ? v.prefill_es : v.prefill_en);
+const tryDemoLink = `https://wa.me/${WA_NUMBER}?text=${prefill}`;
+
+// Secondary: book a call — also WhatsApp, different prefill.
+const bookCallLink = waBookCallLink(lang);
 ---
 
-<section id="demo" style="position:relative;padding:100px 24px;text-align:center;overflow:hidden;">
+<section id="demo" class="cta" aria-labelledby="cta-title">
+  <div aria-hidden="true" class="cta__glow"></div>
 
-  <!-- Radial glow -->
-  <div aria-hidden="true" style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 50% 100%,rgba(212,175,55,0.1) 0%,transparent 70%);pointer-events:none;"></div>
+  <p class="cta__eyebrow">{t.final_cta.eyebrow}</p>
+  <h2 class="cta__title" id="cta-title">{t.final_cta.title}</h2>
+  <p class="cta__sub">{t.final_cta.sub}</p>
 
-  <!-- Top border line -->
-  <div aria-hidden="true" style="position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,0.3),transparent);"></div>
-
-  <div style="position:relative;max-width:640px;margin:0 auto;">
-
-    <p class="section-label" style="margin-bottom:16px;">Ready?</p>
-
-    <h2 style="font-size:clamp(30px,5vw,56px);font-weight:700;letter-spacing:-0.04em;color:#ededed;line-height:1.08;margin:0 0 20px;">
-      The only thing we can't do<br>is try it <span style="color:#D4AF37;">for you.</span>
-    </h2>
-
-    <p style="font-size:16px;color:#888;line-height:1.6;max-width:440px;margin:0 auto 40px;">
-      Send a message on WhatsApp and talk to the actual AI — no demo scripts, no sales call needed.
-    </p>
-
-    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;">
-      <a href={WA_LINK} target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:15px;padding:13px 28px;">
-        Try the demo on WhatsApp →
-      </a>
-      <a href="mailto:hello@theclamai.com" class="btn-secondary">
-        Email us instead
-      </a>
-    </div>
-
-    <p style="font-size:12px;color:#555;margin-top:20px;">
-      No card required · Cancel anytime · Live in 3 days
-    </p>
-
+  <div class="cta__actions">
+    <a href={tryDemoLink} target="_blank" rel="noopener noreferrer" class="btn-primary cta__btn">
+      {t.final_cta.primary} →
+    </a>
+    <a href={bookCallLink} target="_blank" rel="noopener noreferrer" class="btn-secondary cta__btn">
+      {t.final_cta.secondary}
+    </a>
   </div>
-
 </section>
+
+<style>
+  .cta {
+    position: relative;
+    text-align: center;
+    padding: var(--sp-9) var(--sp-5);
+    max-width: var(--container-narrow);
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .cta__glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 70% at 50% 100%, rgba(212, 175, 55, 0.10) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cta__eyebrow {
+    position: relative;
+    font-size: var(--fs-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    font-weight: 500;
+    margin: 0 0 var(--sp-4);
+  }
+  .cta__title {
+    position: relative;
+    font-size: var(--fs-4xl);
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin: 0 0 var(--sp-4);
+  }
+  .cta__sub {
+    position: relative;
+    font-size: var(--fs-md);
+    color: var(--text-muted);
+    line-height: 1.6;
+    max-width: 480px;
+    margin: 0 auto var(--sp-7);
+  }
+  .cta__actions {
+    position: relative;
+    display: flex;
+    gap: var(--sp-3);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .cta__btn {
+    min-width: 180px;
+    justify-content: center;
+  }
+</style>

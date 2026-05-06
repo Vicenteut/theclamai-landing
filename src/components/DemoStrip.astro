@@ -3,89 +3,72 @@ import { getLocale, dict } from '../i18n';
 
 const lang = getLocale(Astro.url);
 const t = dict(lang);
-const steps = t.how_it_works.steps;
+const steps = t.demo_strip.steps;
 ---
 
-<section id="how" class="how" aria-labelledby="how-title">
-  <header class="how__head">
-    <p class="how__eyebrow">{t.how_it_works.eyebrow}</p>
-    <h2 class="how__title" id="how-title">{t.how_it_works.title}</h2>
-  </header>
-
-  <ol class="how__grid">
-    {steps.map((s) => (
-      <li class="how__card">
-        <span class="how__num">{s.n}</span>
-        <h3 class="how__step-title">{s.title}</h3>
-        <p class="how__body">{s.body}</p>
+<section class="demo-strip" aria-labelledby="demo-strip-title">
+  <p class="demo-strip__eyebrow" id="demo-strip-title">{t.demo_strip.eyebrow}</p>
+  <ol class="demo-strip__grid">
+    {steps.map((s, i) => (
+      <li class="demo-strip__card">
+        <span class="demo-strip__num">{String(i + 1).padStart(2, '0')}</span>
+        <h3 class="demo-strip__title">{s.title}</h3>
+        <p class="demo-strip__body">{s.body}</p>
       </li>
     ))}
   </ol>
 </section>
 
 <style>
-  .how {
+  .demo-strip {
     max-width: var(--container);
     margin: 0 auto;
-    padding: var(--sp-9) var(--sp-5);
+    padding: var(--sp-8) var(--sp-5);
   }
-  .how__head {
+  .demo-strip__eyebrow {
     text-align: center;
-    margin-bottom: var(--sp-8);
-  }
-  .how__eyebrow {
     font-size: var(--fs-xs);
     text-transform: uppercase;
     letter-spacing: 0.12em;
     color: var(--accent);
     font-weight: 500;
-    margin: 0 0 var(--sp-3);
+    margin: 0 0 var(--sp-7);
   }
-  .how__title {
-    font-size: var(--fs-3xl);
-    font-weight: 600;
-    color: var(--text);
-    margin: 0;
-    letter-spacing: -0.03em;
-    line-height: 1.15;
-  }
-  .how__grid {
+  .demo-strip__grid {
     list-style: none;
     margin: 0;
     padding: 0;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: var(--sp-4);
-    counter-reset: step;
   }
-  .how__card {
+  .demo-strip__card {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--r-lg);
     padding: var(--sp-6);
-    display: flex;
-    flex-direction: column;
     transition: border-color 0.15s, transform 0.15s;
   }
-  .how__card:hover {
+  .demo-strip__card:hover {
     border-color: var(--border-hover);
     transform: translateY(-2px);
   }
-  .how__num {
+  .demo-strip__num {
+    display: inline-block;
     font-family: var(--font-mono);
     font-size: var(--fs-xs);
     color: var(--accent);
     letter-spacing: 0.12em;
-    margin-bottom: var(--sp-5);
+    margin-bottom: var(--sp-4);
   }
-  .how__step-title {
+  .demo-strip__title {
     font-size: var(--fs-lg);
     font-weight: 600;
     color: var(--text);
     margin: 0 0 var(--sp-3);
     letter-spacing: -0.02em;
   }
-  .how__body {
+  .demo-strip__body {
     font-size: var(--fs-sm);
     color: var(--text-muted);
     line-height: 1.6;
