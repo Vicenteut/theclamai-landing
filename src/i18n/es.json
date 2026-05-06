@@ -125,7 +125,18 @@
   },
   "faq": {
     "eyebrow": "Preguntas frecuentes",
-    "title": "Respuestas rápidas."
+    "title": "Respuestas rápidas.",
+    "items": [
+      { "q": "¿Qué hace The Clam AI exactamente?",                "a": "Es un asistente de IA conectado a tu número de WhatsApp Business. Lee mensajes en cualquier idioma y responde con precisión y tu tono — tomando pedidos, reservas, calificando leads, contestando preguntas y pasando al humano cuando hace falta." },
+      { "q": "¿Solo sirve para restaurantes y hoteles?",          "a": "No. Funciona para cualquier negocio que hable con clientes por WhatsApp — farmacias, inmobiliarias, concesionarios, clínicas, empresas de servicios. Lo ajustamos a tu industria durante el onboarding." },
+      { "q": "¿Necesito conocimientos técnicos?",                 "a": "Ninguno. Hacemos una llamada de 30 min, nos compartes menú/listings/inventario/preguntas frecuentes, y nosotros configuramos, probamos y lanzamos por ti." },
+      { "q": "¿Qué idiomas soporta?",                             "a": "Detecta el idioma del cliente automáticamente y responde igual — 20+ idiomas incluyendo español, inglés, francés, alemán, portugués, italiano, chino y árabe." },
+      { "q": "¿Qué pasa cuando la IA no puede responder?",        "a": "Cuando no tiene certeza, marca el mensaje y lo pasa a tu equipo en tiempo real. Tú defines las reglas — por tema, horario o nivel de confianza." },
+      { "q": "¿Se integra con mi POS, PMS o CRM?",                "a": "Sí — en planes Pro y Custom. Nos integramos con la mayoría de sistemas modernos vía API. Si el tuyo es atípico, conversemos en Custom." },
+      { "q": "¿Los datos de mis clientes están seguros?",         "a": "Todo va cifrado en tránsito y en reposo. Cumplimos GDPR, nunca vendemos ni compartimos datos, y puedes configurar la retención de conversaciones según tus políticas." },
+      { "q": "¿Cuánto tarda en estar en vivo?",                   "a": "La mayoría de clientes están en vivo dentro de 72 horas del onboarding. Integraciones complejas pueden agregar unos días." },
+      { "q": "¿Puedo cancelar cuando quiera?",                    "a": "Sí. Todos los planes son mes a mes. El número sigue siendo tuyo y exportamos todos los datos dentro de 48 horas." }
+    ]
   },
   "final_cta": {
     "eyebrow": "¿Listo?",

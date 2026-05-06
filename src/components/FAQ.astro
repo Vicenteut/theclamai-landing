@@ -1,67 +1,106 @@
 ---
-const faqs = [
-  {
-    q: "What exactly does The Clam AI do?",
-    a: "It acts as an AI-powered assistant connected to your WhatsApp Business number. It reads incoming messages from guests, understands them in any language, and responds with accurate, on-brand replies — handling orders, bookings, FAQs, and more.",
-  },
-  {
-    q: "Do I need technical knowledge to set it up?",
-    a: "None at all. You have a 30-minute briefing call with our team, share your menu or room details, and we handle everything — configuration, testing, and go-live.",
-  },
-  {
-    q: "What languages does it support?",
-    a: "The Clam AI detects the language of each guest automatically and responds in kind. It currently supports 20+ languages including English, Spanish, French, German, Portuguese, Chinese, and Arabic.",
-  },
-  {
-    q: "What happens when the AI can't answer?",
-    a: "Any message the AI is not confident about is immediately flagged and handed off to your team. You set the escalation rules — by topic, time of day, or confidence threshold.",
-  },
-  {
-    q: "Can it take orders or make bookings?",
-    a: "Yes. For restaurants, it captures order details and sends them to your kitchen system or POS. For hotels, it checks availability and confirms reservations, with optional PMS integration on Pro.",
-  },
-  {
-    q: "Is my guests' data secure?",
-    a: "All data is encrypted in transit and at rest. We are fully GDPR-compliant and do not sell or share guest data. Conversation retention is configurable per client.",
-  },
-  {
-    q: "How long does it take to go live?",
-    a: "Most clients go live within 72 hours of their onboarding call. Complex integrations (PMS/POS) may take up to a week.",
-  },
-  {
-    q: "Can I cancel at any time?",
-    a: "Yes. Both plans are month-to-month with no long-term commitment. Your WhatsApp number stays yours and all data is exported within 48 hours.",
-  },
-];
+import { getLocale, dict } from '../i18n';
+
+const lang = getLocale(Astro.url);
+const t = dict(lang);
+const items = t.faq.items;
 ---
 
-<section id="faq" style="padding:80px 24px;max-width:720px;margin:0 auto;">
+<section id="faq" class="faq" aria-labelledby="faq-title">
+  <header class="faq__head">
+    <p class="faq__eyebrow">{t.faq.eyebrow}</p>
+    <h2 class="faq__title" id="faq-title">{t.faq.title}</h2>
+  </header>
 
-  <p class="section-label" style="text-align:center;margin-bottom:12px;">FAQ</p>
-  <h2 style="font-size:clamp(26px,4vw,40px);font-weight:700;letter-spacing:-0.03em;color:#ededed;text-align:center;margin:0 0 56px;">
-    Common questions
-  </h2>
-
-  <div style="display:flex;flex-direction:column;">
-    {faqs.map((faq) => (
-      <div x-data="{ open: false }" style="border-bottom:1px solid rgba(255,255,255,0.08);">
+  <div class="faq__list">
+    {items.map((item) => (
+      <div class="faq__item" x-data="{ open: false }">
         <button
+          type="button"
           x-on:click="open = !open"
-          style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0;text-align:left;background:transparent;border:none;cursor:pointer;"
+          class="faq__q"
           aria-expanded="false"
           x-bind:aria-expanded="open.toString()"
         >
-          <span style="font-size:15px;font-weight:500;color:#ededed;line-height:1.45;">{faq.q}</span>
-          <span
-            x-text="open ? '−' : '+'"
-            style="flex-shrink:0;font-size:18px;color:#555;width:20px;text-align:center;transition:color .15s;font-weight:300;"
-          >+</span>
+          <span>{item.q}</span>
+          <span class="faq__plus" x-text="open ? '−' : '+'" aria-hidden="true">+</span>
         </button>
         <div x-show="open" x-collapse>
-          <p style="font-size:14px;color:#888;line-height:1.7;padding:0 0 18px;margin:0;">{faq.a}</p>
+          <p class="faq__a">{item.a}</p>
         </div>
       </div>
     ))}
   </div>
-
 </section>
+
+<style>
+  .faq {
+    max-width: var(--container-narrow);
+    margin: 0 auto;
+    padding: var(--sp-9) var(--sp-5);
+  }
+  .faq__head {
+    text-align: center;
+    margin-bottom: var(--sp-8);
+  }
+  .faq__eyebrow {
+    font-size: var(--fs-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    font-weight: 500;
+    margin: 0 0 var(--sp-3);
+  }
+  .faq__title {
+    font-size: var(--fs-3xl);
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin: 0;
+  }
+  .faq__list {
+    display: flex;
+    flex-direction: column;
+  }
+  .faq__item {
+    border-bottom: 1px solid var(--border);
+  }
+  .faq__q {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 0;
+    text-align: left;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    color: var(--text);
+    font-size: var(--fs-md);
+    font-weight: 500;
+    line-height: 1.45;
+  }
+  .faq__q:hover .faq__plus {
+    color: var(--accent);
+  }
+  .faq__plus {
+    flex-shrink: 0;
+    font-size: 22px;
+    color: var(--text-dim);
+    width: 24px;
+    text-align: center;
+    font-weight: 300;
+    transition: color 0.15s;
+  }
+  .faq__a {
+    font-size: var(--fs-sm);
+    color: var(--text-muted);
+    line-height: 1.7;
+    padding: 0 0 18px;
+    margin: 0;
+    max-width: 92%;
+  }
+</style>

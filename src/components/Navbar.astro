@@ -1,16 +1,20 @@
 ---
 import LangToggle from './LangToggle.astro';
 import { getLocale, dict } from '../i18n';
+import { WA_NUMBER, VERTICALS } from '../data/demos';
 
 const lang = getLocale(Astro.url);
 const t = dict(lang);
 
-const WA_LINK = "https://wa.me/501XXXXXXXX?text=demo";
+const v = VERTICALS[0];
+const prefill = encodeURIComponent(lang === 'es' ? v.prefill_es : v.prefill_en);
+const WA_LINK = `https://wa.me/${WA_NUMBER}?text=${prefill}`;
 
 const links = [
   { href: "#how", label: t.nav.how_it_works },
+  { href: "#verticals", label: t.nav.verticals },
   { href: "#pricing", label: t.nav.pricing },
-  { href: "#demo", label: lang === 'es' ? 'Demo' : 'Demo' },
+  { href: "#faq", label: t.nav.faq },
 ];
 
 const ctaLabel = t.nav.cta;
