@@ -1,0 +1,85 @@
+---
+/**
+ * VerticalSwitcher renders the pill tabs.
+ * Alpine state (`active`, `demos`) lives on the parent (Hero) so that
+ * sibling LiveDemo can read the same scope.
+ */
+import { getLocale, dict } from '../i18n';
+
+const lang = getLocale(Astro.url);
+const t = dict(lang);
+---
+
+<div class="vsw">
+  <span class="vsw__label">{t.switcher.label}</span>
+  <div class="vsw__pills" role="tablist" aria-label={t.switcher.label}>
+    <template x-for="d in demos" :key="d.id">
+      <button
+        type="button"
+        role="tab"
+        class="vsw__pill"
+        x-on:click="active = d.id"
+        x-text="d.label"
+        x-bind:aria-selected="active === d.id"
+        x-bind:class="active === d.id ? 'vsw__pill--active' : ''"
+      ></button>
+    </template>
+  </div>
+</div>
+
+<style>
+  .vsw {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin: 28px 0 0;
+  }
+  .vsw__label {
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .vsw__pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    justify-content: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-pill);
+    padding: 4px;
+  }
+  .vsw__pill {
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: var(--r-pill);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color 0.15s, background 0.15s;
+    font-family: inherit;
+  }
+  .vsw__pill:hover {
+    color: var(--text);
+  }
+  .vsw__pill--active {
+    background: var(--text);
+    color: #000;
+  }
+  @media (max-width: 640px) {
+    .vsw__pills {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      max-width: calc(100vw - 48px);
+      scrollbar-width: none;
+    }
+    .vsw__pills::-webkit-scrollbar { display: none; }
+    .vsw__pill { padding: 7px 12px; font-size: 12px; }
+  }
+</style>

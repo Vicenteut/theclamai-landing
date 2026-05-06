@@ -1,0 +1,136 @@
+---
+/**
+ * LiveDemo: QR + WhatsApp link.
+ * Reads Alpine state from parent (Hero): `active`, `waLink()`, `prefillText()`.
+ * Re-renders QR via x-effect when active vertical changes.
+ */
+import { getLocale, dict } from '../i18n';
+
+const lang = getLocale(Astro.url);
+const t = dict(lang);
+---
+
+<!-- Load qrcode lib (small, ~12KB gzipped) -->
+<script is:inline src="https://cdn.jsdelivr.net/npm/qrcode@1.5.4/build/qrcode.min.js"></script>
+
+<div class="live-demo">
+  <div class="live-demo__head">
+    <span class="live-demo__pulse"></span>
+    <span class="live-demo__head-text">{t.hero.demo_label}</span>
+  </div>
+
+  <!-- QR canvas — re-renders via x-effect -->
+  <div class="live-demo__qr">
+    <canvas
+      width="200"
+      height="200"
+      x-ref="qr"
+      x-effect="window.QRCode && $refs.qr && window.QRCode.toCanvas($refs.qr, waLink(), { width: 200, margin: 1, color: { dark: '#ededed', light: '#0a0a0a' } })"
+      aria-label="WhatsApp demo QR code"
+    ></canvas>
+  </div>
+
+  <!-- Prefill preview -->
+  <div class="live-demo__bubble" aria-live="polite">
+    <span class="live-demo__bubble-from">You</span>
+    <span class="live-demo__bubble-text" x-text="prefillText()"></span>
+  </div>
+
+  <!-- Action -->
+  <a
+    class="live-demo__cta btn-primary"
+    x-bind:href="waLink()"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.6 6.4A7.96 7.96 0 0 0 12 4a8 8 0 0 0-6.9 12L4 20l4-1A8 8 0 0 0 20 12a7.96 7.96 0 0 0-2.4-5.6Zm-5.6 12.3a6.7 6.7 0 0 1-3.4-.9l-.2-.1-2.4.6.6-2.3-.2-.3a6.7 6.7 0 1 1 5.6 3Zm3.7-5c-.2-.1-1.2-.6-1.4-.7-.2-.1-.3-.1-.5.1-.2.2-.5.7-.7.8-.1.1-.2.2-.4 0-.2-.1-.9-.3-1.7-1-.6-.5-1-1.2-1.2-1.4-.1-.2 0-.3.1-.4l.3-.4.2-.3c.1-.1 0-.2 0-.3 0-.1-.5-1.2-.7-1.6-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.4 0-.7.3-.2.2-.9.9-.9 2.2 0 1.3.9 2.5 1 2.7.1.2 1.8 2.7 4.4 3.8.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.4-.3Z"/>
+    </svg>
+    {t.hero.cta_primary} →
+  </a>
+
+  <p class="live-demo__help">{t.hero.demo_help}</p>
+</div>
+
+<style>
+  .live-demo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 28px;
+    background: linear-gradient(180deg, var(--surface) 0%, var(--bg) 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--r-xl);
+    width: 100%;
+    max-width: 360px;
+    margin: 32px auto 0;
+    position: relative;
+    box-shadow:
+      0 0 0 1px rgba(212, 175, 55, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  }
+  .live-demo__head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+  .live-demo__head-text { color: var(--accent); }
+  .live-demo__pulse {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #25D366;
+    box-shadow: 0 0 8px #25D366;
+    animation: pulse-dot 2s infinite;
+  }
+  .live-demo__qr {
+    padding: 14px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--r-md);
+    line-height: 0;
+  }
+  .live-demo__qr canvas { display: block; width: 200px; height: 200px; }
+
+  .live-demo__bubble {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: rgba(37, 211, 102, 0.05);
+    border: 1px solid rgba(37, 211, 102, 0.15);
+    border-radius: 12px;
+    padding: 12px 14px;
+    width: 100%;
+    text-align: left;
+  }
+  .live-demo__bubble-from {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #25D366;
+    font-weight: 600;
+  }
+  .live-demo__bubble-text {
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.45;
+  }
+
+  .live-demo__cta {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .live-demo__help {
+    font-size: 11px;
+    color: var(--text-dim);
+    text-align: center;
+    margin: 0;
+  }
+</style>

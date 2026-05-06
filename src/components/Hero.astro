@@ -1,49 +1,144 @@
 ---
-import ProductPreview from './ProductPreview.astro';
+import { getLocale, dict } from '../i18n';
+import { VERTICALS, WA_NUMBER } from '../data/demos';
+import VerticalSwitcher from './VerticalSwitcher.astro';
+import LiveDemo from './LiveDemo.astro';
 
-const WA_LINK = "https://wa.me/501XXXXXXXX?text=demo";
+const lang = getLocale(Astro.url);
+const t = dict(lang);
+const labels = t.switcher.verticals;
+
+const demoData = VERTICALS.map((v) => ({
+  id: v.id,
+  label: labels[v.id],
+  prefill: encodeURIComponent(lang === 'es' ? v.prefill_es : v.prefill_en),
+}));
+
+const heroAlpine = `{
+  active: ${JSON.stringify(VERTICALS[0].id)},
+  waNumber: ${JSON.stringify(WA_NUMBER)},
+  demos: ${JSON.stringify(demoData)},
+  waLink() {
+    const d = this.demos.find(x => x.id === this.active) || this.demos[0];
+    return 'https://wa.me/' + this.waNumber + '?text=' + d.prefill;
+  },
+  prefillText() {
+    const d = this.demos.find(x => x.id === this.active) || this.demos[0];
+    return decodeURIComponent(d.prefill);
+  }
+}`;
 ---
 
-<section style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:160px 24px 80px;overflow:hidden;">
+<section class="hero" x-data={heroAlpine}>
 
-  <!-- Radial gold glow -->
-  <div aria-hidden="true" style="position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:700px;height:500px;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(212,175,55,0.13) 0%,transparent 70%);pointer-events:none;z-index:0;"></div>
+  <!-- Radial accent glow -->
+  <div aria-hidden="true" class="hero__glow"></div>
 
-  <!-- Badge -->
-  <div class="fade-up" style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(212,175,55,0.25);border-radius:9999px;padding:6px 14px;margin-bottom:32px;background:rgba(212,175,55,0.05);position:relative;z-index:1;">
+  <!-- Eyebrow badge -->
+  <div class="hero__badge fade-up">
     <span class="pulse-dot"></span>
-    <span style="font-size:12px;color:#D4AF37;font-weight:500;letter-spacing:0.04em;">Conversational AI for hospitality</span>
+    <span>{t.hero.eyebrow}</span>
   </div>
 
   <!-- H1 -->
-  <h1 class="fade-up" style="font-size:clamp(48px,8.5vw,96px);font-weight:700;letter-spacing:-0.04em;line-height:1.05;color:#ededed;max-width:900px;margin:0 0 28px;position:relative;z-index:1;animation-delay:0.05s;">
-    Your guests message.<br>
-    <span style="color:#D4AF37;">We answer.</span>
+  <h1 class="hero__title fade-up fade-up-delay-1">
+    {t.hero.title_pre}<br>
+    <span class="hero__title-strong">{t.hero.title_strong}</span>
   </h1>
 
   <!-- Subhead -->
-  <p class="fade-up" style="font-size:clamp(16px,2.2vw,20px);color:#888;line-height:1.6;max-width:520px;margin:0 0 40px;position:relative;z-index:1;animation-delay:0.1s;">
-    An AI assistant that takes orders, books rooms, and answers guest questions on WhatsApp — in any language, around the clock.
-  </p>
+  <p class="hero__sub fade-up fade-up-delay-2">{t.hero.sub}</p>
 
-  <!-- CTAs -->
-  <div class="fade-up" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;position:relative;z-index:1;animation-delay:0.15s;">
-    <a href={WA_LINK} target="_blank" rel="noopener noreferrer" class="btn-primary">
-      Try the demo →
-    </a>
-    <a href="#how" class="btn-secondary">
-      See how it works
-    </a>
+  <!-- Vertical switcher -->
+  <div class="fade-up fade-up-delay-3">
+    <VerticalSwitcher />
   </div>
 
-  <!-- Sub note -->
-  <p class="fade-up" style="font-size:12px;color:#555;margin-top:16px;position:relative;z-index:1;animation-delay:0.2s;">
-    No card required · Cancel anytime · Live in 3 days
-  </p>
-
-  <!-- Product Preview -->
-  <div class="fade-up" style="position:relative;z-index:1;width:100%;display:flex;justify-content:center;animation-delay:0.25s;">
-    <ProductPreview />
+  <!-- Live demo card -->
+  <div class="fade-up fade-up-delay-4">
+    <LiveDemo />
   </div>
 
+  <!-- Secondary CTA -->
+  <a href="#how" class="hero__secondary-cta fade-up fade-up-delay-4">
+    ↓ {t.nav.how_it_works}
+  </a>
 </section>
+
+<style>
+  .hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 140px 24px 80px;
+    overflow: hidden;
+  }
+  .hero__glow {
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 600px;
+    background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(212, 175, 55, 0.13) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: var(--r-pill);
+    padding: 6px 14px;
+    margin-bottom: 28px;
+    background: rgba(212, 175, 55, 0.05);
+    position: relative;
+    z-index: 1;
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+  .hero__title {
+    font-size: clamp(40px, 7vw, 80px);
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    color: var(--text);
+    max-width: 880px;
+    margin: 0 0 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero__title-strong {
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .hero__sub {
+    font-size: clamp(16px, 1.6vw, 19px);
+    color: var(--text-muted);
+    line-height: 1.55;
+    max-width: 560px;
+    margin: 0 0 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero__secondary-cta {
+    margin-top: 28px;
+    font-size: 13px;
+    color: var(--text-dim);
+    transition: color 0.15s;
+    position: relative;
+    z-index: 1;
+  }
+  .hero__secondary-cta:hover {
+    color: var(--text);
+  }
+
+  @media (max-width: 640px) {
+    .hero { padding: 120px 16px 60px; }
+  }
+</style>
