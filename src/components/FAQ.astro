@@ -2,35 +2,35 @@
 const faqs = [
   {
     q: "What exactly does The Clam AI do?",
-    a: "It acts as an AI-powered assistant connected to your WhatsApp Business number. It reads incoming messages from guests and customers, understands them in any language, and responds with accurate, on-brand replies — handling orders, bookings, FAQs, and more, all automatically.",
+    a: "It acts as an AI-powered assistant connected to your WhatsApp Business number. It reads incoming messages from guests, understands them in any language, and responds with accurate, on-brand replies — handling orders, bookings, FAQs, and more.",
   },
   {
     q: "Do I need technical knowledge to set it up?",
-    a: "None at all. You have a 30-minute briefing call with our team, share your menu or room details, and we handle everything — configuration, testing, and go-live. You get a simple dashboard to monitor conversations.",
+    a: "None at all. You have a 30-minute briefing call with our team, share your menu or room details, and we handle everything — configuration, testing, and go-live.",
   },
   {
     q: "What languages does it support?",
-    a: "The Clam AI detects the language of each guest automatically and responds in kind. It currently supports 20+ languages including English, Spanish, French, German, Portuguese, Chinese, Arabic, and more.",
+    a: "The Clam AI detects the language of each guest automatically and responds in kind. It currently supports 20+ languages including English, Spanish, French, German, Portuguese, Chinese, and Arabic.",
   },
   {
-    q: "What happens when the AI can't answer something?",
-    a: "Any message the AI is not confident about is immediately flagged and handed off to your team. You set the escalation rules — by topic, time of day, or confidence threshold. Nothing slips through.",
+    q: "What happens when the AI can't answer?",
+    a: "Any message the AI is not confident about is immediately flagged and handed off to your team. You set the escalation rules — by topic, time of day, or confidence threshold.",
   },
   {
-    q: "Can it take orders or make bookings directly?",
-    a: "Yes. For restaurants, it can capture order details and send them to your kitchen system or POS. For hotels, it can check availability and confirm reservations, with optional PMS integration on the Pro plan.",
+    q: "Can it take orders or make bookings?",
+    a: "Yes. For restaurants, it captures order details and sends them to your kitchen system or POS. For hotels, it checks availability and confirms reservations, with optional PMS integration on Pro.",
   },
   {
     q: "Is my guests' data secure?",
-    a: "Absolutely. All data is encrypted in transit and at rest. We are fully compliant with GDPR and do not sell or share guest data with any third party. Guest conversations are retained only as long as you configure.",
+    a: "All data is encrypted in transit and at rest. We are fully GDPR-compliant and do not sell or share guest data. Conversation retention is configurable per client.",
   },
   {
     q: "How long does it take to go live?",
-    a: "Most clients go live within 72 hours of their onboarding call. Complex integrations (PMS/POS) may take up to a week. We'll give you a clear timeline at the start.",
+    a: "Most clients go live within 72 hours of their onboarding call. Complex integrations (PMS/POS) may take up to a week.",
   },
   {
     q: "Can I cancel at any time?",
-    a: "Yes. Both plans are month-to-month with no long-term commitment. If you cancel, your WhatsApp number remains yours and all your data is exported to you within 48 hours.",
+    a: "Yes. Both plans are month-to-month with no long-term commitment. Your WhatsApp number stays yours and all data is exported within 48 hours.",
   },
 ];
 ---
@@ -42,26 +42,23 @@ const faqs = [
     Common questions
   </h2>
 
-  <div style="display:flex;flex-direction:column;gap:1px;border:1px solid rgba(255,255,255,0.08);border-radius:16px;overflow:hidden;background:rgba(255,255,255,0.05);">
-    {faqs.map((faq, i) => (
-      <div x-data="{ open: false }" style="background:#000;">
+  <div style="display:flex;flex-direction:column;">
+    {faqs.map((faq) => (
+      <div x-data="{ open: false }" style="border-bottom:1px solid rgba(255,255,255,0.08);">
         <button
           x-on:click="open = !open"
-          style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;text-align:left;background:transparent;border:none;cursor:pointer;"
+          style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0;text-align:left;background:transparent;border:none;cursor:pointer;"
           aria-expanded="false"
           x-bind:aria-expanded="open.toString()"
         >
-          <span style="font-size:14px;font-weight:500;color:#ededed;line-height:1.45;">{faq.q}</span>
-          <svg
-            x-bind:style="open ? 'transform:rotate(180deg)' : 'transform:rotate(0deg)'"
-            style="flex-shrink:0;transition:transform 0.2s;width:16px;height:16px;"
-            viewBox="0 0 16 16" fill="none" aria-hidden="true"
-          >
-            <path d="M4 6l4 4 4-4" stroke="#555" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+          <span style="font-size:15px;font-weight:500;color:#ededed;line-height:1.45;">{faq.q}</span>
+          <span
+            x-text="open ? '−' : '+'"
+            style="flex-shrink:0;font-size:18px;color:#555;width:20px;text-align:center;transition:color .15s;font-weight:300;"
+          >+</span>
         </button>
-        <div x-show="open" x-collapse style="border-top:1px solid rgba(255,255,255,0.06);">
-          <p style="font-size:14px;color:#888;line-height:1.7;padding:16px 24px 20px;margin:0;">{faq.a}</p>
+        <div x-show="open" x-collapse>
+          <p style="font-size:14px;color:#888;line-height:1.7;padding:0 0 18px;margin:0;">{faq.a}</p>
         </div>
       </div>
     ))}
