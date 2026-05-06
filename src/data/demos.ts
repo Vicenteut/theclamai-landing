@@ -4,7 +4,7 @@
  * Replace WA_NUMBER with the real production demo number when ready.
  */
 
-export const WA_NUMBER = '5026105086'; // Guatemala — TheClam AI demo bot (production)
+export const WA_NUMBER = '5016105086'; // Belize — TheClam AI demo bot (production)
 
 export type VerticalId =
   | 'restaurant'
