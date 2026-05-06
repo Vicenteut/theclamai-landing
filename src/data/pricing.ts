@@ -23,16 +23,18 @@ import { WA_NUMBER } from './demos';
 
 const wa = (text: string) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
 
+// All tiers display "Contact us" until the user finalizes pricing.
+// Re-introduce numeric priceUSD when ready; component already handles both modes.
 export const plans: PricingPlan[] = [
   {
     id: 'starter',
-    priceUSD: 99, // TODO: confirm
+    priceUSD: null,
     featured: false,
     ctaHref: wa("Hi! I'm interested in the Starter plan for my business."),
   },
   {
     id: 'pro',
-    priceUSD: 299, // TODO: confirm
+    priceUSD: null,
     featured: true,
     highlight: 'most_popular',
     ctaHref: wa("Hi! I'm interested in the Pro plan for my business."),
