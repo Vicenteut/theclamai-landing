@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "The Clam AI — IA conversacional para cualquier negocio",
+    "description": "Asistentes de IA que toman pedidos, reservas, contestan dudas y dan seguimiento en WhatsApp — en cualquier idioma, 24/7. En vivo en 72 horas."
+  },
+  "nav": {
+    "how_it_works": "Cómo funciona",
+    "verticals": "Industrias",
+    "pricing": "Precios",
+    "faq": "Preguntas",
+    "cta": "Probar el demo"
+  },
+  "hero": {
+    "eyebrow": "IA conversacional · WhatsApp",
+    "title_pre": "El asistente de IA",
+    "title_strong": "que tu negocio ya necesitaba.",
+    "sub": "Conecta WhatsApp. Entrénalo con tus datos. En vivo en 72 horas.",
+    "demo_label": "Demo en vivo",
+    "demo_help": "Escanea o toca. El bot responde en tu idioma.",
+    "cta_primary": "Probar el demo",
+    "cta_secondary": "Agendar una llamada"
+  },
+  "switcher": {
+    "label": "Tengo un…",
+    "verticals": {
+      "restaurant": "Restaurante",
+      "hotel": "Hotel",
+      "pharmacy": "Farmacia",
+      "real_estate": "Inmobiliaria",
+      "car_dealer": "Concesionario"
+    }
+  },
+  "demo_strip": {
+    "eyebrow": "Qué acaba de pasar",
+    "steps": [
+      { "title": "Escaneaste",         "body": "WhatsApp abrió con un mensaje ya redactado para tu industria." },
+      { "title": "El bot respondió",   "body": "En tu idioma, con el contexto correcto — pedidos, reservas, info, seguimiento." },
+      { "title": "Handoff real",       "body": "Si algo requiere humano, se marca y pasa limpio a tu equipo." }
+    ]
+  },
+  "how_it_works": {
+    "eyebrow": "Cómo funciona",
+    "title": "Tres pasos. En vivo en 72 horas.",
+    "steps": [
+      { "n": "01", "title": "Conecta WhatsApp",   "body": "Te damos un número de WhatsApp Business — o conectamos el tuyo." },
+      { "n": "02", "title": "Entrena con tus datos", "body": "Menú, habitaciones, propiedades, inventario — lo que tu negocio maneje." },
+      { "n": "03", "title": "En vivo en 72 horas", "body": "Probamos, apruebas, el bot empieza a responder a tus clientes." }
+    ]
+  },
+  "verticals_section": {
+    "eyebrow": "Industrias",
+    "title": "Hecho para negocios que hablan con clientes.",
+    "sub": "Una sola plataforma, ajustada por industria. Elige la tuya.",
+    "items": {
+      "restaurant": { "name": "Restaurantes", "use": "Toma pedidos, recomienda platillos, se conecta a tu POS." },
+      "hotel":      { "name": "Hoteles",       "use": "Responde a huéspedes, checa disponibilidad y reserva." },
+      "pharmacy":   { "name": "Farmacias",     "use": "Contesta dudas, registra recetas, agenda recogidas." },
+      "real_estate":{ "name": "Inmobiliarias", "use": "Califica compradores, comparte propiedades, agenda visitas." },
+      "car_dealer": { "name": "Concesionarios","use": "Pre-califica leads, comparte inventario, agenda pruebas de manejo." }
+    },
+    "soon": "Muy pronto"
+  },
+  "capabilities": {
+    "eyebrow": "Capacidades",
+    "title": "Todo lo que un asistente al cliente debería hacer.",
+    "items": [
+      { "title": "Pedidos y reservas", "body": "Captura pedidos o reservas estructurados, validados y listos para tu sistema." },
+      { "title": "Preguntas e info",   "body": "Contesta lo que tus clientes preguntan siempre — horarios, precios, políticas." },
+      { "title": "Handoff inteligente","body": "Pasa al humano cuando hay duda o cuando el cliente lo pide." },
+      { "title": "20+ idiomas",        "body": "Detecta el idioma del cliente y responde igual." },
+      { "title": "Integraciones",      "body": "POS, PMS, CRM, calendario — se conecta con lo que ya usas." },
+      { "title": "Siempre activo",     "body": "24/7. No duerme, no se enferma, no olvida." }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "Precios",
+    "title": "Planes simples. USD, mensual.",
+    "sub": "Empieza pequeño. Sube cuando crezcas. Cancela cuando quieras."
+  },
+  "faq": {
+    "eyebrow": "Preguntas frecuentes",
+    "title": "Respuestas rápidas."
+  },
+  "final_cta": {
+    "eyebrow": "¿Listo?",
+    "title": "Pruébalo ahora, o agenda una llamada.",
+    "sub": "La forma más rápida de saber si te sirve es escribirle al bot tú mismo.",
+    "primary": "Probar el demo",
+    "secondary": "Agendar una llamada"
+  },
+  "footer": {
+    "tagline": "IA conversacional para cualquier negocio.",
+    "links_legal": "Legal",
+    "links_privacy": "Privacidad",
+    "links_terms": "Términos",
+    "links_contact": "Contacto",
+    "rights": "Todos los derechos reservados."
+  }
+}

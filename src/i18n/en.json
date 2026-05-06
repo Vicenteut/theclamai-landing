@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "The Clam AI — Conversational AI for any business",
+    "description": "AI assistants that handle orders, bookings, FAQs and follow-ups on WhatsApp — in any language, around the clock. Live in 72 hours."
+  },
+  "nav": {
+    "how_it_works": "How it works",
+    "verticals": "Industries",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "cta": "Try the demo"
+  },
+  "hero": {
+    "eyebrow": "Conversational AI · WhatsApp",
+    "title_pre": "The AI assistant",
+    "title_strong": "your business already needs.",
+    "sub": "Connect WhatsApp. Train it on your data. Live in 72 hours.",
+    "demo_label": "Live demo",
+    "demo_help": "Scan or tap. The bot replies in your language.",
+    "cta_primary": "Try the demo",
+    "cta_secondary": "Book a call"
+  },
+  "switcher": {
+    "label": "I run a…",
+    "verticals": {
+      "restaurant": "Restaurant",
+      "hotel": "Hotel",
+      "pharmacy": "Pharmacy",
+      "real_estate": "Real estate office",
+      "car_dealer": "Car dealership"
+    }
+  },
+  "demo_strip": {
+    "eyebrow": "What just happened",
+    "steps": [
+      { "title": "You scanned", "body": "WhatsApp opened with a prefilled message tailored to your industry." },
+      { "title": "The bot replied", "body": "In your language, with the right context — orders, bookings, info, follow-ups." },
+      { "title": "Real handoff", "body": "If something needs a human, it's flagged and handed off cleanly to your team." }
+    ]
+  },
+  "how_it_works": {
+    "eyebrow": "How it works",
+    "title": "Three steps. Live in 72 hours.",
+    "steps": [
+      { "n": "01", "title": "Connect WhatsApp", "body": "We provision a WhatsApp Business number — or attach to yours." },
+      { "n": "02", "title": "Train on your data", "body": "Menu, rooms, listings, inventory — whatever your business runs on." },
+      { "n": "03", "title": "Go live in 72 hours", "body": "We test, you approve, the bot starts answering customers." }
+    ]
+  },
+  "verticals_section": {
+    "eyebrow": "Industries",
+    "title": "Built for businesses that talk to customers.",
+    "sub": "One platform, tuned per industry. Pick yours.",
+    "items": {
+      "restaurant": { "name": "Restaurants", "use": "Takes orders, recommends dishes, syncs with your POS." },
+      "hotel":      { "name": "Hotels",      "use": "Answers guests, checks availability, books rooms." },
+      "pharmacy":   { "name": "Pharmacies",  "use": "Replies to product questions, logs prescription requests, schedules pickup." },
+      "real_estate":{ "name": "Real Estate", "use": "Qualifies buyers, shares listings, books visits." },
+      "car_dealer": { "name": "Car Dealerships", "use": "Pre-qualifies leads, shares inventory, schedules test drives." }
+    },
+    "soon": "Coming soon"
+  },
+  "capabilities": {
+    "eyebrow": "Capabilities",
+    "title": "Everything a customer-facing assistant should do.",
+    "items": [
+      { "title": "Orders & bookings", "body": "Captures structured orders or reservations, validated and ready for your system." },
+      { "title": "FAQs & info",       "body": "Answers anything your customers usually ask — hours, prices, policies." },
+      { "title": "Smart handoff",     "body": "Hands off to a human when confidence is low or the customer asks." },
+      { "title": "20+ languages",     "body": "Auto-detects the customer's language and replies in kind." },
+      { "title": "Integrations",      "body": "POS, PMS, CRM, calendar — plug into the systems you already use." },
+      { "title": "Always on",         "body": "24/7. Doesn't sleep, doesn't get sick, doesn't forget." }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "Pricing",
+    "title": "Simple plans. USD, monthly.",
+    "sub": "Start small. Upgrade when you grow. Cancel anytime."
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Questions, answered."
+  },
+  "final_cta": {
+    "eyebrow": "Ready?",
+    "title": "Try it now, or book a call.",
+    "sub": "The fastest way to know if it works for your business is to message the bot yourself.",
+    "primary": "Try the demo",
+    "secondary": "Book a call"
+  },
+  "footer": {
+    "tagline": "Conversational AI for any business.",
+    "links_legal": "Legal",
+    "links_privacy": "Privacy",
+    "links_terms": "Terms",
+    "links_contact": "Contact",
+    "rights": "All rights reserved."
+  }
+}

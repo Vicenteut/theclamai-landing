@@ -1,11 +1,19 @@
 ---
+import LangToggle from './LangToggle.astro';
+import { getLocale, dict } from '../i18n';
+
+const lang = getLocale(Astro.url);
+const t = dict(lang);
+
 const WA_LINK = "https://wa.me/501XXXXXXXX?text=demo";
 
 const links = [
-  { href: "#how", label: "How it works" },
-  { href: "#pricing", label: "Pricing" },
-  { href: "#demo", label: "Demo" },
+  { href: "#how", label: t.nav.how_it_works },
+  { href: "#pricing", label: t.nav.pricing },
+  { href: "#demo", label: lang === 'es' ? 'Demo' : 'Demo' },
 ];
+
+const ctaLabel = t.nav.cta;
 ---
 
 <nav
@@ -30,9 +38,14 @@ const links = [
       ))}
     </div>
 
+    <!-- Lang toggle (desktop) -->
+    <div class="nav-lang-desktop" style="margin-right:12px;">
+      <LangToggle />
+    </div>
+
     <!-- CTA (desktop) -->
     <a href={WA_LINK} target="_blank" rel="noopener noreferrer" class="nav-cta nav-cta-desktop">
-      Try demo →
+      {ctaLabel} →
     </a>
 
     <!-- Mobile hamburger -->
@@ -65,8 +78,11 @@ const links = [
     {links.map((link) => (
       <a href={link.href} x-on:click="open = false" class="nav-mobile-link">{link.label}</a>
     ))}
-    <a href={WA_LINK} target="_blank" rel="noopener noreferrer" class="nav-cta" style="display:block;text-align:center;margin-top:4px;">
-      Try demo →
+    <div style="margin-top:8px;display:flex;justify-content:center;">
+      <LangToggle />
+    </div>
+    <a href={WA_LINK} target="_blank" rel="noopener noreferrer" class="nav-cta" style="display:block;text-align:center;margin-top:8px;">
+      {ctaLabel} →
     </a>
   </div>
 </nav>
@@ -139,6 +155,7 @@ const links = [
   @media (max-width: 640px) {
     .nav-links-desktop { display: none !important; }
     .nav-cta-desktop { display: none !important; }
+    .nav-lang-desktop { display: none !important; }
     .nav-hamburger { display: block !important; }
   }
 </style>
