@@ -10,6 +10,10 @@
     "faq": "FAQ",
     "cta": "Try the demo"
   },
+  "a11y": {
+    "menu_toggle": "Toggle menu",
+    "qr_label": "WhatsApp demo QR code"
+  },
   "hero": {
     "eyebrow": "Conversational AI · WhatsApp",
     "title_pre": "The AI assistant",
@@ -147,6 +151,8 @@
   },
   "footer": {
     "tagline": "Conversational AI for any business.",
+    "product": "Product",
+    "nav_label": "Footer",
     "links_legal": "Legal",
     "links_privacy": "Privacy",
     "links_terms": "Terms",

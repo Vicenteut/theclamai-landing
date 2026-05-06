@@ -19,9 +19,9 @@ const year = new Date().getFullYear();
       <p class="footer__tagline">{t.footer.tagline}</p>
     </div>
 
-    <nav aria-label="Footer" class="footer__nav">
+    <nav aria-label={t.footer.nav_label} class="footer__nav">
       <div>
-        <p class="footer__h">Product</p>
+        <p class="footer__h">{t.footer.product}</p>
         <ul class="footer__list">
           <li><a href="#how" class="footer__link">{t.nav.how_it_works}</a></li>
           <li><a href="#verticals" class="footer__link">{t.nav.verticals}</a></li>

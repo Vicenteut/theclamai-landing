@@ -10,6 +10,10 @@
     "faq": "Preguntas",
     "cta": "Probar el demo"
   },
+  "a11y": {
+    "menu_toggle": "Abrir menú",
+    "qr_label": "Código QR del demo de WhatsApp"
+  },
   "hero": {
     "eyebrow": "IA conversacional · WhatsApp",
     "title_pre": "El asistente de IA",
@@ -147,6 +151,8 @@
   },
   "footer": {
     "tagline": "IA conversacional para cualquier negocio.",
+    "product": "Producto",
+    "nav_label": "Pie de página",
     "links_legal": "Legal",
     "links_privacy": "Privacidad",
     "links_terms": "Términos",
