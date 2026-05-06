@@ -1,0 +1,385 @@
+---
+import Navbar from './Navbar.astro';
+import Footer from './Footer.astro';
+import Pricing from './Pricing.astro';
+import { dict, type Locale } from '../i18n';
+import {
+  WA_NUMBER,
+  VERTICALS,
+  VERTICAL_SLUGS,
+  type VerticalId,
+} from '../data/demos';
+
+export interface Props {
+  verticalId: VerticalId;
+  lang: Locale;
+}
+
+const { verticalId, lang } = Astro.props;
+const t = dict(lang);
+const v = VERTICALS.find((x) => x.id === verticalId)!;
+const copy = t.verticals_pages[verticalId];
+
+const prefill = encodeURIComponent(lang === 'es' ? v.prefill_es : v.prefill_en);
+const waLink = `https://wa.me/${WA_NUMBER}?text=${prefill}`;
+
+const slug = VERTICAL_SLUGS[verticalId];
+---
+
+<Navbar />
+
+<main id="main">
+  <!-- Hero -->
+  <section class="vp-hero">
+    <div aria-hidden="true" class="vp-hero__glow"></div>
+    <div class="vp-hero__badge">
+      <span class="pulse-dot"></span>
+      <span>{copy.hero.eyebrow}</span>
+    </div>
+    <h1 class="vp-hero__title">
+      {copy.hero.title_pre}<br />
+      <span class="vp-hero__title-strong">{copy.hero.title_strong}</span>
+    </h1>
+    <p class="vp-hero__sub">{copy.hero.sub}</p>
+    <a
+      href={waLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn-primary vp-hero__cta"
+      data-track="cta_click_hero"
+      data-track-vertical={verticalId}
+      data-track-page={slug}
+    >
+      {copy.hero.cta_primary} →
+    </a>
+    <p class="vp-hero__help">{copy.hero.cta_help}</p>
+  </section>
+
+  <!-- Pains -->
+  <section class="vp-section" aria-labelledby={`${slug}-pains-title`}>
+    <header class="vp-head">
+      <p class="vp-eyebrow">{copy.pains.eyebrow}</p>
+      <h2 class="vp-title" id={`${slug}-pains-title`}>{copy.pains.title}</h2>
+    </header>
+    <ul class="vp-grid vp-grid--3">
+      {copy.pains.items.map((item) => (
+        <li class="vp-card">
+          <h3 class="vp-card__title">{item.title}</h3>
+          <p class="vp-card__body">{item.body}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <!-- Capabilities -->
+  <section class="vp-section" aria-labelledby={`${slug}-cap-title`}>
+    <header class="vp-head">
+      <p class="vp-eyebrow">{copy.capabilities.eyebrow}</p>
+      <h2 class="vp-title" id={`${slug}-cap-title`}>{copy.capabilities.title}</h2>
+    </header>
+    <ul class="vp-grid vp-grid--3">
+      {copy.capabilities.items.map((item) => (
+        <li class="vp-card">
+          <h3 class="vp-card__title">{item.title}</h3>
+          <p class="vp-card__body">{item.body}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <!-- Screenshot placeholder gallery -->
+  <section class="vp-section" aria-labelledby={`${slug}-shots-title`}>
+    <header class="vp-head">
+      <p class="vp-eyebrow">{copy.screenshots.eyebrow}</p>
+      <h2 class="vp-title" id={`${slug}-shots-title`}>{copy.screenshots.title}</h2>
+      <p class="vp-sub">{copy.screenshots.sub}</p>
+    </header>
+    <div class="vp-shots">
+      {[1, 2, 3].map(() => (
+        <div class="vp-shot vp-shot--placeholder" aria-hidden="true">
+          <div class="vp-shot__phone">
+            <div class="vp-shot__bubble vp-shot__bubble--user"></div>
+            <div class="vp-shot__bubble vp-shot__bubble--bot"></div>
+            <div class="vp-shot__bubble vp-shot__bubble--user vp-shot__bubble--short"></div>
+            <div class="vp-shot__bubble vp-shot__bubble--bot vp-shot__bubble--short"></div>
+          </div>
+        </div>
+      ))}
+    </div>
+    <div class="vp-shots-cta">
+      <a
+        href={waLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-secondary"
+        data-track="cta_click_screenshots"
+        data-track-vertical={verticalId}
+        data-track-page={slug}
+      >
+        {lang === 'es' ? 'Ver el demo en vivo →' : 'See the live demo →'}
+      </a>
+    </div>
+  </section>
+
+  <Pricing />
+
+  <!-- Vertical-specific Final CTA -->
+  <section class="vp-finalcta" aria-labelledby={`${slug}-fcta-title`}>
+    <div aria-hidden="true" class="vp-finalcta__glow"></div>
+    <p class="vp-eyebrow">{copy.finalcta.eyebrow}</p>
+    <h2 class="vp-title" id={`${slug}-fcta-title`}>{copy.finalcta.title}</h2>
+    <p class="vp-sub">{copy.finalcta.sub}</p>
+    <div class="vp-finalcta__actions">
+      <a
+        href={waLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-primary vp-finalcta__btn"
+        data-track="cta_click_finalcta"
+        data-track-action="try_demo"
+        data-track-vertical={verticalId}
+        data-track-page={slug}
+      >
+        {copy.finalcta.primary} →
+      </a>
+      <a
+        href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(
+          lang === 'es'
+            ? `¡Hola! Quiero el bot para mi restaurante.`
+            : `Hi! I want the bot for my restaurant.`,
+        )}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-secondary vp-finalcta__btn"
+        data-track="cta_click_finalcta"
+        data-track-action="get_started"
+        data-track-vertical={verticalId}
+        data-track-page={slug}
+      >
+        {copy.finalcta.secondary}
+      </a>
+    </div>
+  </section>
+</main>
+
+<Footer />
+
+<style>
+  .vp-hero {
+    position: relative;
+    text-align: center;
+    padding: 140px var(--sp-5) 80px;
+    max-width: 880px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .vp-hero__glow {
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 600px;
+    background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(212, 175, 55, 0.13) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .vp-hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: var(--r-pill);
+    padding: 6px 14px;
+    margin-bottom: var(--sp-6);
+    background: rgba(212, 175, 55, 0.05);
+    position: relative;
+    z-index: 1;
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+  .vp-hero__title {
+    font-size: clamp(40px, 7vw, 76px);
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    color: var(--text);
+    margin: 0 0 var(--sp-5);
+    position: relative;
+    z-index: 1;
+  }
+  .vp-hero__title-strong {
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .vp-hero__sub {
+    font-size: clamp(16px, 1.6vw, 19px);
+    color: var(--text-muted);
+    line-height: 1.55;
+    max-width: 580px;
+    margin: 0 auto var(--sp-7);
+    position: relative;
+    z-index: 1;
+  }
+  .vp-hero__cta {
+    position: relative;
+    z-index: 1;
+    font-size: 15px;
+    padding: 13px 28px;
+  }
+  .vp-hero__help {
+    margin-top: var(--sp-3);
+    font-size: 12px;
+    color: var(--text-dim);
+    position: relative;
+    z-index: 1;
+  }
+
+  .vp-section {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: var(--sp-9) var(--sp-5);
+  }
+  .vp-head {
+    text-align: center;
+    margin-bottom: var(--sp-8);
+  }
+  .vp-eyebrow {
+    font-size: var(--fs-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    font-weight: 500;
+    margin: 0 0 var(--sp-3);
+  }
+  .vp-title {
+    font-size: var(--fs-3xl);
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin: 0 auto;
+    max-width: 720px;
+  }
+  .vp-sub {
+    font-size: var(--fs-md);
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: var(--sp-3) auto 0;
+    max-width: 540px;
+  }
+  .vp-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--sp-4);
+  }
+  .vp-grid--3 {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+  .vp-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    padding: var(--sp-6);
+    transition: border-color 0.15s, transform 0.15s;
+  }
+  .vp-card:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-2px);
+  }
+  .vp-card__title {
+    font-size: var(--fs-lg);
+    font-weight: 600;
+    color: var(--text);
+    margin: 0 0 var(--sp-3);
+    letter-spacing: -0.02em;
+  }
+  .vp-card__body {
+    font-size: var(--fs-sm);
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Screenshot placeholder gallery */
+  .vp-shots {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--sp-4);
+    margin-bottom: var(--sp-5);
+  }
+  .vp-shot {
+    aspect-ratio: 9 / 16;
+    background: linear-gradient(180deg, var(--surface) 0%, var(--bg) 100%);
+    border: 1px dashed var(--border-hover);
+    border-radius: var(--r-lg);
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .vp-shot__phone {
+    width: 100%;
+    height: 100%;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--r-md);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: flex-end;
+  }
+  .vp-shot__bubble {
+    height: 24px;
+    border-radius: 12px;
+    width: 80%;
+    background: var(--surface-2);
+  }
+  .vp-shot__bubble--user {
+    align-self: flex-end;
+    background: rgba(37, 211, 102, 0.18);
+  }
+  .vp-shot__bubble--bot {
+    align-self: flex-start;
+    background: rgba(255, 255, 255, 0.05);
+  }
+  .vp-shot__bubble--short {
+    width: 50%;
+  }
+  .vp-shots-cta {
+    text-align: center;
+  }
+
+  /* Final CTA */
+  .vp-finalcta {
+    position: relative;
+    text-align: center;
+    padding: var(--sp-9) var(--sp-5);
+    max-width: var(--container-narrow);
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .vp-finalcta__glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 70% at 50% 100%, rgba(212, 175, 55, 0.10) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .vp-finalcta__actions {
+    position: relative;
+    display: flex;
+    gap: var(--sp-3);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: var(--sp-7);
+  }
+  .vp-finalcta__btn {
+    min-width: 200px;
+    justify-content: center;
+  }
+</style>

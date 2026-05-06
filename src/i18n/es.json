@@ -154,6 +154,55 @@
     "primary": "Probar el demo",
     "secondary": "Agendar una llamada"
   },
+  "verticals_pages": {
+    "restaurant": {
+      "meta": {
+        "title": "IA en WhatsApp para Restaurantes — The Clam AI",
+        "description": "Un asistente de IA en WhatsApp que toma pedidos, reserva mesas, contesta dudas del menú y atiende a cada cliente en 20+ idiomas. En vivo en 72 horas."
+      },
+      "hero": {
+        "eyebrow": "Para Restaurantes",
+        "title_pre": "El anfitrión IA",
+        "title_strong": "que tu restaurante ya necesitaba.",
+        "sub": "Toma pedidos, reserva mesas, contesta dudas, no pierde un cliente. En WhatsApp. En cualquier idioma.",
+        "cta_primary": "Probar el demo en WhatsApp",
+        "cta_help": "Toca y conversa con el bot — sin registro, sin tarjeta."
+      },
+      "pains": {
+        "eyebrow": "Por qué los restaurantes pierden",
+        "title": "Los 3 mensajes que te cuestan mesas cada semana.",
+        "items": [
+          { "title": "\"¿A qué hora abren?\"", "body": "Lo preguntan 50× a la semana. Cada uno sin respuesta es un cliente que no llega." },
+          { "title": "\"¿Tienen mesa para dos a las 8?\"", "body": "Si la respuesta tarda 30 min, ya reservaron en otro lado." },
+          { "title": "\"¿Puedo ver el menú?\"", "body": "Si no ven precios rápido, no vienen." }
+        ]
+      },
+      "capabilities": {
+        "eyebrow": "Qué hace el bot",
+        "title": "Cada mensaje del cliente, atendido.",
+        "items": [
+          { "title": "Toma pedidos", "body": "Captura el plato, modificaciones, pedidos especiales. Manda el pedido estructurado a tu POS o cocina." },
+          { "title": "Reserva mesas", "body": "Checa disponibilidad, confirma hora y cantidad, manda el recordatorio." },
+          { "title": "Contesta dudas del menú", "body": "Alérgenos, precios, opciones vegetarianas, ingredientes. Siempre con tu tono." },
+          { "title": "20+ idiomas", "body": "Turista pregunta en alemán, el bot responde en alemán. Igual con francés, italiano, mandarín." },
+          { "title": "Handoff inteligente", "body": "¿Caso complejo? Pasa al humano con todo el contexto, sin que el cliente repita." },
+          { "title": "Integración POS", "body": "Se conecta con tu sistema de cocina. Sin retipear, sin relay humano." }
+        ]
+      },
+      "screenshots": {
+        "eyebrow": "Conversaciones reales",
+        "title": "Cómo se ve en el WhatsApp de tu cliente.",
+        "sub": "Mockups basados en flujos reales del demo — muy pronto. Pruébalo ya para verlo tú mismo."
+      },
+      "finalcta": {
+        "eyebrow": "Pruébalo ahora",
+        "title": "Habla con el demo como si fueras un cliente.",
+        "sub": "Toca abajo — el bot responde como si tu restaurante ya estuviera en WhatsApp.",
+        "primary": "Probar el demo de restaurante",
+        "secondary": "Empezar con mi restaurante"
+      }
+    }
+  },
   "footer": {
     "tagline": "IA conversacional para cualquier negocio.",
     "product": "Producto",

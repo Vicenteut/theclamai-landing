@@ -154,6 +154,55 @@
     "primary": "Try the demo",
     "secondary": "Book a call"
   },
+  "verticals_pages": {
+    "restaurant": {
+      "meta": {
+        "title": "WhatsApp AI for Restaurants — The Clam AI",
+        "description": "An AI assistant on WhatsApp that takes orders, books tables, answers menu questions, and handles every guest message in 20+ languages. Live in 72 hours."
+      },
+      "hero": {
+        "eyebrow": "For Restaurants",
+        "title_pre": "The AI host",
+        "title_strong": "your restaurant already needs.",
+        "sub": "Takes orders, books tables, answers questions, never misses a guest. On WhatsApp. In any language.",
+        "cta_primary": "Try the demo on WhatsApp",
+        "cta_help": "Tap and chat with the bot — no signup, no card."
+      },
+      "pains": {
+        "eyebrow": "Why restaurants fall behind",
+        "title": "The 3 messages costing you tables every week.",
+        "items": [
+          { "title": "\"What time do you open?\"", "body": "Asked 50× a week. Each unanswered one is a lost cover." },
+          { "title": "\"Do you have a table for two at 8?\"", "body": "If the answer takes 30 min, they booked someone else." },
+          { "title": "\"Can I see the menu?\"", "body": "If they don't see prices fast, they don't come at all." }
+        ]
+      },
+      "capabilities": {
+        "eyebrow": "What the bot does",
+        "title": "Every guest message, handled.",
+        "items": [
+          { "title": "Takes orders", "body": "Captures the dish, modifiers, special requests. Sends a structured order to your POS or kitchen." },
+          { "title": "Books tables", "body": "Checks your availability, confirms time and party size, sends the reminder." },
+          { "title": "Answers menu questions", "body": "Allergens, prices, vegan options, ingredients. Always on-brand." },
+          { "title": "20+ languages", "body": "Tourist asks in German, bot replies in German. Same for French, Italian, Mandarin." },
+          { "title": "Smart human handoff", "body": "Complex case? Hands off to your team with full context, never makes the guest repeat." },
+          { "title": "POS integration", "body": "Plugs into your kitchen system. No double-typing, no human relay." }
+        ]
+      },
+      "screenshots": {
+        "eyebrow": "Real conversations",
+        "title": "What it looks like in your guest's WhatsApp.",
+        "sub": "Mockups based on real demo flows — coming soon. Try the bot now to see it yourself."
+      },
+      "finalcta": {
+        "eyebrow": "Try it now",
+        "title": "Talk to the demo as a guest.",
+        "sub": "Tap below — the bot replies as if your restaurant was already on WhatsApp.",
+        "primary": "Try the restaurant demo",
+        "secondary": "Get started for my restaurant"
+      }
+    }
+  },
   "footer": {
     "tagline": "Conversational AI for any business.",
     "product": "Product",

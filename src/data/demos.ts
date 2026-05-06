@@ -21,6 +21,25 @@ export interface VerticalDemo {
   icon: string;
 }
 
+/** Verticals that have a dedicated sub-page (used by [vertical] dynamic routes). */
+export const PAGE_ENABLED_VERTICALS: VerticalId[] = ['restaurant'];
+
+/** URL slug ↔ vertical id. URL slugs are friendlier (plural, hyphenated). */
+export const VERTICAL_SLUGS: Record<VerticalId, string> = {
+  restaurant: 'restaurants',
+  hotel: 'hotels',
+  pharmacy: 'pharmacies',
+  real_estate: 'real-estate',
+  car_dealer: 'cars',
+};
+
+export function slugToVerticalId(slug: string): VerticalId | null {
+  const entry = (Object.entries(VERTICAL_SLUGS) as [VerticalId, string][]).find(
+    ([, s]) => s === slug,
+  );
+  return entry?.[0] ?? null;
+}
+
 export const VERTICALS: VerticalDemo[] = [
   {
     id: 'restaurant',
