@@ -778,5 +778,11 @@
     "links_terms": "Terms",
     "links_contact": "Contact",
     "rights": "All rights reserved."
+  },
+  "consent": {
+    "message": "We use privacy-friendly analytics to improve this site. No analytics loads until you accept.",
+    "accept": "Accept",
+    "reject": "Reject",
+    "privacy": "Privacy"
   }
 }
