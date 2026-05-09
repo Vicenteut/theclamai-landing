@@ -1,14 +1,13 @@
 ---
 import LangToggle from './LangToggle.astro';
 import { getLocale, dict } from '../i18n';
-import { WA_NUMBER, VERTICALS } from '../data/demos';
+import { waGenericDemoLink, waLink, VERTICALS } from '../data/demos';
 
 const lang = getLocale(Astro.url);
 const t = dict(lang);
 
-const v = VERTICALS[0];
-const prefill = encodeURIComponent(lang === 'es' ? v.prefill_es : v.prefill_en);
-const WA_LINK = `https://wa.me/${WA_NUMBER}?text=${prefill}`;
+const WA_LINK = waGenericDemoLink(lang);
+const demoLinks = Object.fromEntries(VERTICALS.map((v) => [v.id, waLink(v.id, lang)]));
 
 const links = [
   { href: "#how", label: t.nav.how_it_works },
@@ -49,6 +48,7 @@ const ctaLabel = t.nav.cta;
 
     <!-- CTA (desktop) -->
     <a href={WA_LINK} target="_blank" rel="noopener noreferrer" class="nav-cta nav-cta-desktop"
+       data-demo-cta
        data-track="cta_click_navbar" data-track-source="desktop">
       {ctaLabel} →
     </a>
@@ -88,11 +88,34 @@ const ctaLabel = t.nav.cta;
     </div>
     <a href={WA_LINK} target="_blank" rel="noopener noreferrer" class="nav-cta"
        style="display:block;text-align:center;margin-top:8px;"
+       data-demo-cta
        data-track="cta_click_navbar" data-track-source="mobile">
       {ctaLabel} →
     </a>
   </div>
 </nav>
+
+<script is:inline define:vars={{ demoLinks, WA_LINK }}>
+  (() => {
+    const storageKey = 'clamai:selected-vertical';
+    const updateDemoLinks = (vertical) => {
+      const href = demoLinks[vertical] || WA_LINK;
+      document.querySelectorAll('[data-demo-cta]').forEach((link) => {
+        link.setAttribute('href', href);
+      });
+    };
+
+    try {
+      updateDemoLinks(window.localStorage?.getItem(storageKey));
+    } catch (_) {
+      updateDemoLinks(null);
+    }
+
+    window.addEventListener('clamai:vertical-changed', (event) => {
+      updateDemoLinks(event.detail?.vertical);
+    });
+  })();
+</script>
 
 <style>
   /* Desktop link base */

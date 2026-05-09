@@ -6,6 +6,11 @@
 
 export const WA_NUMBER = '5016105086'; // Belize — TheClam AI demo bot (production)
 
+export const GENERIC_DEMO_PREFILL = {
+  en: 'Show me a demo for my business',
+  es: 'Muéstrame un demo para mi negocio',
+} as const;
+
 export type VerticalId =
   | 'restaurant'
   | 'hotel'
@@ -78,6 +83,11 @@ export const BOOK_CALL_PREFILL = {
   en: "Hi! I'd like to book a call to learn more about The Clam AI for my business.",
   es: '¡Hola! Quiero agendar una llamada para saber más sobre The Clam AI para mi negocio.',
 } as const;
+
+/** Build a generic wa.me demo link when no vertical has been selected. */
+export function waGenericDemoLink(lang: 'en' | 'es'): string {
+  return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(GENERIC_DEMO_PREFILL[lang])}`;
+}
 
 /** Build a wa.me link with a prefilled message for a vertical + locale. */
 export function waLink(verticalId: VerticalId, lang: 'en' | 'es'): string {

@@ -1,14 +1,13 @@
 ---
 import { getLocale, dict } from '../i18n';
-import { WA_NUMBER, VERTICALS, waBookCallLink } from '../data/demos';
+import { waBookCallLink, waGenericDemoLink, waLink, VERTICALS } from '../data/demos';
 
 const lang = getLocale(Astro.url);
 const t = dict(lang);
 
-// Primary: try the demo (restaurant prefill — Hero is where users pick a vertical).
-const v = VERTICALS[0];
-const prefill = encodeURIComponent(lang === 'es' ? v.prefill_es : v.prefill_en);
-const tryDemoLink = `https://wa.me/${WA_NUMBER}?text=${prefill}`;
+// Primary: generic until the visitor selects a vertical in the hero.
+const tryDemoLink = waGenericDemoLink(lang);
+const demoLinks = Object.fromEntries(VERTICALS.map((v) => [v.id, waLink(v.id, lang)]));
 
 // Secondary: book a call — also WhatsApp, different prefill.
 const bookCallLink = waBookCallLink(lang);
@@ -23,6 +22,7 @@ const bookCallLink = waBookCallLink(lang);
 
   <div class="cta__actions">
     <a href={tryDemoLink} target="_blank" rel="noopener noreferrer" class="btn-primary cta__btn"
+       data-demo-cta
        data-track="cta_click_finalcta" data-track-action="try_demo">
       {t.final_cta.primary} →
     </a>
@@ -32,6 +32,28 @@ const bookCallLink = waBookCallLink(lang);
     </a>
   </div>
 </section>
+
+<script is:inline define:vars={{ demoLinks, tryDemoLink }}>
+  (() => {
+    const storageKey = 'clamai:selected-vertical';
+    const updateDemoLinks = (vertical) => {
+      const href = demoLinks[vertical] || tryDemoLink;
+      document.querySelectorAll('[data-demo-cta]').forEach((link) => {
+        link.setAttribute('href', href);
+      });
+    };
+
+    try {
+      updateDemoLinks(window.localStorage?.getItem(storageKey));
+    } catch (_) {
+      updateDemoLinks(null);
+    }
+
+    window.addEventListener('clamai:vertical-changed', (event) => {
+      updateDemoLinks(event.detail?.vertical);
+    });
+  })();
+</script>
 
 <style>
   .cta {
