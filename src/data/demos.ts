@@ -32,16 +32,24 @@ export interface VerticalDemo {
 }
 
 /** Verticals that have a dedicated sub-page (used by [vertical] dynamic routes). */
-export const PAGE_ENABLED_VERTICALS: VerticalId[] = ['restaurant'];
+export const PAGE_ENABLED_VERTICALS: VerticalId[] = [
+  'hotel',
+  'airbnb',
+  'restaurant',
+  'real_estate',
+  'pharmacy',
+  'car_sales',
+  'doctores',
+];
 
 /** URL slug ↔ vertical id. URL slugs are friendlier (plural, hyphenated). */
 export const VERTICAL_SLUGS: Record<VerticalId, string> = {
-  hotel: 'hotels',
+  hotel: 'hotel',
   airbnb: 'airbnb',
-  restaurant: 'restaurants',
-  real_estate: 'real-estate',
-  pharmacy: 'pharmacies',
-  car_sales: 'cars',
+  restaurant: 'restaurant',
+  real_estate: 'real_estate',
+  pharmacy: 'pharmacy',
+  car_sales: 'car_sales',
   doctores: 'doctores',
 };
 

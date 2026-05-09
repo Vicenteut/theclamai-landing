@@ -1,6 +1,6 @@
 ---
 import { getLocale, dict } from '../i18n';
-import { VERTICALS } from '../data/demos';
+import { VERTICALS, VERTICAL_SLUGS } from '../data/demos';
 
 const lang = getLocale(Astro.url);
 const t = dict(lang);
@@ -27,8 +27,10 @@ const ICON_PATHS: Record<string, string> = {
   <ul class="vert__grid">
     {VERTICALS.map((v) => {
       const info = items[v.id];
+      const href = lang === 'es' ? `/es/verticals/${VERTICAL_SLUGS[v.id]}/` : `/verticals/${VERTICAL_SLUGS[v.id]}/`;
       return (
-        <li class="vert__card">
+        <li>
+          <a href={href} class="vert__card">
           <span class="vert__icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <path d={ICON_PATHS[v.icon]} />
@@ -37,6 +39,7 @@ const ICON_PATHS: Record<string, string> = {
           <h3 class="vert__name">{info.name}</h3>
           <p class="vert__use">{info.use}</p>
           <span class={`vert__status vert__status--${v.status}`}>{t.verticals_section.status[v.status]}</span>
+          </a>
         </li>
       );
     })}
@@ -88,6 +91,7 @@ const ICON_PATHS: Record<string, string> = {
     gap: var(--sp-4);
   }
   .vert__card {
+    text-decoration: none;
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--r-lg);

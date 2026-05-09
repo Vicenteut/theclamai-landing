@@ -323,6 +323,450 @@
         "primary": "Probar el demo de restaurante",
         "secondary": "Empezar con mi restaurante"
       }
+    },
+    "hotel": {
+      "meta": {
+        "title": "IA en WhatsApp para Hoteles — The Clam AI",
+        "description": "Responde dudas de huéspedes, revisa disponibilidad, apoya reservas y pasa al equipo cuando hace falta."
+      },
+      "hero": {
+        "eyebrow": "Para Hoteles",
+        "title_pre": "El concierge IA",
+        "title_strong": "que tu hotel ya necesitaba.",
+        "sub": "Responde dudas de huéspedes, revisa disponibilidad, apoya reservas y pasa al equipo cuando hace falta.",
+        "cta_primary": "Probar el demo de hotel en WhatsApp",
+        "cta_help": "Toca y conversa con el bot — sin registro, sin tarjeta."
+      },
+      "pains": {
+        "eyebrow": "Dónde se pierden mensajes",
+        "title": "Los mensajes de clientes que tu equipo no debería perseguir manualmente.",
+        "items": [
+          {
+            "title": "Preguntas repetidas",
+            "body": "Horarios, disponibilidad, precios, reglas y detalles básicos llegan todo el día."
+          },
+          {
+            "title": "Seguimiento lento",
+            "body": "Si la respuesta tarda demasiado, el cliente se va con otra opción."
+          },
+          {
+            "title": "Handoff desordenado",
+            "body": "Cuando entra el equipo, necesita todo el contexto sin preguntar dos veces."
+          }
+        ]
+      },
+      "capabilities": {
+        "eyebrow": "Qué hace el bot",
+        "title": "Cada mensaje del cliente, atendido con contexto.",
+        "items": [
+          {
+            "title": "Contesta preguntas",
+            "body": "Usa los datos de tu negocio para responder con precisión y tu tono."
+          },
+          {
+            "title": "Captura solicitudes estructuradas",
+            "body": "Convierte chats desordenados en leads, reservas o pedidos utilizables."
+          },
+          {
+            "title": "Agenda o deriva el siguiente paso",
+            "body": "Mueve al cliente a la acción correcta en vez de dejar el chat colgado."
+          },
+          {
+            "title": "20+ idiomas",
+            "body": "Detecta el idioma del cliente y responde igual."
+          },
+          {
+            "title": "Handoff inteligente",
+            "body": "Escala casos sensibles o de baja confianza con contexto."
+          },
+          {
+            "title": "Visibilidad en dashboard",
+            "body": "Mantiene conversaciones, leads y resultados visibles para el dueño."
+          }
+        ]
+      },
+      "screenshots": {
+        "eyebrow": "Flujo en vivo",
+        "title": "Cómo se ve en el WhatsApp de tu cliente.",
+        "sub": "Prueba el demo para ver el flujo en vivo de este vertical."
+      },
+      "finalcta": {
+        "eyebrow": "Pruébalo ahora",
+        "title": "Habla con el demo como si fueras un cliente.",
+        "sub": "Toca abajo y mira cómo el bot atiende una conversación real de WhatsApp.",
+        "primary": "Probar el demo de hotel",
+        "secondary": "Empezar con mi hotel"
+      }
+    },
+    "airbnb": {
+      "meta": {
+        "title": "IA en WhatsApp para Airbnb Hosts — The Clam AI",
+        "description": "Responde dudas de check-in, comparte reglas de la casa, da recomendaciones locales y escala al humano cuando hace falta."
+      },
+      "hero": {
+        "eyebrow": "Para Airbnb Hosts",
+        "title_pre": "El asistente IA de huéspedes",
+        "title_strong": "que tu renta ya necesitaba.",
+        "sub": "Responde dudas de check-in, comparte reglas de la casa, da recomendaciones locales y escala al humano cuando hace falta.",
+        "cta_primary": "Probar el demo de Airbnb en WhatsApp",
+        "cta_help": "Toca y conversa con el bot — sin registro, sin tarjeta."
+      },
+      "pains": {
+        "eyebrow": "Dónde se pierden mensajes",
+        "title": "Los mensajes de clientes que tu equipo no debería perseguir manualmente.",
+        "items": [
+          {
+            "title": "Preguntas repetidas",
+            "body": "Horarios, disponibilidad, precios, reglas y detalles básicos llegan todo el día."
+          },
+          {
+            "title": "Seguimiento lento",
+            "body": "Si la respuesta tarda demasiado, el cliente se va con otra opción."
+          },
+          {
+            "title": "Handoff desordenado",
+            "body": "Cuando entra el equipo, necesita todo el contexto sin preguntar dos veces."
+          }
+        ]
+      },
+      "capabilities": {
+        "eyebrow": "Qué hace el bot",
+        "title": "Cada mensaje del cliente, atendido con contexto.",
+        "items": [
+          {
+            "title": "Contesta preguntas",
+            "body": "Usa los datos de tu negocio para responder con precisión y tu tono."
+          },
+          {
+            "title": "Captura solicitudes estructuradas",
+            "body": "Convierte chats desordenados en leads, reservas o pedidos utilizables."
+          },
+          {
+            "title": "Agenda o deriva el siguiente paso",
+            "body": "Mueve al cliente a la acción correcta en vez de dejar el chat colgado."
+          },
+          {
+            "title": "20+ idiomas",
+            "body": "Detecta el idioma del cliente y responde igual."
+          },
+          {
+            "title": "Handoff inteligente",
+            "body": "Escala casos sensibles o de baja confianza con contexto."
+          },
+          {
+            "title": "Visibilidad en dashboard",
+            "body": "Mantiene conversaciones, leads y resultados visibles para el dueño."
+          }
+        ]
+      },
+      "screenshots": {
+        "eyebrow": "Flujo en vivo",
+        "title": "Cómo se ve en el WhatsApp de tu cliente.",
+        "sub": "Prueba el demo para ver el flujo en vivo de este vertical."
+      },
+      "finalcta": {
+        "eyebrow": "Pruébalo ahora",
+        "title": "Habla con el demo como si fueras un cliente.",
+        "sub": "Toca abajo y mira cómo el bot atiende una conversación real de WhatsApp.",
+        "primary": "Probar el demo de Airbnb",
+        "secondary": "Empezar con mi renta"
+      }
+    },
+    "real_estate": {
+      "meta": {
+        "title": "IA en WhatsApp para Inmobiliarias — The Clam AI",
+        "description": "Califica compradores e inquilinos, comparte detalles, captura presupuesto y agenda visitas por WhatsApp."
+      },
+      "hero": {
+        "eyebrow": "Para Inmobiliarias",
+        "title_pre": "El asistente IA de ventas",
+        "title_strong": "que tus propiedades ya necesitaban.",
+        "sub": "Califica compradores e inquilinos, comparte detalles, captura presupuesto y agenda visitas por WhatsApp.",
+        "cta_primary": "Probar el demo inmobiliario en WhatsApp",
+        "cta_help": "Toca y conversa con el bot — sin registro, sin tarjeta."
+      },
+      "pains": {
+        "eyebrow": "Dónde se pierden mensajes",
+        "title": "Los mensajes de clientes que tu equipo no debería perseguir manualmente.",
+        "items": [
+          {
+            "title": "Preguntas repetidas",
+            "body": "Horarios, disponibilidad, precios, reglas y detalles básicos llegan todo el día."
+          },
+          {
+            "title": "Seguimiento lento",
+            "body": "Si la respuesta tarda demasiado, el cliente se va con otra opción."
+          },
+          {
+            "title": "Handoff desordenado",
+            "body": "Cuando entra el equipo, necesita todo el contexto sin preguntar dos veces."
+          }
+        ]
+      },
+      "capabilities": {
+        "eyebrow": "Qué hace el bot",
+        "title": "Cada mensaje del cliente, atendido con contexto.",
+        "items": [
+          {
+            "title": "Contesta preguntas",
+            "body": "Usa los datos de tu negocio para responder con precisión y tu tono."
+          },
+          {
+            "title": "Captura solicitudes estructuradas",
+            "body": "Convierte chats desordenados en leads, reservas o pedidos utilizables."
+          },
+          {
+            "title": "Agenda o deriva el siguiente paso",
+            "body": "Mueve al cliente a la acción correcta en vez de dejar el chat colgado."
+          },
+          {
+            "title": "20+ idiomas",
+            "body": "Detecta el idioma del cliente y responde igual."
+          },
+          {
+            "title": "Handoff inteligente",
+            "body": "Escala casos sensibles o de baja confianza con contexto."
+          },
+          {
+            "title": "Visibilidad en dashboard",
+            "body": "Mantiene conversaciones, leads y resultados visibles para el dueño."
+          }
+        ]
+      },
+      "screenshots": {
+        "eyebrow": "Flujo en vivo",
+        "title": "Cómo se ve en el WhatsApp de tu cliente.",
+        "sub": "Prueba el demo para ver el flujo en vivo de este vertical."
+      },
+      "finalcta": {
+        "eyebrow": "Pruébalo ahora",
+        "title": "Habla con el demo como si fueras un cliente.",
+        "sub": "Toca abajo y mira cómo el bot atiende una conversación real de WhatsApp.",
+        "primary": "Probar el demo inmobiliario",
+        "secondary": "Empezar con mi inmobiliaria"
+      }
+    },
+    "pharmacy": {
+      "meta": {
+        "title": "IA en WhatsApp para Farmacias — The Clam AI",
+        "description": "Responde dudas de productos, revisa disponibilidad, registra solicitudes de receta y coordina recogidas."
+      },
+      "hero": {
+        "eyebrow": "Para Farmacias",
+        "title_pre": "El asistente IA de mostrador",
+        "title_strong": "que tu farmacia ya necesitaba.",
+        "sub": "Responde dudas de productos, revisa disponibilidad, registra solicitudes de receta y coordina recogidas.",
+        "cta_primary": "Probar el demo de farmacia en WhatsApp",
+        "cta_help": "Toca y conversa con el bot — sin registro, sin tarjeta."
+      },
+      "pains": {
+        "eyebrow": "Dónde se pierden mensajes",
+        "title": "Los mensajes de clientes que tu equipo no debería perseguir manualmente.",
+        "items": [
+          {
+            "title": "Preguntas repetidas",
+            "body": "Horarios, disponibilidad, precios, reglas y detalles básicos llegan todo el día."
+          },
+          {
+            "title": "Seguimiento lento",
+            "body": "Si la respuesta tarda demasiado, el cliente se va con otra opción."
+          },
+          {
+            "title": "Handoff desordenado",
+            "body": "Cuando entra el equipo, necesita todo el contexto sin preguntar dos veces."
+          }
+        ]
+      },
+      "capabilities": {
+        "eyebrow": "Qué hace el bot",
+        "title": "Cada mensaje del cliente, atendido con contexto.",
+        "items": [
+          {
+            "title": "Contesta preguntas",
+            "body": "Usa los datos de tu negocio para responder con precisión y tu tono."
+          },
+          {
+            "title": "Captura solicitudes estructuradas",
+            "body": "Convierte chats desordenados en leads, reservas o pedidos utilizables."
+          },
+          {
+            "title": "Agenda o deriva el siguiente paso",
+            "body": "Mueve al cliente a la acción correcta en vez de dejar el chat colgado."
+          },
+          {
+            "title": "20+ idiomas",
+            "body": "Detecta el idioma del cliente y responde igual."
+          },
+          {
+            "title": "Handoff inteligente",
+            "body": "Escala casos sensibles o de baja confianza con contexto."
+          },
+          {
+            "title": "Visibilidad en dashboard",
+            "body": "Mantiene conversaciones, leads y resultados visibles para el dueño."
+          }
+        ]
+      },
+      "screenshots": {
+        "eyebrow": "Flujo en vivo",
+        "title": "Cómo se ve en el WhatsApp de tu cliente.",
+        "sub": "Prueba el demo para ver el flujo en vivo de este vertical."
+      },
+      "finalcta": {
+        "eyebrow": "Pruébalo ahora",
+        "title": "Habla con el demo como si fueras un cliente.",
+        "sub": "Toca abajo y mira cómo el bot atiende una conversación real de WhatsApp.",
+        "primary": "Probar el demo de farmacia",
+        "secondary": "Empezar con mi farmacia"
+      }
+    },
+    "car_sales": {
+      "meta": {
+        "title": "IA en WhatsApp para Concesionarios — The Clam AI",
+        "description": "Califica leads, comparte inventario, responde dudas de financiamiento y agenda pruebas de manejo."
+      },
+      "hero": {
+        "eyebrow": "Para Concesionarios",
+        "title_pre": "El asistente IA de sala",
+        "title_strong": "que tu concesionario ya necesitaba.",
+        "sub": "Califica leads, comparte inventario, responde dudas de financiamiento y agenda pruebas de manejo.",
+        "cta_primary": "Probar el demo de autos en WhatsApp",
+        "cta_help": "Toca y conversa con el bot — sin registro, sin tarjeta."
+      },
+      "pains": {
+        "eyebrow": "Dónde se pierden mensajes",
+        "title": "Los mensajes de clientes que tu equipo no debería perseguir manualmente.",
+        "items": [
+          {
+            "title": "Preguntas repetidas",
+            "body": "Horarios, disponibilidad, precios, reglas y detalles básicos llegan todo el día."
+          },
+          {
+            "title": "Seguimiento lento",
+            "body": "Si la respuesta tarda demasiado, el cliente se va con otra opción."
+          },
+          {
+            "title": "Handoff desordenado",
+            "body": "Cuando entra el equipo, necesita todo el contexto sin preguntar dos veces."
+          }
+        ]
+      },
+      "capabilities": {
+        "eyebrow": "Qué hace el bot",
+        "title": "Cada mensaje del cliente, atendido con contexto.",
+        "items": [
+          {
+            "title": "Contesta preguntas",
+            "body": "Usa los datos de tu negocio para responder con precisión y tu tono."
+          },
+          {
+            "title": "Captura solicitudes estructuradas",
+            "body": "Convierte chats desordenados en leads, reservas o pedidos utilizables."
+          },
+          {
+            "title": "Agenda o deriva el siguiente paso",
+            "body": "Mueve al cliente a la acción correcta en vez de dejar el chat colgado."
+          },
+          {
+            "title": "20+ idiomas",
+            "body": "Detecta el idioma del cliente y responde igual."
+          },
+          {
+            "title": "Handoff inteligente",
+            "body": "Escala casos sensibles o de baja confianza con contexto."
+          },
+          {
+            "title": "Visibilidad en dashboard",
+            "body": "Mantiene conversaciones, leads y resultados visibles para el dueño."
+          }
+        ]
+      },
+      "screenshots": {
+        "eyebrow": "Flujo en vivo",
+        "title": "Cómo se ve en el WhatsApp de tu cliente.",
+        "sub": "Prueba el demo para ver el flujo en vivo de este vertical."
+      },
+      "finalcta": {
+        "eyebrow": "Pruébalo ahora",
+        "title": "Habla con el demo como si fueras un cliente.",
+        "sub": "Toca abajo y mira cómo el bot atiende una conversación real de WhatsApp.",
+        "primary": "Probar el demo de autos",
+        "secondary": "Empezar con mi concesionario"
+      }
+    },
+    "doctores": {
+      "meta": {
+        "title": "IA en WhatsApp para Doctores y Clínicas — The Clam AI",
+        "description": "Agenda citas, responde preguntas comunes, recoge intención del paciente y deriva casos sensibles al equipo."
+      },
+      "hero": {
+        "eyebrow": "Para Doctores y Clínicas",
+        "title_pre": "La recepción IA",
+        "title_strong": "que tu clínica ya necesitaba.",
+        "sub": "Agenda citas, responde preguntas comunes, recoge intención del paciente y deriva casos sensibles al equipo.",
+        "cta_primary": "Probar el demo de clínica en WhatsApp",
+        "cta_help": "Toca y conversa con el bot — sin registro, sin tarjeta."
+      },
+      "pains": {
+        "eyebrow": "Dónde se pierden mensajes",
+        "title": "Los mensajes de clientes que tu equipo no debería perseguir manualmente.",
+        "items": [
+          {
+            "title": "Preguntas repetidas",
+            "body": "Horarios, disponibilidad, precios, reglas y detalles básicos llegan todo el día."
+          },
+          {
+            "title": "Seguimiento lento",
+            "body": "Si la respuesta tarda demasiado, el cliente se va con otra opción."
+          },
+          {
+            "title": "Handoff desordenado",
+            "body": "Cuando entra el equipo, necesita todo el contexto sin preguntar dos veces."
+          }
+        ]
+      },
+      "capabilities": {
+        "eyebrow": "Qué hace el bot",
+        "title": "Cada mensaje del cliente, atendido con contexto.",
+        "items": [
+          {
+            "title": "Contesta preguntas",
+            "body": "Usa los datos de tu negocio para responder con precisión y tu tono."
+          },
+          {
+            "title": "Captura solicitudes estructuradas",
+            "body": "Convierte chats desordenados en leads, reservas o pedidos utilizables."
+          },
+          {
+            "title": "Agenda o deriva el siguiente paso",
+            "body": "Mueve al cliente a la acción correcta en vez de dejar el chat colgado."
+          },
+          {
+            "title": "20+ idiomas",
+            "body": "Detecta el idioma del cliente y responde igual."
+          },
+          {
+            "title": "Handoff inteligente",
+            "body": "Escala casos sensibles o de baja confianza con contexto."
+          },
+          {
+            "title": "Visibilidad en dashboard",
+            "body": "Mantiene conversaciones, leads y resultados visibles para el dueño."
+          }
+        ]
+      },
+      "screenshots": {
+        "eyebrow": "Flujo en vivo",
+        "title": "Cómo se ve en el WhatsApp de tu cliente.",
+        "sub": "Prueba el demo para ver el flujo en vivo de este vertical."
+      },
+      "finalcta": {
+        "eyebrow": "Pruébalo ahora",
+        "title": "Habla con el demo como si fueras un cliente.",
+        "sub": "Toca abajo y mira cómo el bot atiende una conversación real de WhatsApp.",
+        "primary": "Probar el demo de clínica",
+        "secondary": "Empezar con mi clínica"
+      }
     }
   },
   "footer": {

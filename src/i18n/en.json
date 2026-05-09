@@ -323,6 +323,450 @@
         "primary": "Try the restaurant demo",
         "secondary": "Get started for my restaurant"
       }
+    },
+    "hotel": {
+      "meta": {
+        "title": "WhatsApp AI for Hotels — The Clam AI",
+        "description": "Answers guest questions, checks availability, supports bookings, and hands off cleanly to staff on WhatsApp."
+      },
+      "hero": {
+        "eyebrow": "For Hotels",
+        "title_pre": "The AI concierge",
+        "title_strong": "your hotel already needs.",
+        "sub": "Answers guest questions, checks availability, supports bookings, and hands off cleanly to staff on WhatsApp.",
+        "cta_primary": "Try the hotel demo on WhatsApp",
+        "cta_help": "Tap and chat with the bot — no signup, no card."
+      },
+      "pains": {
+        "eyebrow": "Where messages get lost",
+        "title": "The customer messages your team should not have to chase manually.",
+        "items": [
+          {
+            "title": "Repeated questions",
+            "body": "Hours, availability, pricing, rules, and basic details arrive all day."
+          },
+          {
+            "title": "Slow follow-up",
+            "body": "If the reply takes too long, the customer moves to another option."
+          },
+          {
+            "title": "Messy handoff",
+            "body": "When staff steps in, they need the full context without asking twice."
+          }
+        ]
+      },
+      "capabilities": {
+        "eyebrow": "What the bot does",
+        "title": "Every customer message, handled with context.",
+        "items": [
+          {
+            "title": "Answers FAQs",
+            "body": "Uses your business data to reply accurately in your tone."
+          },
+          {
+            "title": "Captures structured requests",
+            "body": "Turns messy WhatsApp chats into usable lead, booking, or order details."
+          },
+          {
+            "title": "Books or routes next steps",
+            "body": "Moves the customer to the right action instead of leaving the chat hanging."
+          },
+          {
+            "title": "20+ languages",
+            "body": "Detects the customer language and replies in kind."
+          },
+          {
+            "title": "Smart human handoff",
+            "body": "Escalates low-confidence or sensitive cases with context."
+          },
+          {
+            "title": "Dashboard visibility",
+            "body": "Keeps conversations, leads, and outcomes visible to the business owner."
+          }
+        ]
+      },
+      "screenshots": {
+        "eyebrow": "Live flow",
+        "title": "What it looks like in your customer's WhatsApp.",
+        "sub": "Try the demo to see the live flow for this vertical."
+      },
+      "finalcta": {
+        "eyebrow": "Try it now",
+        "title": "Talk to the demo as a customer.",
+        "sub": "Tap below and see how the bot handles a real WhatsApp conversation.",
+        "primary": "Try the hotel demo",
+        "secondary": "Get started for my hotel"
+      }
+    },
+    "airbnb": {
+      "meta": {
+        "title": "WhatsApp AI for Airbnb Hosts — The Clam AI",
+        "description": "Answers check-in questions, shares house rules, handles local recommendations, and escalates when guests need a human."
+      },
+      "hero": {
+        "eyebrow": "For Airbnb Hosts",
+        "title_pre": "The AI guest assistant",
+        "title_strong": "your rental already needs.",
+        "sub": "Answers check-in questions, shares house rules, handles local recommendations, and escalates when guests need a human.",
+        "cta_primary": "Try the Airbnb demo on WhatsApp",
+        "cta_help": "Tap and chat with the bot — no signup, no card."
+      },
+      "pains": {
+        "eyebrow": "Where messages get lost",
+        "title": "The customer messages your team should not have to chase manually.",
+        "items": [
+          {
+            "title": "Repeated questions",
+            "body": "Hours, availability, pricing, rules, and basic details arrive all day."
+          },
+          {
+            "title": "Slow follow-up",
+            "body": "If the reply takes too long, the customer moves to another option."
+          },
+          {
+            "title": "Messy handoff",
+            "body": "When staff steps in, they need the full context without asking twice."
+          }
+        ]
+      },
+      "capabilities": {
+        "eyebrow": "What the bot does",
+        "title": "Every customer message, handled with context.",
+        "items": [
+          {
+            "title": "Answers FAQs",
+            "body": "Uses your business data to reply accurately in your tone."
+          },
+          {
+            "title": "Captures structured requests",
+            "body": "Turns messy WhatsApp chats into usable lead, booking, or order details."
+          },
+          {
+            "title": "Books or routes next steps",
+            "body": "Moves the customer to the right action instead of leaving the chat hanging."
+          },
+          {
+            "title": "20+ languages",
+            "body": "Detects the customer language and replies in kind."
+          },
+          {
+            "title": "Smart human handoff",
+            "body": "Escalates low-confidence or sensitive cases with context."
+          },
+          {
+            "title": "Dashboard visibility",
+            "body": "Keeps conversations, leads, and outcomes visible to the business owner."
+          }
+        ]
+      },
+      "screenshots": {
+        "eyebrow": "Live flow",
+        "title": "What it looks like in your customer's WhatsApp.",
+        "sub": "Try the demo to see the live flow for this vertical."
+      },
+      "finalcta": {
+        "eyebrow": "Try it now",
+        "title": "Talk to the demo as a customer.",
+        "sub": "Tap below and see how the bot handles a real WhatsApp conversation.",
+        "primary": "Try the Airbnb demo",
+        "secondary": "Get started for my rental"
+      }
+    },
+    "real_estate": {
+      "meta": {
+        "title": "WhatsApp AI for Real Estate — The Clam AI",
+        "description": "Qualifies buyers and renters, shares property details, captures budget and timeline, and books visits on WhatsApp."
+      },
+      "hero": {
+        "eyebrow": "For Real Estate",
+        "title_pre": "The AI sales assistant",
+        "title_strong": "your listings already need.",
+        "sub": "Qualifies buyers and renters, shares property details, captures budget and timeline, and books visits on WhatsApp.",
+        "cta_primary": "Try the real estate demo on WhatsApp",
+        "cta_help": "Tap and chat with the bot — no signup, no card."
+      },
+      "pains": {
+        "eyebrow": "Where messages get lost",
+        "title": "The customer messages your team should not have to chase manually.",
+        "items": [
+          {
+            "title": "Repeated questions",
+            "body": "Hours, availability, pricing, rules, and basic details arrive all day."
+          },
+          {
+            "title": "Slow follow-up",
+            "body": "If the reply takes too long, the customer moves to another option."
+          },
+          {
+            "title": "Messy handoff",
+            "body": "When staff steps in, they need the full context without asking twice."
+          }
+        ]
+      },
+      "capabilities": {
+        "eyebrow": "What the bot does",
+        "title": "Every customer message, handled with context.",
+        "items": [
+          {
+            "title": "Answers FAQs",
+            "body": "Uses your business data to reply accurately in your tone."
+          },
+          {
+            "title": "Captures structured requests",
+            "body": "Turns messy WhatsApp chats into usable lead, booking, or order details."
+          },
+          {
+            "title": "Books or routes next steps",
+            "body": "Moves the customer to the right action instead of leaving the chat hanging."
+          },
+          {
+            "title": "20+ languages",
+            "body": "Detects the customer language and replies in kind."
+          },
+          {
+            "title": "Smart human handoff",
+            "body": "Escalates low-confidence or sensitive cases with context."
+          },
+          {
+            "title": "Dashboard visibility",
+            "body": "Keeps conversations, leads, and outcomes visible to the business owner."
+          }
+        ]
+      },
+      "screenshots": {
+        "eyebrow": "Live flow",
+        "title": "What it looks like in your customer's WhatsApp.",
+        "sub": "Try the demo to see the live flow for this vertical."
+      },
+      "finalcta": {
+        "eyebrow": "Try it now",
+        "title": "Talk to the demo as a customer.",
+        "sub": "Tap below and see how the bot handles a real WhatsApp conversation.",
+        "primary": "Try the real estate demo",
+        "secondary": "Get started for my office"
+      }
+    },
+    "pharmacy": {
+      "meta": {
+        "title": "WhatsApp AI for Pharmacies — The Clam AI",
+        "description": "Answers product questions, checks availability, logs prescription requests, and coordinates pickup on WhatsApp."
+      },
+      "hero": {
+        "eyebrow": "For Pharmacies",
+        "title_pre": "The AI counter assistant",
+        "title_strong": "your pharmacy already needs.",
+        "sub": "Answers product questions, checks availability, logs prescription requests, and coordinates pickup on WhatsApp.",
+        "cta_primary": "Try the pharmacy demo on WhatsApp",
+        "cta_help": "Tap and chat with the bot — no signup, no card."
+      },
+      "pains": {
+        "eyebrow": "Where messages get lost",
+        "title": "The customer messages your team should not have to chase manually.",
+        "items": [
+          {
+            "title": "Repeated questions",
+            "body": "Hours, availability, pricing, rules, and basic details arrive all day."
+          },
+          {
+            "title": "Slow follow-up",
+            "body": "If the reply takes too long, the customer moves to another option."
+          },
+          {
+            "title": "Messy handoff",
+            "body": "When staff steps in, they need the full context without asking twice."
+          }
+        ]
+      },
+      "capabilities": {
+        "eyebrow": "What the bot does",
+        "title": "Every customer message, handled with context.",
+        "items": [
+          {
+            "title": "Answers FAQs",
+            "body": "Uses your business data to reply accurately in your tone."
+          },
+          {
+            "title": "Captures structured requests",
+            "body": "Turns messy WhatsApp chats into usable lead, booking, or order details."
+          },
+          {
+            "title": "Books or routes next steps",
+            "body": "Moves the customer to the right action instead of leaving the chat hanging."
+          },
+          {
+            "title": "20+ languages",
+            "body": "Detects the customer language and replies in kind."
+          },
+          {
+            "title": "Smart human handoff",
+            "body": "Escalates low-confidence or sensitive cases with context."
+          },
+          {
+            "title": "Dashboard visibility",
+            "body": "Keeps conversations, leads, and outcomes visible to the business owner."
+          }
+        ]
+      },
+      "screenshots": {
+        "eyebrow": "Live flow",
+        "title": "What it looks like in your customer's WhatsApp.",
+        "sub": "Try the demo to see the live flow for this vertical."
+      },
+      "finalcta": {
+        "eyebrow": "Try it now",
+        "title": "Talk to the demo as a customer.",
+        "sub": "Tap below and see how the bot handles a real WhatsApp conversation.",
+        "primary": "Try the pharmacy demo",
+        "secondary": "Get started for my pharmacy"
+      }
+    },
+    "car_sales": {
+      "meta": {
+        "title": "WhatsApp AI for Car Sales — The Clam AI",
+        "description": "Qualifies leads, shares inventory, answers financing questions, and schedules test drives on WhatsApp."
+      },
+      "hero": {
+        "eyebrow": "For Car Sales",
+        "title_pre": "The AI showroom assistant",
+        "title_strong": "your dealership already needs.",
+        "sub": "Qualifies leads, shares inventory, answers financing questions, and schedules test drives on WhatsApp.",
+        "cta_primary": "Try the car sales demo on WhatsApp",
+        "cta_help": "Tap and chat with the bot — no signup, no card."
+      },
+      "pains": {
+        "eyebrow": "Where messages get lost",
+        "title": "The customer messages your team should not have to chase manually.",
+        "items": [
+          {
+            "title": "Repeated questions",
+            "body": "Hours, availability, pricing, rules, and basic details arrive all day."
+          },
+          {
+            "title": "Slow follow-up",
+            "body": "If the reply takes too long, the customer moves to another option."
+          },
+          {
+            "title": "Messy handoff",
+            "body": "When staff steps in, they need the full context without asking twice."
+          }
+        ]
+      },
+      "capabilities": {
+        "eyebrow": "What the bot does",
+        "title": "Every customer message, handled with context.",
+        "items": [
+          {
+            "title": "Answers FAQs",
+            "body": "Uses your business data to reply accurately in your tone."
+          },
+          {
+            "title": "Captures structured requests",
+            "body": "Turns messy WhatsApp chats into usable lead, booking, or order details."
+          },
+          {
+            "title": "Books or routes next steps",
+            "body": "Moves the customer to the right action instead of leaving the chat hanging."
+          },
+          {
+            "title": "20+ languages",
+            "body": "Detects the customer language and replies in kind."
+          },
+          {
+            "title": "Smart human handoff",
+            "body": "Escalates low-confidence or sensitive cases with context."
+          },
+          {
+            "title": "Dashboard visibility",
+            "body": "Keeps conversations, leads, and outcomes visible to the business owner."
+          }
+        ]
+      },
+      "screenshots": {
+        "eyebrow": "Live flow",
+        "title": "What it looks like in your customer's WhatsApp.",
+        "sub": "Try the demo to see the live flow for this vertical."
+      },
+      "finalcta": {
+        "eyebrow": "Try it now",
+        "title": "Talk to the demo as a customer.",
+        "sub": "Tap below and see how the bot handles a real WhatsApp conversation.",
+        "primary": "Try the car sales demo",
+        "secondary": "Get started for my dealership"
+      }
+    },
+    "doctores": {
+      "meta": {
+        "title": "WhatsApp AI for Doctors & Clinics — The Clam AI",
+        "description": "Books appointments, answers common questions, collects patient intent, and routes sensitive cases to staff."
+      },
+      "hero": {
+        "eyebrow": "For Doctors & Clinics",
+        "title_pre": "The AI front desk",
+        "title_strong": "your clinic already needs.",
+        "sub": "Books appointments, answers common questions, collects patient intent, and routes sensitive cases to staff.",
+        "cta_primary": "Try the clinic demo on WhatsApp",
+        "cta_help": "Tap and chat with the bot — no signup, no card."
+      },
+      "pains": {
+        "eyebrow": "Where messages get lost",
+        "title": "The customer messages your team should not have to chase manually.",
+        "items": [
+          {
+            "title": "Repeated questions",
+            "body": "Hours, availability, pricing, rules, and basic details arrive all day."
+          },
+          {
+            "title": "Slow follow-up",
+            "body": "If the reply takes too long, the customer moves to another option."
+          },
+          {
+            "title": "Messy handoff",
+            "body": "When staff steps in, they need the full context without asking twice."
+          }
+        ]
+      },
+      "capabilities": {
+        "eyebrow": "What the bot does",
+        "title": "Every customer message, handled with context.",
+        "items": [
+          {
+            "title": "Answers FAQs",
+            "body": "Uses your business data to reply accurately in your tone."
+          },
+          {
+            "title": "Captures structured requests",
+            "body": "Turns messy WhatsApp chats into usable lead, booking, or order details."
+          },
+          {
+            "title": "Books or routes next steps",
+            "body": "Moves the customer to the right action instead of leaving the chat hanging."
+          },
+          {
+            "title": "20+ languages",
+            "body": "Detects the customer language and replies in kind."
+          },
+          {
+            "title": "Smart human handoff",
+            "body": "Escalates low-confidence or sensitive cases with context."
+          },
+          {
+            "title": "Dashboard visibility",
+            "body": "Keeps conversations, leads, and outcomes visible to the business owner."
+          }
+        ]
+      },
+      "screenshots": {
+        "eyebrow": "Live flow",
+        "title": "What it looks like in your customer's WhatsApp.",
+        "sub": "Try the demo to see the live flow for this vertical."
+      },
+      "finalcta": {
+        "eyebrow": "Try it now",
+        "title": "Talk to the demo as a customer.",
+        "sub": "Tap below and see how the bot handles a real WhatsApp conversation.",
+        "primary": "Try the clinic demo",
+        "secondary": "Get started for my clinic"
+      }
     }
   },
   "footer": {
