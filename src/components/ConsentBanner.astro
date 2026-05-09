@@ -1,0 +1,123 @@
+---
+import { dict, type Locale } from '../i18n';
+
+export interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const t = dict(lang).consent;
+const privacyHref = lang === 'es' ? '/es/legal/privacy' : '/legal/privacy';
+---
+
+<div class="consent" data-consent-banner hidden>
+  <p class="consent__text">
+    {t.message}
+    <a href={privacyHref}>{t.privacy}</a>
+  </p>
+  <div class="consent__actions">
+    <button type="button" class="consent__btn consent__btn--ghost" data-consent-choice="denied">{t.reject}</button>
+    <button type="button" class="consent__btn consent__btn--primary" data-consent-choice="granted">{t.accept}</button>
+  </div>
+</div>
+
+<script>
+  (() => {
+    const key = 'clamai:analytics-consent';
+    const banner = document.querySelector('[data-consent-banner]');
+    if (!banner) return;
+
+    let current = null;
+    try {
+      current = window.localStorage?.getItem(key);
+    } catch (_) {}
+
+    if (current !== 'granted' && current !== 'denied') {
+      banner.removeAttribute('hidden');
+    }
+
+    banner.addEventListener('click', (event) => {
+      const target = event.target instanceof Element
+        ? event.target.closest('[data-consent-choice]')
+        : null;
+      if (!(target instanceof HTMLElement)) return;
+      const choice = target.dataset.consentChoice;
+      if (choice !== 'granted' && choice !== 'denied') return;
+
+      try {
+        window.localStorage?.setItem(key, choice);
+      } catch (_) {}
+      banner.setAttribute('hidden', '');
+      window.dispatchEvent(new CustomEvent('clamai:analytics-consent', { detail: { consent: choice } }));
+    });
+  })();
+</script>
+
+<style>
+  .consent {
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    z-index: 120;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 12px 14px;
+    background: rgba(10, 10, 10, 0.94);
+    border: 1px solid rgba(212, 175, 55, 0.22);
+    border-radius: 14px;
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+  .consent[hidden] { display: none; }
+  .consent__text {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 12px;
+    line-height: 1.45;
+  }
+  .consent__text a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .consent__text a:hover { text-decoration: underline; }
+  .consent__actions {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .consent__btn {
+    border: 1px solid var(--border);
+    border-radius: var(--r-pill);
+    padding: 8px 13px;
+    font: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .consent__btn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  .consent__btn--ghost {
+    background: transparent;
+    color: var(--text-muted);
+  }
+  .consent__btn--primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #000;
+  }
+  @media (max-width: 640px) {
+    .consent {
+      align-items: stretch;
+      flex-direction: column;
+    }
+    .consent__actions { justify-content: flex-end; }
+  }
+</style>

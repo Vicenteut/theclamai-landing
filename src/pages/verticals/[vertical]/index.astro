@@ -19,10 +19,10 @@ export function getStaticPaths() {
 const { vertical: slug } = Astro.params;
 const verticalId = slug ? slugToVerticalId(slug) : null;
 if (!verticalId) {
-  return Astro.redirect('/es/');
+  return Astro.redirect('/');
 }
 
-const lang = 'es';
+const lang = 'en';
 const t = dict(lang);
 const meta = t.verticals_pages[verticalId].meta;
 ---

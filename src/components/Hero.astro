@@ -1,6 +1,6 @@
 ---
 import { getLocale, dict } from '../i18n';
-import { VERTICALS, WA_NUMBER } from '../data/demos';
+import { GENERIC_DEMO_PREFILL, VERTICALS, WA_NUMBER } from '../data/demos';
 import VerticalSwitcher from './VerticalSwitcher.astro';
 import LiveDemo from './LiveDemo.astro';
 
@@ -13,18 +13,35 @@ const demoData = VERTICALS.map((v) => ({
   label: labels[v.id],
   prefill: encodeURIComponent(lang === 'es' ? v.prefill_es : v.prefill_en),
 }));
+const genericPrefill = encodeURIComponent(GENERIC_DEMO_PREFILL[lang]);
 
 const heroAlpine = `{
-  active: ${JSON.stringify(VERTICALS[0].id)},
+  active: null,
   waNumber: ${JSON.stringify(WA_NUMBER)},
   demos: ${JSON.stringify(demoData)},
+  genericPrefill: ${JSON.stringify(genericPrefill)},
+  storageKey: 'clamai:selected-vertical',
+  init() {
+    try {
+      const stored = window.localStorage?.getItem(this.storageKey);
+      if (this.demos.some(x => x.id === stored)) this.active = stored;
+    } catch (_) {}
+  },
+  currentDemo() {
+    return this.demos.find(x => x.id === this.active) || null;
+  },
+  setActive(id) {
+    this.active = id;
+    try { window.localStorage?.setItem(this.storageKey, id); } catch (_) {}
+    window.dispatchEvent(new CustomEvent('clamai:vertical-changed', { detail: { vertical: id } }));
+  },
   waLink() {
-    const d = this.demos.find(x => x.id === this.active) || this.demos[0];
-    return 'https://wa.me/' + this.waNumber + '?text=' + d.prefill;
+    const d = this.currentDemo();
+    return 'https://wa.me/' + this.waNumber + '?text=' + (d ? d.prefill : this.genericPrefill);
   },
   prefillText() {
-    const d = this.demos.find(x => x.id === this.active) || this.demos[0];
-    return decodeURIComponent(d.prefill);
+    const d = this.currentDemo();
+    return decodeURIComponent(d ? d.prefill : this.genericPrefill);
   }
 }`;
 ---
