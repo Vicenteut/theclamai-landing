@@ -27,7 +27,8 @@
       "¿En vivo en 72 horas? Hagámoslo."
     ],
     "cta_primary": "Probar el demo",
-    "cta_secondary": "Agendar una llamada"
+    "cta_secondary": "Agendar una llamada",
+    "you_label": "Tú"
   },
   "switcher": {
     "label": "Tengo un…",

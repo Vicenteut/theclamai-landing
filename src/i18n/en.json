@@ -27,7 +27,8 @@
       "Live in 72 hours? Let's do it."
     ],
     "cta_primary": "Try the demo",
-    "cta_secondary": "Book a call"
+    "cta_secondary": "Book a call",
+    "you_label": "You"
   },
   "switcher": {
     "label": "I run a…",
