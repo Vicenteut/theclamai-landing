@@ -5,6 +5,8 @@ import LangToggle from './LangToggle.astro';
 const lang = getLocale(Astro.url);
 const t = dict(lang);
 const year = new Date().getFullYear();
+const privacyHref = lang === 'es' ? '/es/legal/privacy' : '/legal/privacy';
+const termsHref = lang === 'es' ? '/es/legal/terms' : '/legal/terms';
 ---
 
 <footer class="footer">
@@ -32,8 +34,8 @@ const year = new Date().getFullYear();
       <div>
         <p class="footer__h">{t.footer.links_legal}</p>
         <ul class="footer__list">
-          <li><a href="/legal/privacy" class="footer__link">{t.footer.links_privacy}</a></li>
-          <li><a href="/legal/terms" class="footer__link">{t.footer.links_terms}</a></li>
+          <li><a href={privacyHref} class="footer__link">{t.footer.links_privacy}</a></li>
+          <li><a href={termsHref} class="footer__link">{t.footer.links_terms}</a></li>
         </ul>
       </div>
     </nav>

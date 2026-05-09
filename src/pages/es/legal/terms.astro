@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Navbar from '../../../components/Navbar.astro';
+import Footer from '../../../components/Footer.astro';
+
+const updated = 'Mayo 2025';
+---
+
+<BaseLayout
+  title="Términos de Servicio — The Clam AI"
+  description="Términos y condiciones para usar la plataforma The Clam AI."
+  lang="es"
+>
+  <Navbar />
+
+  <main style="max-width:720px;margin:0 auto;padding:140px 24px 80px;">
+    <h1 style="font-size:36px;font-weight:700;letter-spacing:-0.03em;color:#ededed;margin:0 0 8px;">Términos de Servicio</h1>
+    <p style="font-size:13px;color:#555;margin:0 0 48px;">Última actualización: {updated}</p>
+
+    <div style="display:flex;flex-direction:column;gap:32px;">
+      <section><h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">1. Aceptación</h2><p style="font-size:14px;color:#888;line-height:1.75;margin:0;">Al suscribirte o usar The Clam AI ("Servicio"), aceptas estos términos. Si no estás de acuerdo, no uses el Servicio. Estos términos forman un contrato vinculante entre tú ("Cliente") y The Clam AI.</p></section>
+      <section><h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">2. El Servicio</h2><p style="font-size:14px;color:#888;line-height:1.75;margin:0;">The Clam AI ofrece un asistente de IA gestionado que procesa mensajes de WhatsApp en nombre de negocios. El Servicio incluye configuración, hosting y mantenimiento continuo del modelo. Podemos modificar funciones con aviso de 14 días.</p></section>
+      <section><h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">3. Suscripciones y facturación</h2><ul style="font-size:14px;color:#888;line-height:1.75;margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;"><li>Los planes se facturan mensualmente por adelantado.</li><li>No se requiere contrato de largo plazo; puedes cancelar antes del siguiente ciclo de facturación.</li><li>No hay cargos de instalación.</li><li>Los cambios de precio se comunicarán con 30 días de anticipación.</li></ul></section>
+      <section><h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">4. Política de reembolso</h2><p style="font-size:14px;color:#888;line-height:1.75;margin:0;">Ofrecemos reembolso completo si cancelas dentro de los 7 días posteriores a tu primer cargo y el asistente de IA aún no ha salido en vivo. Una vez que el Servicio está en vivo, los cargos del periodo actual no son reembolsables, pero no se te cobrará de nuevo después de cancelar.</p></section>
+      <section><h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">5. Responsabilidades del cliente</h2><ul style="font-size:14px;color:#888;line-height:1.75;margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;"><li>Debes proporcionar información precisa del negocio durante el onboarding.</li><li>Eres responsable de mantener tu cuenta de WhatsApp Business en buen estado con las políticas de Meta.</li><li>No debes usar el Servicio para comunicaciones ilegales, engañosas o abusivas.</li><li>Eres responsable de informar a tus clientes que una IA automatizada puede responder en tu nombre.</li></ul></section>
+      <section><h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">6. Limitación de responsabilidad</h2><p style="font-size:14px;color:#888;line-height:1.75;margin:0;">The Clam AI no será responsable por daños indirectos, incidentales o consecuentes derivados del uso del Servicio. Nuestra responsabilidad total en cualquier periodo de 12 meses no excederá las tarifas pagadas por ti durante ese periodo. La IA puede producir respuestas inexactas ocasionalmente; eres responsable de revisar decisiones operativas críticas.</p></section>
+      <section><h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">7. Propiedad intelectual</h2><p style="font-size:14px;color:#888;line-height:1.75;margin:0;">The Clam AI conserva todos los derechos sobre el software de la plataforma, modelos de IA e infraestructura. Tú conservas la propiedad de los datos de tu negocio y del contenido de conversaciones de tus clientes. Al terminar, exportaremos tus datos dentro de 48 horas.</p></section>
+      <section><h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">8. Terminación</h2><p style="font-size:14px;color:#888;line-height:1.75;margin:0;">Cualquiera de las partes puede terminar en cualquier momento. Podemos suspender el Servicio inmediatamente si violas estos términos. Al terminar, el acceso se revoca al final del periodo facturado y los datos se eliminan después del periodo de retención definido en la Política de Privacidad.</p></section>
+      <section><h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">9. Ley aplicable</h2><p style="font-size:14px;color:#888;line-height:1.75;margin:0;">Estos términos se rigen por la ley aplicable. Las disputas se resolverán por arbitraje vinculante o ante tribunales de jurisdicción competente. Si alguna disposición se considera inválida, el resto de los términos continúa vigente.</p></section>
+      <section><h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">10. Contacto</h2><p style="font-size:14px;color:#888;line-height:1.75;margin:0;">¿Preguntas sobre estos términos? Escríbenos a <a href="mailto:hello@theclamai.com" style="color:#D4AF37;">hello@theclamai.com</a>.</p></section>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>

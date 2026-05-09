@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Navbar from '../../../components/Navbar.astro';
+import Footer from '../../../components/Footer.astro';
+
+const updated = 'Mayo 2026';
+---
+
+<BaseLayout
+  title="Política de Privacidad — The Clam AI"
+  description="Cómo The Clam AI recopila, usa y protege tus datos."
+  lang="es"
+>
+  <Navbar />
+
+  <main style="max-width:720px;margin:0 auto;padding:140px 24px 80px;">
+    <h1 style="font-size:36px;font-weight:700;letter-spacing:-0.03em;color:#ededed;margin:0 0 8px;">Política de Privacidad</h1>
+    <p style="font-size:13px;color:#555;margin:0 0 48px;">Última actualización: {updated}</p>
+
+    <div style="display:flex;flex-direction:column;gap:32px;">
+      <section>
+        <h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">1. Quiénes somos</h2>
+        <p style="font-size:14px;color:#888;line-height:1.75;margin:0;">
+          The Clam AI ("nosotros") ofrece una plataforma de IA conversacional en WhatsApp para restaurantes, hoteles, farmacias, inmobiliarias, concesionarios y otros negocios que hablan con clientes.
+          Puedes contactarnos en <a href="mailto:hello@theclamai.com" style="color:#D4AF37;">hello@theclamai.com</a>.
+        </p>
+      </section>
+
+      <section>
+        <h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">2. Qué datos recopilamos</h2>
+        <p style="font-size:14px;color:#888;line-height:1.75;margin:0 0 10px;">Recopilamos solo los datos necesarios para prestar el servicio:</p>
+        <ul style="font-size:14px;color:#888;line-height:1.75;margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;">
+          <li><strong style="color:#ededed;">Datos de contacto del negocio</strong> — nombre, email y teléfono de los dueños o responsables que se registran.</li>
+          <li><strong style="color:#ededed;">Datos de mensajes de clientes</strong> — contenido de mensajes de WhatsApp procesados en nombre de nuestros clientes para generar respuestas de IA.</li>
+          <li><strong style="color:#ededed;">Datos de uso</strong> — analítica anonimizada sobre el uso del dashboard y del sitio (vistas de página, uso de funciones).</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">3. Cómo usamos tus datos</h2>
+        <ul style="font-size:14px;color:#888;line-height:1.75;margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;">
+          <li>Para entregar y mejorar el servicio de asistente de IA.</li>
+          <li>Para responder solicitudes de soporte y comunicaciones.</li>
+          <li>Para enviar notificaciones relacionadas con el servicio, sin marketing salvo que exista consentimiento.</li>
+          <li>Para cumplir obligaciones legales.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">4. Compartición de datos</h2>
+        <p style="font-size:14px;color:#888;line-height:1.75;margin:0;">
+          No vendemos ni alquilamos datos personales. Compartimos datos solo con subprocesadores necesarios para operar el servicio, como hosting, infraestructura cloud y proveedores de inferencia de IA, bajo acuerdos estrictos de tratamiento de datos. Solo divulgamos datos a autoridades cuando la ley lo exige.
+        </p>
+      </section>
+
+      <section>
+        <h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">5. Retención de datos</h2>
+        <p style="font-size:14px;color:#888;line-height:1.75;margin:0;">
+          Los datos de conversaciones de clientes se retienen por 90 días por defecto, configurable por cada cliente negocio. Los datos de cuenta del negocio se conservan durante el contrato y 30 días después de terminar.
+        </p>
+      </section>
+
+      <section>
+        <h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">6. Tus derechos (GDPR)</h2>
+        <p style="font-size:14px;color:#888;line-height:1.75;margin:0;">
+          Si estás en la UE/EEE, tienes derecho a acceder, corregir, eliminar o portar tus datos, y a oponerte o restringir el tratamiento. Para ejercer estos derechos, escríbenos a <a href="mailto:hello@theclamai.com" style="color:#D4AF37;">hello@theclamai.com</a>. Respondemos dentro de 30 días.
+        </p>
+      </section>
+
+      <section>
+        <h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">7. Cookies y analítica</h2>
+        <p style="font-size:14px;color:#888;line-height:1.75;margin:0 0 10px;">
+          Nuestro sitio de marketing (theclamai.com) usa <strong style="color:#ededed;">PostHog</strong> para analítica de producto, alojado en la UE. PostHog solo se carga si aceptas el banner de analítica. No activamos grabación de sesión por defecto y respetamos la configuración "Do Not Track" de tu navegador.
+        </p>
+        <p style="font-size:14px;color:#888;line-height:1.75;margin:0;">
+          Nuestro dashboard usa únicamente cookies de sesión estrictamente necesarias.
+        </p>
+      </section>
+
+      <section>
+        <h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">8. El número demo de WhatsApp</h2>
+        <p style="font-size:14px;color:#888;line-height:1.75;margin:0;">
+          Al hacer clic en cualquier botón "Probar el demo", se abre un chat con nuestro bot de producción en +501 6105086. Los mensajes que envíes son procesados por nuestra IA y pueden ser revisados por nuestro equipo para mejorar el producto. No compartas datos sensibles en la conversación demo. Para pedir la eliminación de tu conversación demo, escribe a <a href="mailto:hello@theclamai.com" style="color:#D4AF37;">hello@theclamai.com</a>.
+        </p>
+      </section>
+
+      <section>
+        <h2 style="font-size:17px;font-weight:600;color:#ededed;margin:0 0 10px;">9. Cambios a esta política</h2>
+        <p style="font-size:14px;color:#888;line-height:1.75;margin:0;">
+          Podemos actualizar esta política. Si los cambios son materiales, notificaremos a los clientes por email con 14 días de anticipación. La fecha de última actualización refleja la versión vigente.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>
