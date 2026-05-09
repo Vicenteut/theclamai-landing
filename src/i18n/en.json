@@ -32,28 +32,51 @@
   "switcher": {
     "label": "I run a…",
     "verticals": {
-      "restaurant": "Restaurant",
       "hotel": "Hotel",
-      "pharmacy": "Pharmacy",
+      "airbnb": "Airbnb / short-term rental",
+      "restaurant": "Restaurant",
       "real_estate": "Real estate office",
-      "car_dealer": "Car dealership"
+      "pharmacy": "Pharmacy",
+      "car_sales": "Car dealership",
+      "doctores": "Doctor / clinic"
     }
   },
   "demo_strip": {
     "eyebrow": "What just happened",
     "steps": [
-      { "title": "You scanned", "body": "WhatsApp opened with a prefilled message tailored to your industry." },
-      { "title": "The bot replied", "body": "In your language, with the right context — orders, bookings, info, follow-ups." },
-      { "title": "Real handoff", "body": "If something needs a human, it's flagged and handed off cleanly to your team." }
+      {
+        "title": "You scanned",
+        "body": "WhatsApp opened with a prefilled message tailored to your industry."
+      },
+      {
+        "title": "The bot replied",
+        "body": "In your language, with the right context — orders, bookings, info, follow-ups."
+      },
+      {
+        "title": "Real handoff",
+        "body": "If something needs a human, it's flagged and handed off cleanly to your team."
+      }
     ]
   },
   "how_it_works": {
     "eyebrow": "How it works",
     "title": "Three steps. Live in 72 hours.",
     "steps": [
-      { "n": "01", "title": "Connect WhatsApp", "body": "We provision a WhatsApp Business number — or attach to yours." },
-      { "n": "02", "title": "Train on your data", "body": "Menu, rooms, listings, inventory — whatever your business runs on." },
-      { "n": "03", "title": "Go live in 72 hours", "body": "We test, you approve, the bot starts answering customers." }
+      {
+        "n": "01",
+        "title": "Connect WhatsApp",
+        "body": "We provision a WhatsApp Business number — or attach to yours."
+      },
+      {
+        "n": "02",
+        "title": "Train on your data",
+        "body": "Menu, rooms, listings, inventory — whatever your business runs on."
+      },
+      {
+        "n": "03",
+        "title": "Go live in 72 hours",
+        "body": "We test, you approve, the bot starts answering customers."
+      }
     ]
   },
   "verticals_section": {
@@ -61,24 +84,69 @@
     "title": "Built for businesses that talk to customers.",
     "sub": "One platform, tuned per industry. Pick yours.",
     "items": {
-      "restaurant": { "name": "Restaurants", "use": "Takes orders, recommends dishes, syncs with your POS." },
-      "hotel":      { "name": "Hotels",      "use": "Answers guests, checks availability, books rooms." },
-      "pharmacy":   { "name": "Pharmacies",  "use": "Replies to product questions, logs prescription requests, schedules pickup." },
-      "real_estate":{ "name": "Real Estate", "use": "Qualifies buyers, shares listings, books visits." },
-      "car_dealer": { "name": "Car Dealerships", "use": "Pre-qualifies leads, shares inventory, schedules test drives." }
+      "hotel": {
+        "name": "Hotels",
+        "use": "Answers guests, checks availability, books rooms."
+      },
+      "airbnb": {
+        "name": "Airbnb hosts",
+        "use": "Answers guest questions, shares house rules, coordinates check-in."
+      },
+      "restaurant": {
+        "name": "Restaurants",
+        "use": "Takes orders, recommends dishes, syncs with your POS."
+      },
+      "real_estate": {
+        "name": "Real Estate",
+        "use": "Qualifies buyers, shares listings, books visits."
+      },
+      "pharmacy": {
+        "name": "Pharmacies",
+        "use": "Replies to product questions, logs prescription requests, schedules pickup."
+      },
+      "car_sales": {
+        "name": "Car Dealerships",
+        "use": "Pre-qualifies leads, shares inventory, schedules test drives."
+      },
+      "doctores": {
+        "name": "Doctors & Clinics",
+        "use": "Books appointments, answers FAQs, routes patients to staff."
+      }
     },
-    "soon": "Coming soon"
+    "status": {
+      "live": "Available now",
+      "pilot": "Pilot available",
+      "soon": "Coming soon"
+    }
   },
   "capabilities": {
     "eyebrow": "Capabilities",
     "title": "Everything a customer-facing assistant should do.",
     "items": [
-      { "title": "Orders & bookings", "body": "Captures structured orders or reservations, validated and ready for your system." },
-      { "title": "FAQs & info",       "body": "Answers anything your customers usually ask — hours, prices, policies." },
-      { "title": "Smart handoff",     "body": "Hands off to a human when confidence is low or the customer asks." },
-      { "title": "20+ languages",     "body": "Auto-detects the customer's language and replies in kind." },
-      { "title": "Integrations",      "body": "POS, PMS, CRM, calendar — plug into the systems you already use." },
-      { "title": "Always on",         "body": "24/7. Doesn't sleep, doesn't get sick, doesn't forget." }
+      {
+        "title": "Orders & bookings",
+        "body": "Captures structured orders or reservations, validated and ready for your system."
+      },
+      {
+        "title": "FAQs & info",
+        "body": "Answers anything your customers usually ask — hours, prices, policies."
+      },
+      {
+        "title": "Smart handoff",
+        "body": "Hands off to a human when confidence is low or the customer asks."
+      },
+      {
+        "title": "20+ languages",
+        "body": "Auto-detects the customer's language and replies in kind."
+      },
+      {
+        "title": "Integrations",
+        "body": "POS, PMS, CRM, calendar — plug into the systems you already use."
+      },
+      {
+        "title": "Always on",
+        "body": "24/7. Doesn't sleep, doesn't get sick, doesn't forget."
+      }
     ]
   },
   "pricing": {
@@ -136,15 +204,42 @@
     "eyebrow": "FAQ",
     "title": "Questions, answered.",
     "items": [
-      { "q": "What does The Clam AI do, exactly?",            "a": "It's an AI assistant connected to your WhatsApp Business number. It reads incoming messages in any language and responds with accurate, on-brand replies — taking orders, bookings, qualifying leads, answering FAQs, and handing off to a human when needed." },
-      { "q": "Is it just for restaurants and hotels?",         "a": "No. It works for any business that talks to customers on WhatsApp — pharmacies, real estate offices, car dealerships, clinics, service companies. We tune it to your industry during onboarding." },
-      { "q": "Do I need any technical setup?",                 "a": "None. We do a 30-minute briefing call, you share your menu/listings/inventory/FAQs, and we configure, test, and go live for you." },
-      { "q": "What languages does it support?",                "a": "It detects the customer's language automatically and replies in kind — 20+ languages including English, Spanish, French, German, Portuguese, Italian, Chinese, and Arabic." },
-      { "q": "What happens when the AI can't answer?",         "a": "Any message it's not confident about is flagged and handed off to your team in real time. You set the rules — by topic, hours, or confidence threshold." },
-      { "q": "Can it integrate with my POS, PMS, or CRM?",     "a": "Yes — on Pro and Custom plans. We integrate with most modern systems via API. If yours is unusual, talk to us about Custom." },
-      { "q": "Is my customers' data secure?",                  "a": "All data is encrypted in transit and at rest. We're GDPR-aligned, never sell or share data, and let you configure conversation retention per your policies." },
-      { "q": "How long does it take to go live?",              "a": "Most clients are live within 72 hours of the onboarding call. Complex integrations may add a few days." },
-      { "q": "Can I cancel any time?",                         "a": "Yes. All plans are month-to-month. Your number stays yours and we export all data within 48 hours of cancellation." }
+      {
+        "q": "What does The Clam AI do, exactly?",
+        "a": "It's an AI assistant connected to your WhatsApp Business number. It reads incoming messages in any language and responds with accurate, on-brand replies — taking orders, bookings, qualifying leads, answering FAQs, and handing off to a human when needed."
+      },
+      {
+        "q": "Is it just for restaurants and hotels?",
+        "a": "No. It works for any business that talks to customers on WhatsApp — pharmacies, real estate offices, car dealerships, clinics, service companies. We tune it to your industry during onboarding."
+      },
+      {
+        "q": "Do I need any technical setup?",
+        "a": "None. We do a 30-minute briefing call, you share your menu/listings/inventory/FAQs, and we configure, test, and go live for you."
+      },
+      {
+        "q": "What languages does it support?",
+        "a": "It detects the customer's language automatically and replies in kind — 20+ languages including English, Spanish, French, German, Portuguese, Italian, Chinese, and Arabic."
+      },
+      {
+        "q": "What happens when the AI can't answer?",
+        "a": "Any message it's not confident about is flagged and handed off to your team in real time. You set the rules — by topic, hours, or confidence threshold."
+      },
+      {
+        "q": "Can it integrate with my POS, PMS, or CRM?",
+        "a": "Yes — on Pro and Custom plans. We integrate with most modern systems via API. If yours is unusual, talk to us about Custom."
+      },
+      {
+        "q": "Is my customers' data secure?",
+        "a": "All data is encrypted in transit and at rest. We're GDPR-aligned, never sell or share data, and let you configure conversation retention per your policies."
+      },
+      {
+        "q": "How long does it take to go live?",
+        "a": "Most clients are live within 72 hours of the onboarding call. Complex integrations may add a few days."
+      },
+      {
+        "q": "Can I cancel any time?",
+        "a": "Yes. All plans are month-to-month. Your number stays yours and we export all data within 48 hours of cancellation."
+      }
     ]
   },
   "final_cta": {
@@ -172,21 +267,48 @@
         "eyebrow": "Why restaurants fall behind",
         "title": "The 3 messages costing you tables every week.",
         "items": [
-          { "title": "\"What time do you open?\"", "body": "Asked 50× a week. Each unanswered one is a lost cover." },
-          { "title": "\"Do you have a table for two at 8?\"", "body": "If the answer takes 30 min, they booked someone else." },
-          { "title": "\"Can I see the menu?\"", "body": "If they don't see prices fast, they don't come at all." }
+          {
+            "title": "\"What time do you open?\"",
+            "body": "Asked 50× a week. Each unanswered one is a lost cover."
+          },
+          {
+            "title": "\"Do you have a table for two at 8?\"",
+            "body": "If the answer takes 30 min, they booked someone else."
+          },
+          {
+            "title": "\"Can I see the menu?\"",
+            "body": "If they don't see prices fast, they don't come at all."
+          }
         ]
       },
       "capabilities": {
         "eyebrow": "What the bot does",
         "title": "Every guest message, handled.",
         "items": [
-          { "title": "Takes orders", "body": "Captures the dish, modifiers, special requests. Sends a structured order to your POS or kitchen." },
-          { "title": "Books tables", "body": "Checks your availability, confirms time and party size, sends the reminder." },
-          { "title": "Answers menu questions", "body": "Allergens, prices, vegan options, ingredients. Always on-brand." },
-          { "title": "20+ languages", "body": "Tourist asks in German, bot replies in German. Same for French, Italian, Mandarin." },
-          { "title": "Smart human handoff", "body": "Complex case? Hands off to your team with full context, never makes the guest repeat." },
-          { "title": "POS integration", "body": "Plugs into your kitchen system. No double-typing, no human relay." }
+          {
+            "title": "Takes orders",
+            "body": "Captures the dish, modifiers, special requests. Sends a structured order to your POS or kitchen."
+          },
+          {
+            "title": "Books tables",
+            "body": "Checks your availability, confirms time and party size, sends the reminder."
+          },
+          {
+            "title": "Answers menu questions",
+            "body": "Allergens, prices, vegan options, ingredients. Always on-brand."
+          },
+          {
+            "title": "20+ languages",
+            "body": "Tourist asks in German, bot replies in German. Same for French, Italian, Mandarin."
+          },
+          {
+            "title": "Smart human handoff",
+            "body": "Complex case? Hands off to your team with full context, never makes the guest repeat."
+          },
+          {
+            "title": "POS integration",
+            "body": "Plugs into your kitchen system. No double-typing, no human relay."
+          }
         ]
       },
       "screenshots": {

@@ -12,6 +12,8 @@ const ICON_PATHS: Record<string, string> = {
   pill: 'M10.5 20.5L20.5 10.5a4 4 0 0 0-5.66-5.66L4.84 14.84a4 4 0 0 0 5.66 5.66zM7.5 7.5l9 9',
   home: 'M3 9.5L12 3l9 6.5V21H3z M9 21V12h6v9',
   car: 'M5 17h14M5 17a2 2 0 0 1-2-2v-3l2-5h14l2 5v3a2 2 0 0 1-2 2M7 17v2M17 17v2M7 12h10',
+  key: 'M15 7a4 4 0 1 1-2.8 6.8L9 17H6v3H3v-3.5l5.2-5.2A4 4 0 0 1 15 7zM15 7h.01',
+  stethoscope: 'M6 3v4a4 4 0 0 0 8 0V3M4 3h4M12 3h4M10 11v3a4 4 0 0 0 8 0v-1M18 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4z',
 };
 ---
 
@@ -34,7 +36,7 @@ const ICON_PATHS: Record<string, string> = {
           </span>
           <h3 class="vert__name">{info.name}</h3>
           <p class="vert__use">{info.use}</p>
-          <span class="vert__soon">{t.verticals_section.soon}</span>
+          <span class={`vert__status vert__status--${v.status}`}>{t.verticals_section.status[v.status]}</span>
         </li>
       );
     })}
@@ -123,7 +125,7 @@ const ICON_PATHS: Record<string, string> = {
     margin: 0;
     flex: 1;
   }
-  .vert__soon {
+  .vert__status {
     align-self: flex-start;
     font-size: 10px;
     text-transform: uppercase;
@@ -134,5 +136,13 @@ const ICON_PATHS: Record<string, string> = {
     border-radius: var(--r-pill);
     padding: 4px 10px;
     font-weight: 500;
+  }
+</style>
+
+<style>
+  .vert__status--live {
+    color: #25D366;
+    background: rgba(37, 211, 102, 0.08);
+    border-color: rgba(37, 211, 102, 0.18);
   }
 </style>

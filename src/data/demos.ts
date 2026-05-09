@@ -12,14 +12,19 @@ export const GENERIC_DEMO_PREFILL = {
 } as const;
 
 export type VerticalId =
-  | 'restaurant'
   | 'hotel'
-  | 'pharmacy'
+  | 'airbnb'
+  | 'restaurant'
   | 'real_estate'
-  | 'car_dealer';
+  | 'pharmacy'
+  | 'car_sales'
+  | 'doctores';
+
+export type VerticalStatus = 'live' | 'pilot' | 'soon';
 
 export interface VerticalDemo {
   id: VerticalId;
+  status: VerticalStatus;
   prefill_en: string;
   prefill_es: string;
   /** Inline SVG icon glyph (kept simple — Lucide-style strokes). */
@@ -31,11 +36,13 @@ export const PAGE_ENABLED_VERTICALS: VerticalId[] = ['restaurant'];
 
 /** URL slug ↔ vertical id. URL slugs are friendlier (plural, hyphenated). */
 export const VERTICAL_SLUGS: Record<VerticalId, string> = {
-  restaurant: 'restaurants',
   hotel: 'hotels',
-  pharmacy: 'pharmacies',
+  airbnb: 'airbnb',
+  restaurant: 'restaurants',
   real_estate: 'real-estate',
-  car_dealer: 'cars',
+  pharmacy: 'pharmacies',
+  car_sales: 'cars',
+  doctores: 'doctores',
 };
 
 export function slugToVerticalId(slug: string): VerticalId | null {
@@ -47,34 +54,53 @@ export function slugToVerticalId(slug: string): VerticalId | null {
 
 export const VERTICALS: VerticalDemo[] = [
   {
-    id: 'restaurant',
-    prefill_en: "Hi! I'd like to see your menu and place an order.",
-    prefill_es: '¡Hola! Quiero ver el menú y hacer un pedido.',
-    icon: 'utensils',
-  },
-  {
     id: 'hotel',
+    status: 'live',
     prefill_en: "Hi! I'd like to check availability for a room this weekend.",
     prefill_es: '¡Hola! Quiero saber si hay habitación disponible este fin de semana.',
     icon: 'bed',
   },
   {
-    id: 'pharmacy',
-    prefill_en: "Hi! I'm looking for a product and would like to know if you have it in stock.",
-    prefill_es: '¡Hola! Estoy buscando un producto, ¿lo tienen disponible?',
-    icon: 'pill',
+    id: 'airbnb',
+    status: 'pilot',
+    prefill_en: "Hi! I'm interested in your Airbnb and want to check availability.",
+    prefill_es: '¡Hola! Me interesa tu Airbnb y quiero revisar disponibilidad.',
+    icon: 'key',
+  },
+  {
+    id: 'restaurant',
+    status: 'live',
+    prefill_en: "Hi! I'd like to see your menu and place an order.",
+    prefill_es: '¡Hola! Quiero ver el menú y hacer un pedido.',
+    icon: 'utensils',
   },
   {
     id: 'real_estate',
+    status: 'pilot',
     prefill_en: "Hi! I'm looking for a 2-bedroom apartment to rent.",
     prefill_es: '¡Hola! Estoy buscando un apartamento de 2 habitaciones en renta.',
     icon: 'home',
   },
   {
-    id: 'car_dealer',
+    id: 'pharmacy',
+    status: 'pilot',
+    prefill_en: "Hi! I'm looking for a product and would like to know if you have it in stock.",
+    prefill_es: '¡Hola! Estoy buscando un producto, ¿lo tienen disponible?',
+    icon: 'pill',
+  },
+  {
+    id: 'car_sales',
+    status: 'pilot',
     prefill_en: "Hi! I'd like to book a test drive — what do you have available?",
     prefill_es: '¡Hola! Quiero agendar una prueba de manejo, ¿qué tienen disponible?',
     icon: 'car',
+  },
+  {
+    id: 'doctores',
+    status: 'pilot',
+    prefill_en: "Hi! I'd like to book a doctor's appointment.",
+    prefill_es: '¡Hola! Quiero agendar una cita médica.',
+    icon: 'stethoscope',
   },
 ];
 
