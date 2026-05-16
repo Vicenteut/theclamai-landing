@@ -1,4 +1,7 @@
 @import '@fontsource-variable/geist/index.css';
+/* Editorial display + meta — aligned with dashboard v4 (Fraunces + JetBrains Mono). */
+@import '@fontsource-variable/fraunces/index.css';
+@import '@fontsource-variable/jetbrains-mono/index.css';
 
 @import './tokens.css';
 
