@@ -38,7 +38,10 @@ const ICON_PATHS: Record<string, string> = {
           </span>
           <h3 class="vert__name">{info.name}</h3>
           <p class="vert__use">{info.use}</p>
-          <span class={`vert__status vert__status--${v.status}`}>{t.verticals_section.status[v.status]}</span>
+          <span class={`vert__status ui-status-pill ui-status-pill--sm ${v.status === 'pilot' ? 'ui-status-pill--warning' : v.status === 'soon' ? 'ui-status-pill--neutral' : ''}`}>
+            <span class="ui-status-pill__dot" aria-hidden="true"></span>
+            {t.verticals_section.status[v.status]}
+          </span>
           </a>
         </li>
       );
@@ -57,19 +60,23 @@ const ICON_PATHS: Record<string, string> = {
     margin-bottom: var(--sp-8);
   }
   .vert__eyebrow {
-    font-size: var(--fs-xs);
+    font-family: var(--font-mono-display);
+    font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
     color: var(--accent);
     font-weight: 500;
     margin: 0 0 var(--sp-3);
   }
   .vert__title {
+    font-family: var(--font-serif);
+    font-optical-sizing: auto;
+    font-variation-settings: "SOFT" 50, "WONK" 0;
     font-size: var(--fs-3xl);
-    font-weight: 600;
+    font-weight: 500;
     color: var(--text);
     margin: 0 0 var(--sp-4);
-    letter-spacing: -0.03em;
+    letter-spacing: -0.02em;
     line-height: 1.15;
     max-width: 720px;
     margin-inline: auto;
@@ -131,22 +138,5 @@ const ICON_PATHS: Record<string, string> = {
   }
   .vert__status {
     align-self: flex-start;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--accent);
-    background: rgba(212, 175, 55, 0.08);
-    border: 1px solid rgba(212, 175, 55, 0.18);
-    border-radius: var(--r-pill);
-    padding: 4px 10px;
-    font-weight: 500;
-  }
-</style>
-
-<style>
-  .vert__status--live {
-    color: #25D366;
-    background: rgba(37, 211, 102, 0.08);
-    border-color: rgba(37, 211, 102, 0.18);
   }
 </style>

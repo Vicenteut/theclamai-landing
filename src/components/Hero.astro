@@ -52,8 +52,8 @@ const heroAlpine = `{
   <div aria-hidden="true" class="hero__glow"></div>
 
   <!-- Eyebrow badge -->
-  <div class="hero__badge fade-up">
-    <span class="pulse-dot"></span>
+  <div class="hero__badge ui-status-pill ui-status-pill--accent fade-up">
+    <span class="ui-status-pill__dot" aria-hidden="true"></span>
     <span>{t.hero.eyebrow}</span>
   </div>
 
@@ -104,25 +104,17 @@ const heroAlpine = `{
     z-index: 0;
   }
   .hero__badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    border: 1px solid rgba(212, 175, 55, 0.25);
-    border-radius: var(--r-pill);
-    padding: 6px 14px;
     margin-bottom: 28px;
-    background: rgba(212, 175, 55, 0.05);
     position: relative;
     z-index: 1;
-    font-size: 12px;
-    color: var(--accent);
-    font-weight: 500;
-    letter-spacing: 0.04em;
   }
   .hero__title {
-    font-size: clamp(40px, 7vw, 80px);
-    font-weight: 600;
-    letter-spacing: -0.04em;
+    font-family: var(--font-serif);
+    font-optical-sizing: auto;
+    font-variation-settings: "SOFT" 50, "WONK" 0;
+    font-size: clamp(40px, 7vw, 76px);
+    font-weight: 500;
+    letter-spacing: -0.025em;
     line-height: 1.05;
     color: var(--text);
     max-width: 880px;
@@ -132,7 +124,7 @@ const heroAlpine = `{
   }
   .hero__title-strong {
     color: var(--accent);
-    font-weight: 700;
+    font-weight: 600;
   }
   .hero__sub {
     font-size: clamp(16px, 1.6vw, 19px);
