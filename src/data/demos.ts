@@ -69,18 +69,18 @@ export const VERTICALS: VerticalDemo[] = [
     icon: 'bed',
   },
   {
-    id: 'airbnb',
-    status: 'pilot',
-    prefill_en: "Hi! I'm interested in your Airbnb and want to check availability.",
-    prefill_es: '¡Hola! Me interesa tu Airbnb y quiero revisar disponibilidad.',
-    icon: 'key',
-  },
-  {
     id: 'restaurant',
     status: 'live',
     prefill_en: "Hi! I'd like to see your menu and place an order.",
     prefill_es: '¡Hola! Quiero ver el menú y hacer un pedido.',
     icon: 'utensils',
+  },
+  {
+    id: 'airbnb',
+    status: 'pilot',
+    prefill_en: "Hi! I'm interested in your Airbnb and want to check availability.",
+    prefill_es: '¡Hola! Me interesa tu Airbnb y quiero revisar disponibilidad.',
+    icon: 'key',
   },
   {
     id: 'real_estate',
@@ -90,18 +90,18 @@ export const VERTICALS: VerticalDemo[] = [
     icon: 'home',
   },
   {
-    id: 'pharmacy',
-    status: 'pilot',
-    prefill_en: "Hi! I'm looking for a product and would like to know if you have it in stock.",
-    prefill_es: '¡Hola! Estoy buscando un producto, ¿lo tienen disponible?',
-    icon: 'pill',
-  },
-  {
     id: 'car_sales',
     status: 'pilot',
     prefill_en: "Hi! I'd like to book a test drive — what do you have available?",
     prefill_es: '¡Hola! Quiero agendar una prueba de manejo, ¿qué tienen disponible?',
     icon: 'car',
+  },
+  {
+    id: 'pharmacy',
+    status: 'pilot',
+    prefill_en: "Hi! I'm looking for a product and would like to know if you have it in stock.",
+    prefill_es: '¡Hola! Estoy buscando un producto, ¿lo tienen disponible?',
+    icon: 'pill',
   },
   {
     id: 'doctores',

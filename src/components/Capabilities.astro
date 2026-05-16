@@ -4,14 +4,13 @@ import { getLocale, dict } from '../i18n';
 const lang = getLocale(Astro.url);
 const t = dict(lang);
 const items = t.capabilities.items;
+const alsoIncluded = t.capabilities.also_included_items ?? [];
+const alsoLabel = t.capabilities.also_included_label ?? '';
 
 const ICONS: Record<number, string> = {
-  0: 'M3 7h18M3 12h18M3 17h12',
-  1: 'M12 2v20M2 12h20',
-  2: 'M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.97-4.03 9-9 9-1.5 0-2.91-.37-4.15-1.02L3 21l1.02-4.85A8.96 8.96 0 0 1 3 12c0-4.97 4.03-9 9-9s9 4.03 9 9z',
-  3: 'M5 12l5 5L20 7',
-  4: 'M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z',
-  5: 'M12 6v6l4 2M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20z',
+  0: 'M13 2L3 14h7l-1 8 10-12h-7l1-8z',
+  1: 'M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z',
+  2: 'M3 3v18h18M7 14l4-4 4 4 6-6',
 };
 ---
 
@@ -25,7 +24,7 @@ const ICONS: Record<number, string> = {
     {items.map((it, i) => (
       <li class="caps__cell">
         <span class="caps__icon" aria-hidden="true">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d={ICONS[i] ?? ICONS[0]} />
           </svg>
         </span>
@@ -34,6 +33,17 @@ const ICONS: Record<number, string> = {
       </li>
     ))}
   </ul>
+
+  {alsoIncluded.length > 0 && (
+    <div class="caps__also">
+      <span class="caps__also-label">{alsoLabel}</span>
+      <ul class="caps__also-list">
+        {alsoIncluded.map((item) => (
+          <li class="caps__also-item">{item}</li>
+        ))}
+      </ul>
+    </div>
+  )}
 </section>
 
 <style>
@@ -111,5 +121,44 @@ const ICONS: Record<number, string> = {
     color: var(--text-muted);
     line-height: 1.6;
     margin: 0;
+  }
+
+  /* Also included strip */
+  .caps__also {
+    margin-top: var(--sp-7);
+    padding-top: var(--sp-6);
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--sp-3) var(--sp-4);
+  }
+  .caps__also-label {
+    font-family: var(--font-mono-display);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-dim);
+  }
+  .caps__also-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-2) var(--sp-3);
+    justify-content: center;
+  }
+  .caps__also-item {
+    font-family: var(--font-mono-display);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    padding: 4px 10px;
+    border: 1px solid var(--border);
+    border-radius: var(--r-pill, 999px);
+    background: var(--surface);
   }
 </style>
