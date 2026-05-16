@@ -15,10 +15,10 @@
     "qr_label": "Demo animado del chatbot IA"
   },
   "hero": {
-    "eyebrow": "IA conversacional · WhatsApp",
-    "title_pre": "El asistente de IA",
-    "title_strong": "que tu negocio ya necesitaba.",
-    "sub": "Conecta WhatsApp. Entrénalo con tus datos. En vivo en 72 horas.",
+    "eyebrow": "WhatsApp para negocios",
+    "title_pre": "Tu empleado no puede atender clientes y trabajar al mismo tiempo.",
+    "title_strong": "Dejá de perder ventas.",
+    "sub": "Contestá cada cliente en segundos, las 24 horas. Tu equipo deja de pelear con el teléfono y vuelve a hacer lo que hace bien.",
     "demo_label": "Demo en vivo",
     "demo_help": "Toca para chatear. El bot responde en tu idioma.",
     "chat_messages": [
@@ -65,18 +65,18 @@
     "steps": [
       {
         "n": "01",
-        "title": "Conecta WhatsApp",
-        "body": "Te damos un número de WhatsApp Business — o conectamos el tuyo."
+        "title": "Conectamos WhatsApp",
+        "body": "Sin cambiar tu número actual. Tu equipo sigue viendo todo desde el mismo WhatsApp."
       },
       {
         "n": "02",
-        "title": "Entrena con tus datos",
-        "body": "Menú, habitaciones, propiedades, inventario — lo que tu negocio maneje."
+        "title": "Lo entrenamos con tu negocio",
+        "body": "Menú, horarios, propiedades, habitaciones — lo que vendés y cómo. No vos: nosotros."
       },
       {
         "n": "03",
         "title": "En vivo en 72 horas",
-        "body": "Probamos, apruebas, el bot empieza a responder a tus clientes."
+        "body": "Vos aprobás cada respuesta antes de que salga. El día 4 ya está contestando solo."
       }
     ]
   },
@@ -87,31 +87,31 @@
     "items": {
       "hotel": {
         "name": "Hoteles",
-        "use": "Responde a huéspedes, checa disponibilidad y reserva."
-      },
-      "airbnb": {
-        "name": "Airbnb hosts",
-        "use": "Responde dudas, comparte reglas de la casa y coordina check-in."
+        "use": "Cuando alguien pregunta \"¿tienen habitación para el viernes?\", el bot responde al instante. Solo te avisan cuando hay una reserva real para confirmar."
       },
       "restaurant": {
         "name": "Restaurantes",
-        "use": "Toma pedidos, recomienda platillos, se conecta a tu POS."
+        "use": "Tu cocinero deja de contestar WhatsApp. Los pedidos entran limpios, sin confusión, sin recogidas perdidas."
+      },
+      "airbnb": {
+        "name": "Airbnb hosts",
+        "use": "Los huéspedes reciben las instrucciones de check-in, las reglas, el wifi — en el momento que preguntan, no tres horas después."
       },
       "real_estate": {
         "name": "Inmobiliarias",
-        "use": "Califica compradores, comparte propiedades, agenda visitas."
-      },
-      "pharmacy": {
-        "name": "Farmacias",
-        "use": "Contesta dudas, registra recetas, agenda recogidas."
+        "use": "Cuando alguien pregunta \"¿sigue disponible?\", el bot ya sabe la respuesta. Te enterás solo cuando hay interés real."
       },
       "car_sales": {
         "name": "Concesionarios",
-        "use": "Pre-califica leads, comparte inventario, agenda pruebas de manejo."
+        "use": "Pruebas de manejo agendadas, dudas de financiamiento respondidas, inventario compartido — sin sacar al vendedor del piso de ventas."
+      },
+      "pharmacy": {
+        "name": "Farmacias",
+        "use": "\"¿Lo tienen disponible?\" se contesta antes de que el cliente camine a otra farmacia. Recogidas registradas automáticamente."
       },
       "doctores": {
         "name": "Doctores y clínicas",
-        "use": "Agenda citas, responde preguntas y deriva pacientes al equipo."
+        "use": "Citas agendadas fuera del horario de oficina. Casos sensibles derivados al equipo con todo el contexto — ningún paciente repite su historia dos veces."
       }
     },
     "status": {
@@ -121,39 +121,35 @@
     }
   },
   "capabilities": {
-    "eyebrow": "Capacidades",
-    "title": "Todo lo que un asistente al cliente debería hacer.",
+    "eyebrow": "Qué cambia el día uno",
+    "title": "Tres cosas empiezan a pasar el momento que lo prendés.",
     "items": [
       {
-        "title": "Pedidos y reservas",
-        "body": "Captura pedidos o reservas estructurados, validados y listos para tu sistema."
+        "title": "Contestás antes de que el cliente se vaya a la competencia.",
+        "body": "Cada mensaje de WhatsApp respondido en segundos, 24/7 — no minutos, no horas. El cliente que se hubiera ido esperando se queda en el chat."
       },
       {
-        "title": "Preguntas e info",
-        "body": "Contesta lo que tus clientes preguntan siempre — horarios, precios, políticas."
+        "title": "Tu equipo deja de hacer dos cosas a la vez.",
+        "body": "El bot toma el pedido, la reserva, la pregunta. Tu equipo supervisa y solo entra cuando hace falta."
       },
       {
-        "title": "Handoff inteligente",
-        "body": "Pasa al humano cuando hay duda o cuando el cliente lo pide."
-      },
-      {
-        "title": "20+ idiomas",
-        "body": "Detecta el idioma del cliente y responde igual."
-      },
-      {
-        "title": "Integraciones",
-        "body": "POS, PMS, CRM, calendario — se conecta con lo que ya usas."
-      },
-      {
-        "title": "Siempre activo",
-        "body": "24/7. No duerme, no se enferma, no olvida."
+        "title": "Manejás tu negocio desde donde estés.",
+        "body": "Un dashboard que muestra qué se vende, de qué se quejan los clientes, quién vuelve. Ves la operación sin estar en el mostrador."
       }
+    ],
+    "also_included_label": "También incluido",
+    "also_included_items": [
+      "ES/EN desde el primer día",
+      "20+ idiomas detectados automáticamente",
+      "Integraciones POS · PMS · CRM",
+      "Handoff inteligente a humano",
+      "Cifrado de extremo a extremo"
     ]
   },
   "pricing": {
     "eyebrow": "Precios",
     "title": "Planes simples. USD, mensual.",
-    "sub": "Empieza pequeño. Sube cuando crezcas. Cancela cuando quieras.",
+    "sub": "Sin contrato. Cancelás cuando quieras.",
     "period": "/ mes",
     "custom_price": "Contáctanos",
     "most_popular": "Más popular",
@@ -236,6 +232,14 @@
       {
         "q": "¿Cuánto tarda en estar en vivo?",
         "a": "La mayoría de clientes están en vivo dentro de 72 horas del onboarding. Integraciones complejas pueden agregar unos días."
+      },
+      {
+        "q": "¿Qué pasa si el cliente prefiere hablar con una persona?",
+        "a": "El bot pasa al equipo limpiamente en el momento que el cliente lo pide, la conversación se pone sensible, o la IA no tiene certeza. Tu equipo retoma con todo el contexto — el cliente nunca tiene que repetir lo que ya dijo."
+      },
+      {
+        "q": "¿Tengo que cambiar mi número actual de WhatsApp?",
+        "a": "No. Podemos conectarnos al número que ya usás. Tus clientes siguen mandando al mismo número, y tu equipo sigue viendo todo desde el mismo WhatsApp que usa hoy."
       },
       {
         "q": "¿Puedo cancelar cuando quiera?",
