@@ -52,8 +52,8 @@ const heroAlpine = `{
   <div aria-hidden="true" class="hero__glow"></div>
 
   <!-- Eyebrow badge -->
-  <div class="hero__badge fade-up">
-    <span class="pulse-dot"></span>
+  <div class="hero__badge ui-status-pill ui-status-pill--accent fade-up">
+    <span class="ui-status-pill__dot" aria-hidden="true"></span>
     <span>{t.hero.eyebrow}</span>
   </div>
 
@@ -104,22 +104,9 @@ const heroAlpine = `{
     z-index: 0;
   }
   .hero__badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    border: 1px solid rgba(212, 167, 44, 0.28);
-    border-radius: var(--r-pill);
-    padding: 6px 14px;
     margin-bottom: 28px;
-    background: rgba(212, 167, 44, 0.06);
     position: relative;
     z-index: 1;
-    font-family: var(--font-mono-display);
-    font-size: 11px;
-    color: var(--accent);
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
   }
   .hero__title {
     font-family: var(--font-serif);

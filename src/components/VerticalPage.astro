@@ -32,8 +32,8 @@ const slug = VERTICAL_SLUGS[verticalId];
   <!-- Hero -->
   <section class="vp-hero">
     <div aria-hidden="true" class="vp-hero__glow"></div>
-    <div class="vp-hero__badge">
-      <span class="pulse-dot"></span>
+    <div class="vp-hero__badge ui-status-pill ui-status-pill--accent">
+      <span class="ui-status-pill__dot" aria-hidden="true"></span>
       <span>{copy.hero.eyebrow}</span>
     </div>
     <h1 class="vp-hero__title">
@@ -185,22 +185,9 @@ const slug = VERTICAL_SLUGS[verticalId];
     z-index: 0;
   }
   .vp-hero__badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    border: 1px solid rgba(212, 167, 44, 0.28);
-    border-radius: var(--r-pill);
-    padding: 6px 14px;
     margin-bottom: var(--sp-6);
-    background: rgba(212, 167, 44, 0.06);
     position: relative;
     z-index: 1;
-    font-family: var(--font-mono-display);
-    font-size: 11px;
-    color: var(--accent);
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
   }
   .vp-hero__title {
     font-family: var(--font-serif);
