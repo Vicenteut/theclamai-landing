@@ -188,22 +188,27 @@ const slug = VERTICAL_SLUGS[verticalId];
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    border: 1px solid rgba(212, 175, 55, 0.25);
+    border: 1px solid rgba(212, 167, 44, 0.28);
     border-radius: var(--r-pill);
     padding: 6px 14px;
     margin-bottom: var(--sp-6);
-    background: rgba(212, 175, 55, 0.05);
+    background: rgba(212, 167, 44, 0.06);
     position: relative;
     z-index: 1;
-    font-size: 12px;
+    font-family: var(--font-mono-display);
+    font-size: 11px;
     color: var(--accent);
     font-weight: 500;
-    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
   }
   .vp-hero__title {
-    font-size: clamp(40px, 7vw, 76px);
-    font-weight: 600;
-    letter-spacing: -0.04em;
+    font-family: var(--font-serif);
+    font-optical-sizing: auto;
+    font-variation-settings: "SOFT" 50, "WONK" 0;
+    font-size: clamp(40px, 7vw, 72px);
+    font-weight: 500;
+    letter-spacing: -0.025em;
     line-height: 1.05;
     color: var(--text);
     margin: 0 0 var(--sp-5);
@@ -212,7 +217,7 @@ const slug = VERTICAL_SLUGS[verticalId];
   }
   .vp-hero__title-strong {
     color: var(--accent);
-    font-weight: 700;
+    font-weight: 600;
   }
   .vp-hero__sub {
     font-size: clamp(16px, 1.6vw, 19px);
@@ -247,18 +252,22 @@ const slug = VERTICAL_SLUGS[verticalId];
     margin-bottom: var(--sp-8);
   }
   .vp-eyebrow {
-    font-size: var(--fs-xs);
+    font-family: var(--font-mono-display);
+    font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
     color: var(--accent);
     font-weight: 500;
     margin: 0 0 var(--sp-3);
   }
   .vp-title {
+    font-family: var(--font-serif);
+    font-optical-sizing: auto;
+    font-variation-settings: "SOFT" 50, "WONK" 0;
     font-size: var(--fs-3xl);
-    font-weight: 600;
+    font-weight: 500;
     color: var(--text);
-    letter-spacing: -0.03em;
+    letter-spacing: -0.02em;
     line-height: 1.15;
     margin: 0 auto;
     max-width: 720px;

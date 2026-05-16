@@ -34,19 +34,23 @@ const steps = t.how_it_works.steps;
     margin-bottom: var(--sp-8);
   }
   .how__eyebrow {
-    font-size: var(--fs-xs);
+    font-family: var(--font-mono-display);
+    font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
     color: var(--accent);
     font-weight: 500;
     margin: 0 0 var(--sp-3);
   }
   .how__title {
+    font-family: var(--font-serif);
+    font-optical-sizing: auto;
+    font-variation-settings: "SOFT" 50, "WONK" 0;
     font-size: var(--fs-3xl);
-    font-weight: 600;
+    font-weight: 500;
     color: var(--text);
     margin: 0;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.02em;
     line-height: 1.15;
   }
   .how__grid {
@@ -72,10 +76,11 @@ const steps = t.how_it_works.steps;
     transform: translateY(-2px);
   }
   .how__num {
-    font-family: var(--font-mono);
-    font-size: var(--fs-xs);
+    font-family: var(--font-mono-display);
+    font-size: var(--fs-md);
+    font-weight: 500;
     color: var(--accent);
-    letter-spacing: 0.12em;
+    letter-spacing: 0.08em;
     margin-bottom: var(--sp-5);
   }
   .how__step-title {

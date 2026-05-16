@@ -47,19 +47,23 @@ const ICONS: Record<number, string> = {
     margin-bottom: var(--sp-8);
   }
   .caps__eyebrow {
-    font-size: var(--fs-xs);
+    font-family: var(--font-mono-display);
+    font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
     color: var(--accent);
     font-weight: 500;
     margin: 0 0 var(--sp-3);
   }
   .caps__title {
+    font-family: var(--font-serif);
+    font-optical-sizing: auto;
+    font-variation-settings: "SOFT" 50, "WONK" 0;
     font-size: var(--fs-3xl);
-    font-weight: 600;
+    font-weight: 500;
     color: var(--text);
     margin: 0;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.02em;
     max-width: 720px;
     margin-inline: auto;
     line-height: 1.15;

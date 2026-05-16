@@ -47,7 +47,8 @@ a { text-decoration: none; color: inherit; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: var(--fs-xs);
+  font-family: var(--font-mono-display);
+  font-size: 11px;
   color: var(--accent);
   letter-spacing: 0.08em;
   text-transform: uppercase;
